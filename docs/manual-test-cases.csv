@@ -1,0 +1,29 @@
+ID,Suite,Type,Steps,Expected,Actual,Status
+TC_LOGIN_001,Login,Positive,Submit dedicated valid credentials,Home opens and auth survives restart,Not executed,Not Run
+TC_LOGIN_002,Login,Negative,Submit wrong credentials,Friendly error without navigation,Not executed,Not Run
+TC_LOGIN_003,Login,Negative,Submit empty email and password,Inline validation and no network request,Not executed,Not Run
+TC_LOGIN_004,Login,Negative,Submit malformed email,Inline email error,Not executed,Not Run
+TC_LOGIN_005,Login,GUI,Open keyboard on small screen,Submit remains reachable by scrolling,Not executed,Not Run
+TC_LOGIN_006,Login,GUI,Toggle password visibility,Text visibility changes without losing input,Not executed,Not Run
+TC_LOGIN_007,Login,Mobile,Background then resume login,No duplicate submission or crash,Not executed,Not Run
+TC_SIGNUP_001,Signup,Positive,Create dedicated test account,Profile and persistent authentication created,Not executed,Not Run
+TC_SIGNUP_002,Signup,Negative,Use mismatching password confirmation,Inline mismatch error before network,Not executed,Not Run
+TC_SIGNUP_003,Signup,Negative,Use lowercase first English name letter,Name validation displayed,Not executed,Not Run
+TC_HOME_001,Home,Positive,Launch with internet,Meals load with image name category and add action,Not executed,Not Run
+TC_HOME_002,Home,Positive,Swipe banner and offers,Featured meals and five offer items visible,Not executed,Not Run
+TC_HOME_003,Home,Negative,Launch offline after successful load,Cached meals restored,Not executed,Not Run
+TC_HOME_004,Home,Negative,Launch offline with no cache,Friendly retry state,Not executed,Not Run
+TC_HOME_005,Home,GUI,Inspect 375px and 412px layouts,Two-column grid and no overflow,Not executed,Not Run
+TC_HOME_006,Home,Mobile,Scroll many meals,Responsive scrolling and bounded image memory,Not executed,Not Run
+TC_HOME_007,Home,Positive,Add meal twice,Snackbar and quantity two with correct total,Not executed,Not Run
+TC_DETAILS_001,Details,Positive,Open selected meal,Correct image category area instructions and cart action,Not executed,Not Run
+TC_FAV_001,Favourites,Positive,Save then restart signed-in app,Favourite remains associated with current account,Not executed,Not Run
+TC_CART_001,Cart,Positive,Remove final item,Zero total and empty snackbar,Not executed,Not Run
+TC_ORDER_001,Checkout,Positive,Submit complete demo order,One Firestore order and cleared cart,Not executed,Not Run
+TC_ORDER_002,Checkout,Negative,Double tap submit,No duplicate order,Not executed,Not Run
+TC_PROFILE_001,Profile,Mobile,Authenticate with enrolled biometric,Profile unlocks after successful authentication,Not executed,Not Run
+TC_PROFILE_002,Profile,Positive,Choose gallery thumbnail,Photo updates and survives restart,Not executed,Not Run
+TC_MAP_001,Map,Positive,Open configured map and marker,Five cities and vendor cuisine rating info window,Blocked pending Maps SDK key,Blocked
+TC_L10N_001,Settings,GUI,Toggle Arabic and restart,Arabic strings RTL and mirrored navigation persist,Not executed,Not Run
+TC_THEME_001,Settings,GUI,Toggle dark mode and restart,Dark theme persists with readable contrast,Not executed,Not Run
+TC_SECURITY_001,Firestore,Negative,Attempt cross-user document access,Read and write rejected by rules,Not executed,Not Run
