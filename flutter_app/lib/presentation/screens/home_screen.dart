@@ -84,11 +84,12 @@ class HomeScreen extends StatelessWidget {
                 MaterialPageRoute(builder: (_) => const OrdersScreen()),
               );
             }
-            if (index == 3)
+            if (index == 3) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => const ProfileScreen()),
               );
+            }
           },
           destinations: [
             NavigationDestination(

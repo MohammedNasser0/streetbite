@@ -98,6 +98,42 @@ abstract class AppLocalizations {
     Locale('en'),
   ];
 
+  /// No description provided for @invalidCredentials.
+  ///
+  /// In en, this message translates to:
+  /// **'Email or password is incorrect.'**
+  String get invalidCredentials;
+
+  /// No description provided for @emailInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'An account already uses this email. Log in instead.'**
+  String get emailInUse;
+
+  /// No description provided for @authThrottled.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Please wait and try again.'**
+  String get authThrottled;
+
+  /// No description provided for @authNetworkError.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot connect. Check your internet and try again.'**
+  String get authNetworkError;
+
+  /// No description provided for @authNotEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Email sign-in is currently unavailable. Please try later.'**
+  String get authNotEnabled;
+
+  /// No description provided for @accountDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'This account is disabled. Contact support.'**
+  String get accountDisabled;
+
   /// No description provided for @appName.
   ///
   /// In en, this message translates to:

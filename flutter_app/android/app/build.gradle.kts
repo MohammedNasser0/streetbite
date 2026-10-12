@@ -1,10 +1,12 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
-val mapsConfig = java.util.Properties().apply {
+val mapsConfig = Properties().apply {
     val config = rootProject.file("maps.properties")
     if (config.exists()) config.inputStream().use { load(it) }
 }

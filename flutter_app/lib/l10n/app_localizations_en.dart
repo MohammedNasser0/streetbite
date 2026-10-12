@@ -10,6 +10,27 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get invalidCredentials => 'Email or password is incorrect.';
+
+  @override
+  String get emailInUse =>
+      'An account already uses this email. Log in instead.';
+
+  @override
+  String get authThrottled => 'Too many attempts. Please wait and try again.';
+
+  @override
+  String get authNetworkError =>
+      'Cannot connect. Check your internet and try again.';
+
+  @override
+  String get authNotEnabled =>
+      'Email sign-in is currently unavailable. Please try later.';
+
+  @override
+  String get accountDisabled => 'This account is disabled. Contact support.';
+
+  @override
   String get appName => 'StreetBite';
 
   @override

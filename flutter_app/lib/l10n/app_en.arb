@@ -1,5 +1,11 @@
 {
   "@@locale": "en",
+  "invalidCredentials": "Email or password is incorrect.",
+  "emailInUse": "An account already uses this email. Log in instead.",
+  "authThrottled": "Too many attempts. Please wait and try again.",
+  "authNetworkError": "Cannot connect. Check your internet and try again.",
+  "authNotEnabled": "Email sign-in is currently unavailable. Please try later.",
+  "accountDisabled": "This account is disabled. Contact support.",
   "appName": "StreetBite",
   "home": "Home",
   "search": "Search meals",

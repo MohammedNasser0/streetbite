@@ -34,12 +34,15 @@ class BrowseScreen extends StatelessWidget {
               Expanded(
                 child: BlocBuilder<MenuCubit, MenuState>(
                   builder: (context, state) {
-                    if (state.loading)
+                    if (state.loading) {
                       return const Center(child: CircularProgressIndicator());
-                    if (state.error != null)
+                    }
+                    if (state.error != null) {
                       return Center(child: Text(l.networkError));
-                    if (state.meals.isEmpty)
+                    }
+                    if (state.meals.isEmpty) {
                       return Center(child: Text(l.noMeals));
+                    }
                     return GridView.builder(
                       padding: const EdgeInsets.all(16),
                       gridDelegate:

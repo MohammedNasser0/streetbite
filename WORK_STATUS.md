@@ -10,7 +10,7 @@ Work paused at the user's request when the five-hour Codex usage window reached 
 - Analyzer passed before the most recent small UI/device/test changes.
 - Appium Java project compiled; five scenarios authored but not executed.
 - QA plan, manual cases, traceability and draft closure report written.
-- Public GitHub repository created: https://github.com/MohammedNasser0/streetbite-capstone
+- Public GitHub repository created: https://github.com/MohammedNasser0/streetbite
 
 ## Resume first
 1. Re-run formatter, analyzer and all tests. Four new localized-layout widget tests have not run yet.

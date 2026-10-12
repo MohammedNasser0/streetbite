@@ -10,6 +10,26 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
+  String get invalidCredentials =>
+      'البريد الإلكتروني أو كلمة المرور غير صحيحة.';
+
+  @override
+  String get emailInUse => 'هذا البريد مسجل بالفعل. سجّل الدخول إلى حسابك.';
+
+  @override
+  String get authThrottled => 'محاولات كثيرة. انتظر قليلًا ثم حاول مجددًا.';
+
+  @override
+  String get authNetworkError => 'تعذر الاتصال. تحقق من الإنترنت وحاول مجددًا.';
+
+  @override
+  String get authNotEnabled =>
+      'تسجيل الدخول بالبريد غير متاح حاليًا. حاول لاحقًا.';
+
+  @override
+  String get accountDisabled => 'هذا الحساب معطل. تواصل مع الدعم.';
+
+  @override
   String get appName => 'ستريت بايت';
 
   @override

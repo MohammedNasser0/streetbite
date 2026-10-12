@@ -26,8 +26,8 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       await action();
       if (!isClosed) emit(AuthState(user: state.user));
-    } on FirebaseAuthException catch (_) {
-      if (!isClosed) emit(AuthState(user: state.user, error: 'authError'));
+    } on FirebaseAuthException catch (error) {
+      if (!isClosed) emit(AuthState(user: state.user, error: error.code));
     } catch (_) {
       if (!isClosed) emit(AuthState(user: state.user, error: 'networkError'));
     }

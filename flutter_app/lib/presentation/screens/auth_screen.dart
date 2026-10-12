@@ -34,8 +34,19 @@ class _AuthScreenState extends State<AuthScreen> {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state.error != null) {
+          final message = switch (state.error) {
+            'invalid-credential' ||
+            'wrong-password' ||
+            'user-not-found' => l.invalidCredentials,
+            'email-already-in-use' => l.emailInUse,
+            'too-many-requests' => l.authThrottled,
+            'network-request-failed' || 'networkError' => l.authNetworkError,
+            'operation-not-allowed' => l.authNotEnabled,
+            'user-disabled' => l.accountDisabled,
+            _ => l.authError,
+          };
           ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(l.authError)));
+              .showSnackBar(SnackBar(content: Text(message)));
         }
         if (state.user != null && !state.loading) {
           Navigator.popUntil(context, (route) => route.isFirst);

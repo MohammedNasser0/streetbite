@@ -15,11 +15,12 @@ class OrdersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context)!;
-    if (!services.isRegistered<AuthCubit>())
+    if (!services.isRegistered<AuthCubit>()) {
       return Scaffold(
         appBar: AppBar(title: Text(l.orders)),
         body: Center(child: Text(l.firebaseSetup)),
       );
+    }
     final user = context.watch<AuthCubit>().state.user;
     if (user == null) return const AuthScreen();
     return Scaffold(
@@ -28,8 +29,9 @@ class OrdersScreen extends StatelessWidget {
         stream: services<ProfileRepository>().watchOrders(user.id),
         builder: (context, snap) {
           if (snap.hasError) return Center(child: Text(l.networkError));
-          if (!snap.hasData)
+          if (!snap.hasData) {
             return const Center(child: CircularProgressIndicator());
+          }
           if (snap.data!.isEmpty) return Center(child: Text(l.noOrders));
           return ListView(
             children: snap.data!

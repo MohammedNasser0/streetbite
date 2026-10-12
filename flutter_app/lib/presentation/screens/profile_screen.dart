@@ -28,6 +28,15 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   bool _unlocked = false, _busy = false;
   String _device = '';
+  ImageProvider? _profilePhoto(String? encoded) {
+    if (encoded == null || encoded.isEmpty) return null;
+    try {
+      return MemoryImage(base64Decode(encoded));
+    } on FormatException {
+      return null;
+    }
+  }
+
   Future<void> _unlock() async {
     final l = AppLocalizations.of(context)!;
     try {
@@ -118,14 +127,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
             builder: (context, snap) {
               final profile = snap.data;
               if (snap.hasError) return Text(l.networkError);
+              final photo = _profilePhoto(profile?.photo);
               return Column(
                 children: [
                   CircleAvatar(
                     radius: 44,
-                    backgroundImage: profile?.photo.isNotEmpty == true
-                        ? MemoryImage(base64Decode(profile!.photo))
-                        : null,
-                    child: profile?.photo.isNotEmpty == true
+                    backgroundImage: photo,
+                    onBackgroundImageError: photo == null ? null : (_, _) {},
+                    child: photo != null
                         ? null
                         : const Icon(Icons.person, size: 48),
                   ),

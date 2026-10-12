@@ -7,7 +7,7 @@ public class LoginTest extends BaseTest {
   @Test public void emptyFields() { login(); label("Log in").click(); Assert.assertTrue(label("Enter a valid email").isDisplayed()); }
   @Test public void invalidCredentials() {
     login(); credentials("invalid.streetbite@example.com", "InvalidPassword123!"); label("Log in").click();
-    Assert.assertTrue(label("Could not sign in. Check your details and connection.").isDisplayed());
+    Assert.assertTrue(label("Email or password is incorrect.").isDisplayed());
   }
   @Test public void validLogin() {
     String email=System.getenv("STREETBITE_TEST_EMAIL"), password=System.getenv("STREETBITE_TEST_PASSWORD");
