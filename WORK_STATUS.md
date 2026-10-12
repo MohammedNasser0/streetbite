@@ -33,3 +33,10 @@ Private Firebase configuration, Maps key and QA credentials remain ignored. Dedi
 - Five required Appium scenarios passed on a physical OPPO CPH2669 / Android 16 using the initial build 4 artifact. See docs/physical-verification.md for hashes, scope and infrastructure failures.
 - Maps-enabled build 4 rebuilt; additional profile/photo/payment/checkout and final-artifact tests remain in progress. Distribution is not yet updated.
 - Fingerprint opened the profile with owner participation. Test-locator refinements and gallery/restart verification remain in progress; no final profile test pass claimed yet.
+
+## Latest verification checkpoint
+- Maps-enabled build 4 passed all eight emulator cases, plus a separate offline metadata/restart/cart case. Reports are retained privately. Offline photos use placeholders.
+- Owner-approved email-redacted Firebase build-1 screenshot published in README; original and extra physical images remain private for the delivery ZIP.
+- Owner-assisted physical profile/photo verification is running. Final acceptance remains open.
+
+- Maps-enabled build 4 upload and distribution succeeded: release `3e6bqgorl8k0g`. Tester acceptance remains unverified.

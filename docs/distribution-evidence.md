@@ -18,6 +18,10 @@ The beta uses a development signing key. Distribution does not establish tester 
 
 Version **1.0.0 (2)** was uploaded and distributed successfully after the final seven-scenario emulator run. Release ID: 11dliohcsqaq0. [Updated tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/11dliohcsqaq0). The supplied dashboard screenshots above show build 1; build 2 distribution is confirmed by Firebase CLI. No build-2 tester acceptance is claimed.
 
-## Current beta
+## Build 3 beta
 
 Version **1.0.0 (3)** was uploaded and distributed successfully after the targeted signup correction checks. Release ID: 7dopgsri4kak0. [Current tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/7dopgsri4kak0). Tester acceptance/download status remains unverified.
+
+## Current beta — build 4
+
+Version **1.0.0 (4)** was uploaded, release notes updated, and distributed to both authorized testers successfully through Firebase CLI on 12 October 2026. Release ID: `3e6bqgorl8k0g`. SHA256: `8a6c53e8e5a57af4197c2e65643f997bb1feeeef1802fc21581135be465e0f47`. [Current tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/3e6bqgorl8k0g). This Maps-enabled artifact passed eight emulator Appium cases and a separate offline cache test. The dashboard image above remains historical build-1 evidence. Current tester acceptance/download counts have not been verified.

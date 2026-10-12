@@ -29,4 +29,3 @@ Optional payment/checkout runs were interrupted when the USB connection became u
 Manual-case execution is tracked separately in `manual-test-cases.csv`; an automated pass does not silently become a manual result. No physical-device screenshot is substituted with emulator imagery.
 
 Physical screenshots are retained privately at the user's explicit request; they are not published to this public repository.
-
