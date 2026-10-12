@@ -77,3 +77,32 @@ Private Firebase configuration, Maps key and QA credentials remain ignored. Dedi
 - Android emulator is visible, Medium_Phone, emulator-5554, enrolled fingerprint 1. Genuine Windows prompt capture retained privately and included in ZIP. Physical device 66fc4053 was connected, but final reinstall stalled/cancelled. Appium server localhost:4723.
 - Figma checkout 10:338 was visually inspected: map with adjust pin, delivery-option cards, address/detail/contact/promo rows, fixed bottom action. These remain fidelity work. Do not fabricate real delivery ETAs or charges. Accessible copy contains 15 app frames.
 - No running Flutter build or Appium test remains. No final Sprints submission made. Remaining manual QA and full design fidelity are still open.
+
+## Build 6 runtime verification passed
+- After restoring Appium's Android SDK environment, the targeted cash checkout/history/restart case passed in 1m11s. The prior resumed attempt failed during session creation because ANDROID_HOME/ANDROID_SDK_ROOT were missing, not because an application scenario failed.
+- Visually reviewed loaded emulator history: new Flan order displays the stored meal photo and localized date; older orders retain receipt placeholders. Report and original captures remain private; reviewed emulator history image is safe for public design evidence.
+- The original pre-pause login timeout remains retained as an interrupted/failed attempt. A successful fresh retry is established, but its historical root cause is not proven.
+
+## Build 7 work in progress
+- Added an optional manually selected delivery pin using Google Maps. No GPS/location permission or automatic geocoding is used. Existing saved coordinates are range/finite validated; text address entry remains required. Checkout previews the selected pin and the existing address map persists it with the demo order.
+- New tests cover invalid coordinates and preserving a pin while editing an existing address. Compact EN/AR form coverage remains included. Final full checks/build are running.
+- Build 6 checkout/history/restart passed in 1m11s after Appium SDK environment repair. The loaded history thumbnail was visually reviewed. Build 6 is retained privately at .delivery/verification/streetbite-beta6-maps.apk and has not been distributed; build 5 remains current distributed release.
+
+- Build 7 analyzer passed with no issues and all 25 Flutter tests passed. Maps-enabled APK build is running. Native pin selection will be checked with CheckoutTest using -Dmobile.pin=true; do not count it as passed until execution finishes.
+
+## Map initialization defect found during build 7 review
+- The native pin/order persistence test technically passed, but its screenshot showed an early tap selected 70.44945,-99.54251 while the intended initial camera was Cairo. This visual review invalidated any claim of correct initial map composition.
+- Build 8 waits for an explicit native camera move before allowing selection, shows a localized loading state, and handles camera setup errors. The regression now additionally requires the selected test point to be within 0.05 degrees of the Cairo center.
+- Build 8 analyzer passed with no issues and all 25 Flutter tests passed. APK build running; native regression pending. Build 7 is retained privately and is not distributed.
+
+- Map initialization defect recorded in the dedicated Jira project (private evidence updated). No duplicate found in camera/pin and map searches. The issue remains open pending build-8 native regression. No tester acceptance or final submission is claimed.
+
+## Build 8 verified scope
+- Maps-enabled APK built, SHA256 f23d92fa2e0e958c8969c766f91ca9133ab11401d696c6ce4ffcdb861759a386. Analyzer has no issues; all 25 Flutter tests pass. EN/AR key parity and usage audit previously passed, with new mapLoading used in the map UI.
+- Native pin + cash checkout + Firestore coordinate read + history/restart passed twice (1m17s and 1m31s). Selected test point 30.04443,31.23567 is within Cairo tolerance after explicit native camera initialization. Reports and reviewed evidence are private.
+- Jira STREET-2 early camera/tap defect verified fixed and moved to Done. Private Jira evidence updated.
+- Separate concern: the current emulator shows a blank basemap behind the marker even after a rendering delay. Sanitized SDK diagnostics show no authorization failure. Existing vendor map is being compared; no visual map acceptance is claimed for build 8 yet.
+- Build 5 remains distributed. Builds 6/7/8 have not been distributed. Physical phone is currently absent from ADB; owner has been asked to reconnect it.
+
+- Build-8 vendor-map comparison: marker and info-window interaction passed in 33s, but visual review showed the same blank basemap as the new address map. This affects both screens in the current emulator session. No proxy is modified and no permission/key restrictions are relaxed. Physical comparison and network/rendering diagnosis remain pending.
+- The first build-8 native-pin report (1m17s) is preserved. The 1m31s rendering-delay retry passed in console but its XML was overwritten when starting the map comparison; do not claim two preserved XML reports. The comparison XML and screenshots are retained privately.

@@ -35,4 +35,22 @@ final class QaBackend {
     Object value=fields.get(name);
     return value instanceof Map<?,?> field ? Objects.toString(field.get("stringValue"), "") : "";
   }
+
+  @SuppressWarnings("unchecked") boolean orderHasDeliveryPin(String orderId) throws Exception {
+    if (!orderId.matches("[0-9]+")) throw new IllegalArgumentException("Expected demo order ID");
+    var request=HttpRequest.newBuilder(URI.create(profile.uri()+"/orders/"+orderId))
+      .timeout(Duration.ofSeconds(15))
+      .header("Authorization",profile.headers().firstValue("Authorization").orElseThrow()).GET().build();
+    var response=http.send(request,HttpResponse.BodyHandlers.ofString());
+    if(response.statusCode()!=200) throw new IllegalStateException("QA order HTTP "+response.statusCode());
+    Map<String,Object> document=json.toType(response.body(),Map.class);
+    Map<String,Object> fields=(Map<String,Object>)document.get("fields");
+    Map<String,Object> address=(Map<String,Object>)fields.get("address");
+    Map<String,Object> value=(Map<String,Object>)address.get("mapValue");
+    Map<String,Object> coordinates=(Map<String,Object>)value.get("fields");
+    if(!coordinates.containsKey("latitude") || !coordinates.containsKey("longitude")) return false;
+    double lat=Double.parseDouble((String)((Map<?,?>)coordinates.get("latitude")).get("stringValue"));
+    double lng=Double.parseDouble((String)((Map<?,?>)coordinates.get("longitude")).get("stringValue"));
+    return Double.isFinite(lat) && Double.isFinite(lng) && Math.abs(lat)<=90 && Math.abs(lng)<=180;
+  }
 }

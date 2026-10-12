@@ -11,6 +11,7 @@ import '../../l10n/app_localizations.dart';
 import '../blocs/auth_cubit.dart';
 import '../blocs/cart_bloc.dart';
 import '../blocs/cart_event.dart';
+import '../widgets/delivery_pin_map.dart';
 import 'auth_screen.dart';
 import 'delivery_address_screen.dart';
 import 'demo_card_screen.dart';
@@ -109,6 +110,15 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           children: [
             Text(l.demoPrices),
             const SizedBox(height: 20),
+            if (DeliveryPinMap.fromAddress(_address) != null) ...[
+              DeliveryPinMap(
+                key: ValueKey(
+                  '${_address?['latitude']},${_address?['longitude']}',
+                ),
+                pin: DeliveryPinMap.fromAddress(_address),
+              ),
+              const SizedBox(height: 12),
+            ],
             ListTile(
               leading: const Icon(Icons.location_on_outlined),
               title: Text(_address?['address'] ?? l.deliveryAddress),

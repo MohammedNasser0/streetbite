@@ -299,4 +299,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get seeMenu => 'See menu';
+
+  @override
+  String get selectedPin => 'Selected delivery pin';
+
+  @override
+  String get pinInstructions =>
+      'Optional: tap the map to select a delivery pin. Enter the address below; the pin does not fill it automatically.';
+
+  @override
+  String get mapLoading => 'Loading map…';
 }

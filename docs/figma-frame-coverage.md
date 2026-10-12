@@ -7,13 +7,13 @@ Reference: Food Delivery Mobile App UI Kit by Vlad Solomakha, CC BY 4.0. The acc
 | Welcome | 30:6985 | WelcomeScreen | Email authentication adapts the reference phone form |
 | Home | 6:1910 | HomeScreen | Address header, typography and vendor-card composition |
 | Home • Long | 2:734 | HomeScreen scroll | Required meal grid differs from reference vendor list |
-| Home (delivery address) | 30:7149 | DeliveryAddressScreen | Map/pin composition and field styling |
+| Home (delivery address) | 30:7149 | DeliveryAddressScreen | Build 7 adds an interactive optional delivery pin and required text address; native map runtime verification and field fidelity remain under review |
 | Resturaunt | 2:746 | MealDetailsScreen and live menu | Full vendor hero and grouped menu remain absent |
 | Resturaunt • Scroll | 19:2672 | Home/Browse scrolling | Sticky category strip and grouped rows |
 | Resturaunt • Added | 19:2840 | CartBloc and cart route | Inline quantity controls and bottom Continue |
 | Resturaunt • Search | 18:1784 | BrowseScreen | Category-tile grid differs from current meal grid |
 | Order (cart) | 18:980 | CartScreen | Build 5 adds thumbnails, inline quantity controls and full-width action; reference delivery/pickup and fee breakdown remain absent |
-| Checkout | 10:338 | CheckoutScreen | Map, delivery options and contact rows |
+| Checkout | 10:338 | CheckoutScreen | Build 7 adds a selected-pin map preview; delivery options and contact rows remain absent |
 | Add card | 2:767 | DemoCardScreen (build 4) | Fixed demo values replace editable financial data; no default-card persistence |
 | Order (preparing) | 19:3355 | OrderProgressScreen | Map/timeline composition; no live fulfilment exists |
 | Order (courier) | 20:3626 | OrderProgressScreen | Courier state/contact is unavailable in this demo |

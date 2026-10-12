@@ -33,3 +33,8 @@ ProfileTest needs the physical device owner to touch the enrolled fingerprint se
 
 ### Additional build-5 evidence
 CartTest and EmulatorBiometricTest passed on the enrolled emulator. The biometric case pauses for a Windows capture and unlocks only after a simulated sensor touch. It supplements physical acceptance and must not be represented as physical-device execution.
+
+### Windows Appium environment
+Start the Appium server with `ANDROID_HOME` and `ANDROID_SDK_ROOT` pointing to the installed Android SDK, and `JAVA_HOME` pointing to a supported JDK. These variables must be inherited by the server process, not only the Gradle test process. A missing SDK environment prevented session creation after reboot; it was repaired before the successful build-6 retry.
+
+`CheckoutTest -Dmobile.evidence=true -Dmobile.pin=true` additionally selects the optional native delivery map pin and reads the newly created QA-owned order to verify that valid coordinates persisted. This uses only the dedicated QA account and does not request device location.

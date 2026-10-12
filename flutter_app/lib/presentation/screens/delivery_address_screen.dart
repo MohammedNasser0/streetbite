@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../l10n/app_localizations.dart';
+import '../widgets/delivery_pin_map.dart';
 
 class DeliveryAddressScreen extends StatefulWidget {
   const DeliveryAddressScreen({super.key, this.initial});
@@ -11,6 +13,7 @@ class DeliveryAddressScreen extends StatefulWidget {
 
 class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
   final _form = GlobalKey<FormState>();
+  late LatLng? _pin = DeliveryPinMap.fromAddress(widget.initial);
   late final TextEditingController _address = TextEditingController(
     text: widget.initial?['address'],
   );
@@ -38,22 +41,17 @@ class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
         child: ListView(
           padding: const EdgeInsets.all(20),
           children: [
-            Container(
-              height: 210,
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primaryContainer,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(Icons.location_on, size: 56),
-                    Text(l.enterAddress),
-                  ],
-                ),
-              ),
+            DeliveryPinMap(
+              pin: _pin,
+              onSelected: (pin) => setState(() => _pin = pin),
             ),
+            const SizedBox(height: 12),
+            Text(l.pinInstructions),
+            if (_pin != null)
+              Text(
+                '${l.selectedPin}: ${_pin!.latitude.toStringAsFixed(5)}, ${_pin!.longitude.toStringAsFixed(5)}',
+                textDirection: TextDirection.ltr,
+              ),
             const SizedBox(height: 24),
             TextFormField(
               controller: _address,
@@ -79,6 +77,8 @@ class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
                   'address': _address.text.trim(),
                   'apartment': _apartment.text.trim(),
                   'comment': _comment.text.trim(),
+                  if (_pin != null) 'latitude': _pin!.latitude.toString(),
+                  if (_pin != null) 'longitude': _pin!.longitude.toString(),
                 });
               },
               child: Text(l.saveAddress),

@@ -297,4 +297,14 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get seeMenu => 'عرض القائمة';
+
+  @override
+  String get selectedPin => 'نقطة التوصيل المختارة';
+
+  @override
+  String get pinInstructions =>
+      'اختياري: اضغط على الخريطة لتحديد نقطة التوصيل. اكتب العنوان بالأسفل؛ اختيار النقطة لا يملأ العنوان تلقائيًا.';
+
+  @override
+  String get mapLoading => 'جارٍ تحميل الخريطة…';
 }

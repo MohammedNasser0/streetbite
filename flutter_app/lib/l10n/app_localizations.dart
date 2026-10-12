@@ -661,6 +661,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'See menu'**
   String get seeMenu;
+
+  /// No description provided for @selectedPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected delivery pin'**
+  String get selectedPin;
+
+  /// No description provided for @pinInstructions.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional: tap the map to select a delivery pin. Enter the address below; the pin does not fill it automatically.'**
+  String get pinInstructions;
+
+  /// No description provided for @mapLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading map…'**
+  String get mapLoading;
 }
 
 class _AppLocalizationsDelegate
