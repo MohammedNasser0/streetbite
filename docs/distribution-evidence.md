@@ -4,6 +4,10 @@ Version: **1.0.0 (1)**. Release ID: `6okh6af9cglmo`.
 
 The Firebase CLI confirmed successful APK upload, release-note update and distribution to the two user-authorized testers on 12 October 2026. The user supplied dashboard screenshots showing the same version, **2 Invited, 0 Accepted and 0 Downloaded**. Originals are retained in the private local delivery evidence because they contain personal email addresses.
 
+![Historical build 1 distribution, contact emails redacted](screenshots/firebase-distribution-redacted.png)
+
+The published copy masks the contact email and both tester emails with owner permission. The original is retained for the private delivery ZIP. Version and invitation counters are unchanged. This is historical build 1 evidence.
+
 [Tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/6okh6af9cglmo)
 
 [Firebase console release](https://console.firebase.google.com/project/streetbite-6dd3c/appdistribution/app/android:com.streetbite.streetbite_app/releases/6okh6af9cglmo)
