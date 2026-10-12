@@ -35,3 +35,9 @@ The additional Appium checkout workflow passed on build 2: login, add a meal, ca
 Firebase confirmed upload and distribution of version 1.0.0 (1) to both authorized testers on 12 October 2026. Release ID: `6okh6af9cglmo`. Tester acceptance and installation have not been verified.
 
 Build 2 was subsequently uploaded and distributed to the same two testers. Release ID: 11dliohcsqaq0. Its checksum and final seven-scenario run are listed above. Build-2 acceptance/download status has not been checked.
+
+## Signup correction — build 3
+
+Build **1.0.0 (3)** corrects numeric/punctuation initials in the signup name validator. Two targeted Appium cases passed separately: numeric-name rejection and successful signup with owner-token verification of the Builder-created Firestore profile. The prior seven-scenario run applies to build 2; it was not rerun as a full suite on build 3. Flutter analyzer and all ten existing unit/widget tests passed after the fix. Private Jira evidence records the fix and its post-fix screenshot. No physical-device pass is claimed.
+
+Build-3 APK SHA256: 1b4e44064cb07aa7d7cea0fe3af81fafdfc34ad1cdfe254c94a12ad996b01e80. Firebase confirmed upload and distribution to both testers; release ID: 7dopgsri4kak0.

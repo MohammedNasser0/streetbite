@@ -2,8 +2,8 @@
 
 ## Verified and delivered
 - Public repository: https://github.com/MohammedNasser0/streetbite
-- Android release APK 1.0.0 (2), development signing. SHA256: 3b8b7025831f73a22ad90e78608e2d3f163c203641f3cdb7ed86f24eb3870cdb.
-- Firebase App Distribution upload and distribution to both authorized testers succeeded. Release ID: 11dliohcsqaq0. Acceptance is not verified.
+- Android release APK 1.0.0 (3), development signing. SHA256: 1b4e44064cb07aa7d7cea0fe3af81fafdfc34ad1cdfe254c94a12ad996b01e80.
+- Firebase App Distribution upload and distribution to both authorized testers succeeded. Release ID: 7dopgsri4kak0. Acceptance is not verified.
 - Ten Flutter unit/widget tests passed, including EN/AR forms at 375/412 logical pixels. Analyzer passed.
 - Final build-2 Appium run: seven passed, zero failed/skipped in 5m 36s. Includes the five required cases, Maps and live checkout/order history after app restart. Additional screen tour passed.
 - Google Maps tiles and all five vendor markers render on emulator. Cairo marker interaction passed.
@@ -20,3 +20,9 @@
 6. Production signing and iOS configuration/build verification remain pending. No final Sprints submission performed.
 
 Private Firebase configuration, Maps key and QA credentials remain ignored. Dedicated backend: streetbite-6dd3c. Do not reuse the parent ConnectMe backend.
+
+## Build 3 checkpoint
+- Corrected signup name validation; both invalid-name and successful-signup/profile persistence cases passed on emulator. Analyzer and ten Flutter tests passed after the fix.
+- Dedicated private Jira project created at the user's request. A code-review defect was fixed and verified; issue details and screenshots are retained privately.
+- Build 3 uploaded and distributed to both authorized testers, release7dopgsri4kak0. No tester acceptance or physical-device execution claimed.
+- Full Figma fidelity, Add card design variant, profile/gallery/biometric UI acceptance, offline device checks and real-device manual/Appium QA remain outstanding.

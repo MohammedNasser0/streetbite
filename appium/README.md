@@ -20,6 +20,9 @@ The driver forces APK installation so a previous build with the same version cod
 ```powershell
 .\gradlew.bat test --tests streetbite.EvidenceTest '-Dmobile.evidence=true' '-Dmobile.udid=emulator-5554'
 .\gradlew.bat test --tests streetbite.CheckoutTest '-Dmobile.evidence=true' '-Dmobile.udid=emulator-5554'
+.\gradlew.bat test --tests streetbite.SignupTest '-Dmobile.evidence=true' '-Dmobile.udid=emulator-5554'
 ```
 
 The checkout test creates a demo order in the dedicated QA account. Use no real customer data. Public screenshots exclude private QA credentials and raw Appium server logs.
+
+SignupTest contains numeric-name validation and successful signup/profile persistence checks. The positive case requires the ignored Android `google-services.json` to verify Firestore with the new account's own token. Generated QA credentials are stored only in ignored `artifacts/qa-signup-account.json`. Both signup cases passed separately on build 3; the seven-scenario run was on build 2.

@@ -13,3 +13,7 @@ The beta uses a development signing key. Distribution does not establish tester 
 ## Updated beta
 
 Version **1.0.0 (2)** was uploaded and distributed successfully after the final seven-scenario emulator run. Release ID: 11dliohcsqaq0. [Updated tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/11dliohcsqaq0). The supplied dashboard screenshots above show build 1; build 2 distribution is confirmed by Firebase CLI. No build-2 tester acceptance is claimed.
+
+## Current beta
+
+Version **1.0.0 (3)** was uploaded and distributed successfully after the targeted signup correction checks. Release ID: 7dopgsri4kak0. [Current tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/7dopgsri4kak0). Tester acceptance/download status remains unverified.

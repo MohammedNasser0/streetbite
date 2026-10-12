@@ -39,13 +39,15 @@ Android requests internet and biometric access; gallery selection uses the syste
 
 ## Verification and delivery
 
-Ten unit/widget tests passed on 12 October 2026, including English/Arabic delivery-form layouts at 375 and 412 logical pixels. The Android release build succeeded and all five required Java/TestNG Appium scenarios passed on the emulator. Ten live Firestore access checks passed. Additional screenshot tours verified Maps tiles, five markers and an info window after installing the latest APK. Version 1.0.0 (2) was uploaded to Firebase App Distribution and distributed to the two authorized testers. Tester acceptance and physical-device execution remain unverified.
+Ten unit/widget tests passed on 12 October 2026, including English/Arabic delivery-form layouts at 375 and 412 logical pixels. Build 2 passed seven Appium scenarios: the five required cases, Maps, and cash checkout/order history after restart. Build 3 passed two targeted signup checks: numeric-name rejection and successful account/profile persistence. Ten live Firestore access checks passed. Version 1.0.0 (3) was uploaded to Firebase App Distribution and distributed to the two authorized testers. Tester acceptance and physical-device execution remain unverified.
 
-[Beta tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/11dliohcsqaq0). Distribution completed through Firebase CLI after login renewal. User-supplied dashboard screenshots confirm two invited testers, with zero accepted/downloaded at capture time. Originals containing personal emails are retained privately; see [distribution evidence](docs/distribution-evidence.md).
+[Beta tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/7dopgsri4kak0). Distribution completed through Firebase CLI after login renewal. User-supplied dashboard screenshots confirm two invited testers, with zero accepted/downloaded at capture time. Originals containing personal emails are retained privately; see [distribution evidence](docs/distribution-evidence.md).
 
 <img src="docs/screenshots/welcome.png" alt="Welcome screen" width="240"> <img src="docs/screenshots/vendor-map.png" alt="Vendor map and info window" width="240">
 
 [Project presentation](presentation/StreetBite-project-final.pptx) covers the developer, planning, architecture, features and current verification status.
+
+Jira project and code-review defect verification evidence are retained in the private delivery package. The real-device manual QA cycle remains open.
 
 See [work status](WORK_STATUS.md), [QA plan](docs/test-plan.md), [traceability](docs/traceability.md) and [closure](docs/test-closure.md). This is an implementation in progress, not a completed submission.
 
