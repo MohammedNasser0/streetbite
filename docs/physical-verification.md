@@ -31,3 +31,12 @@ Manual-case execution is tracked separately in `manual-test-cases.csv`; an autom
 Physical screenshots are retained privately at the user's explicit request; they are not published to this public repository.
 
 The owner initially had no second camera available and may try a normal manual screenshot of the biometric prompt. No capture workaround or security-setting change is requested. Until a real visible capture is supplied, this visual evidence remains unavailable.
+
+## Build 5 checkpoint
+
+The owner-assisted fingerprint/profile/name/device-details test passed again on build 5 (APK SHA256 `01fdd6ec29a1ca16f5b157c36dd0b2c2a79b6ff8da196f6ede4072d0d67cbb68`). Photo replacement/restart was verified on build 4; build 5 does not claim a repeat of that full photo scenario. The owner attempted a normal device screenshot and reported that Android refused biometric-prompt capture. Prompt visual evidence remains blocked; fingerprint functionality passed.
+
+The initial build-5 cart quantity assertion expected a separate native label for the number. The screenshot showed quantity 2 and a doubled total, while Flutter merged name/price/count in a single accessibility label. The locator was corrected to match the observed label. This harness failure is not logged as a product defect.
+
+### Emulator biometric evidence — build 5
+The owner captured the visible Windows emulator window showing the genuine StreetBite Android biometric prompt. The original is private delivery evidence at `.delivery/verification/emulator-beta5/biometric-prompt-windows.png`; packaging includes it only in the private ZIP. EmulatorBiometricTest then passed after an emulated fingerprint touch, revealing Change photo. This supplements, and does not replace, the previously completed physical-device biometric test.

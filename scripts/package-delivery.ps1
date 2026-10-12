@@ -30,13 +30,16 @@ try {
         if (-not (Test-Path -LiteralPath $apk)) { throw 'Build the beta APK before packaging.' }
         Add-EvidenceFile $apk 'beta/StreetBite.apk'
         $privateEvidence = Join-Path $projectRoot '.delivery/verification'
+        Add-EvidenceFile (Join-Path $privateEvidence 'emulator-beta5/biometric-prompt-windows.png') 'private-evidence/emulator-beta5/biometric-prompt-windows.png'
         foreach ($name in @('firebase-testers.png', 'firebase-release-testers.png', 'jira-streetbite.jpg', 'jira-evidence.md')) {
             Add-EvidenceFile (Join-Path $privateEvidence $name) ('private-evidence/' + $name)
         }
         # Only visually reviewed screenshots go into the private delivery ZIP.
-        $physical = Join-Path $privateEvidence 'physical-beta4/reviewed-screenshots'
-        foreach ($file in Get-ChildItem -LiteralPath $physical -Filter '*.png' -File -ErrorAction SilentlyContinue) {
-            Add-EvidenceFile $file.FullName ('private-evidence/physical/' + $file.Name)
+        foreach ($build in @('physical-beta4', 'physical-beta5')) {
+            $physical = Join-Path $privateEvidence ($build + '/reviewed-screenshots')
+            foreach ($file in Get-ChildItem -LiteralPath $physical -Filter '*.png' -File -ErrorAction SilentlyContinue) {
+                Add-EvidenceFile $file.FullName ('private-evidence/' + $build + '/' + $file.Name)
+            }
         }
         $entry = $archive.CreateEntry('streetbite-capstone/beta/SHA256.txt')
         $writer = [IO.StreamWriter]::new($entry.Open())

@@ -1,7 +1,7 @@
 # StreetBite test plan
 
 ## Scope
-Welcome/splash, login, signup, home discovery, browse/search, details, favourites, cart, checkout, delivery address, order acknowledgement/history, profile/photo/device/biometrics, vendor map and settings. Cover English/Arabic, RTL, light/dark, offline cache/restart and accessibility at 375×812 and 412×915.
+Welcome/splash, login, signup, home discovery, browse/search, details, favourites, cart quantity/last-item removal, checkout, fixed-data demo card, delivery address, order acknowledgement/history, profile/photo/device/biometrics, vendor map and settings. Cover English/Arabic, RTL, light/dark, offline cache/restart and accessibility at 375×812 and 412×915.
 
 ## Test levels and environments
 Unit tests for models, cache fallback, cart totals and order validation; widget tests for form validation/localization/responsiveness; Appium on Android emulator and physical Android. Firestore ownership rules require emulator tests and live signed-in verification. iOS requires macOS/Xcode/device execution and cannot be certified from Windows.

@@ -8,6 +8,14 @@ import org.testng.annotations.Test;
 
 /** Quantity controls and last-item feedback on the installed beta. */
 public class CartTest extends BaseTest {
+  private void quantity(int expected) {
+    // Flutter merges the meal name, price and count into the image semantics.
+    Assert.assertTrue(wait.until(d -> d.findElements(By.className("android.widget.ImageView"))
+      .stream().anyMatch(e -> {
+        String description=e.getAttribute("content-desc");
+        return description!=null && description.endsWith("\n"+expected);
+      })));
+  }
   private void tooltip(String text) {
     wait.until(ExpectedConditions.elementToBeClickable(
       By.xpath("//*[@tooltip-text='"+text+"']"))).click();
@@ -17,10 +25,10 @@ public class CartTest extends BaseTest {
     home(); grid(); label("Add to cart").click(); label("Added to your cart");
     tooltip("Cart"); label("Cart");
     tooltip("Increase quantity");
-    Assert.assertTrue(label("2").isDisplayed());
+    quantity(2);
     screenshot("cart-quantity-two");
     tooltip("Decrease quantity");
-    Assert.assertTrue(label("1").isDisplayed());
+    quantity(1);
     tooltip("Remove");
     Assert.assertTrue(label("Your cart is empty").isDisplayed());
     // Both the empty-state body and transient feedback must be present.

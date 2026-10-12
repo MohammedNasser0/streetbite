@@ -10,7 +10,7 @@ A work-in-progress bilingual Flutter food discovery and demo ordering app.
 - English/Arabic ARB resources with RTL and persisted language/theme settings.
 - Firebase AuthCubit, profile Builder, Firestore favourites/orders/profile gateway.
 - Gallery thumbnail upload, biometric profile gate and device details.
-- Vendor map screen with five illustrative locations; a Maps key is still required.
+- Vendor map screen with five illustrative locations; the local beta uses a private configured Maps key.
 
 ## Run
 

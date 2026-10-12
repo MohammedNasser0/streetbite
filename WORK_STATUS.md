@@ -47,3 +47,15 @@ Private Firebase configuration, Maps key and QA credentials remain ignored. Dedi
 - Build 5 source in progress: cart thumbnails, quantity controls, last-item removal feedback and compact EN/AR coverage. Not yet built/distributed.
 
 - Build 5 analyzer and nineteen Flutter tests passed. EN/AR localization parity and direct-usage audit passed with no unused getters. APK build running; targeted cart/checkout and physical profile evidence are next.
+
+## Current checkpoint — build 5
+- Android 1.0.0 (5), Maps enabled, uploaded and distributed to both authorized testers. Release: 7tp5domjttll8. Tester acceptance is unverified.
+- APK SHA256: 01fdd6ec29a1ca16f5b157c36dd0b2c2a79b6ff8da196f6ede4072d0d67cbb68.
+- Analyzer and all nineteen Flutter tests passed. Targeted build-5 physical cart and fingerprint/profile tests passed. Full photo/restart acceptance remains established on build 4.
+- Build-5 emulator cash checkout/history, cart quantity/removal and enrolled fingerprint prompt/unlock checks passed. Windows capture of the real emulator prompt is retained privately and added to ZIP packaging. It is supplementary emulator evidence, not a physical-device screenshot.
+- Five required physical Appium cases passed on final Maps-enabled build 4 across two runs; full fingerprint/photo/restart also passed.
+- Private phone images and original Firebase/Jira evidence remain excluded from GitHub. Public images contain emulator UI and the owner-approved email-redacted historical Firebase dashboard.
+- Full Figma fidelity, remaining manual QA, tester acceptance, production signing and iOS verification remain open. No final Sprints submission performed.
+
+- Review presentation refreshed to build 5 and all seven slides rendered/visually checked. Finalizer passed integrity, geometry, reference font and first-party import checks. Current deck: presentation/StreetBite-project-review-build5.pptx. The earlier deck is retained as historical source.
+- Emulator CartTest passed in 43s. Public cart image is from the emulator, not the private phone screenshots.
