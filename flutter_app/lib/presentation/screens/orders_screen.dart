@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../core/price.dart';
 import '../../domain/entities/placed_order.dart';
 import '../../domain/repositories/profile_repository.dart';
 import '../../injection.dart';
 import '../../l10n/app_localizations.dart';
 import '../blocs/auth_cubit.dart';
+import '../widgets/order_history_tile.dart';
 import 'auth_screen.dart';
 import 'order_progress_screen.dart';
 
@@ -34,22 +34,26 @@ class OrdersScreen extends StatelessWidget {
           }
           if (snap.data!.isEmpty) return Center(child: Text(l.noOrders));
           return ListView(
-            children: snap.data!
-                .map(
-                  (order) => ListTile(
-                    leading: const Icon(Icons.receipt_long),
-                    title: Text(order.mealNames.join(', ')),
-                    subtitle: Text(price(context, order.totalInPiastres)),
-                    trailing: const Icon(Icons.chevron_right),
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => OrderProgressScreen(orderId: order.id),
-                      ),
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
+                child: Text(
+                  l.demoOrderNotice,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ),
+              ...snap.data!.map(
+                (order) => OrderHistoryTile(
+                  order: order,
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => OrderProgressScreen(orderId: order.id),
                     ),
                   ),
-                )
-                .toList(),
+                ),
+              ),
+            ],
           );
         },
       ),

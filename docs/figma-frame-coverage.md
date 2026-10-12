@@ -17,7 +17,7 @@ Reference: Food Delivery Mobile App UI Kit by Vlad Solomakha, CC BY 4.0. The acc
 | Add card | 2:767 | DemoCardScreen (build 4) | Fixed demo values replace editable financial data; no default-card persistence |
 | Order (preparing) | 19:3355 | OrderProgressScreen | Map/timeline composition; no live fulfilment exists |
 | Order (courier) | 20:3626 | OrderProgressScreen | Courier state/contact is unavailable in this demo |
-| Orders | 21:3759 | OrdersScreen | Thumbnail cards and current/past grouping |
+| Orders | 21:3759 | OrdersScreen | Build 6 source adds rounded meal thumbnails, localized dates and compact rows; current/past grouping remains absent because no live fulfilment status exists |
 | Profile | 21:3864 | ProfileScreen | Reference settings/contact/help rows; assignment adds biometric, photo and live data |
 | More | 63:270 | Excluded | Promotional plugin advertisement, not an app screen |
 

@@ -76,6 +76,7 @@ class FirestoreService {
               (item) => {
                 'id': item.meal.id,
                 'name': item.meal.name,
+                'image': item.meal.image,
                 'quantity': item.quantity,
                 'priceInPiastres': item.meal.demoPriceInPiastres,
               },

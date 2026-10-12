@@ -59,3 +59,9 @@ Private Firebase configuration, Maps key and QA credentials remain ignored. Dedi
 
 - Review presentation refreshed to build 5 and all seven slides rendered/visually checked. Finalizer passed integrity, geometry, reference font and first-party import checks. Current deck: presentation/StreetBite-project-review-build5.pptx. The earlier deck is retained as historical source.
 - Emulator CartTest passed in 43s. Public cart image is from the emulator, not the private phone screenshots.
+
+## Build 6 work in progress
+- Compared Orders frame 21:3759 in the supplied Figma copy. Added rounded meal thumbnails, localized order dates, compact history rows and an explicit demo-order notice. Existing records without image fields retain a receipt fallback. New orders persist the recipe image URL. No fabricated courier status/current-versus-past grouping is introduced.
+- Analyzer passed and all 23 Flutter tests passed, including historical order decoding, thumbnail/date round trip and compact EN/AR history rows.
+- Maps-enabled build 6 is being built. Emulator checkout/history verification and release distribution are pending. Build 5 remains the distributed beta and review ZIP; the new source is not yet in that ZIP.
+- Reinstalling build 5 on the physical phone stalled and was cancelled. Do not claim successful final reinstall.

@@ -9,6 +9,7 @@ class OrderModel extends PlacedOrder {
     required super.totalInPiastres,
     required super.mealNames,
     super.createdAt,
+    super.image,
   });
   factory OrderModel.fromJson(Map<String, dynamic> json) => OrderModel(
     id: json['id'] as String? ?? '',
@@ -22,12 +23,22 @@ class OrderModel extends PlacedOrder {
     mealNames: (json['items'] as List? ?? [])
         .map((item) => (item as Map)['name'] as String? ?? '')
         .toList(),
+    image: (json['items'] as List? ?? []).isEmpty
+        ? ''
+        : ((json['items'] as List).first as Map)['image'] as String? ?? '',
   );
   Map<String, dynamic> toJson() => {
     'id': id,
     'payment': payment,
     'totalInPiastres': totalInPiastres,
     'createdAt': createdAt?.toIso8601String(),
-    'items': mealNames.map((name) => {'name': name}).toList(),
+    'items': mealNames.indexed
+        .map(
+          (entry) => {
+            'name': entry.$2,
+            if (entry.$1 == 0 && image.isNotEmpty) 'image': image,
+          },
+        )
+        .toList(),
   };
 }

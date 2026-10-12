@@ -15,3 +15,6 @@ Owner-assisted fingerprint, live profile/device details, photo save and photo pe
 ## Build 5 source checks
 
 Analyzer passed and nineteen Flutter tests passed after adding cart thumbnails and quantity controls. Tests verify decrementing from two to one updates the total, removing the last unit clears the cart, and English/Arabic layouts at 375/412 widths show the empty-cart SnackBar. Final APK/device checks are still in progress.
+
+### Build 6 source verification
+Analyzer and 23 Flutter tests passed. New checks cover legacy order records without images, thumbnail/date round-trip persistence and compact English/Arabic history rows. The published build-5 presentation and review ZIP describe build 5 and remain historical review artifacts until replaced by a verified build-6 package.
