@@ -20,13 +20,13 @@ flutter gen-l10n
 flutter run
 ```
 
-The Android Firebase application is registered to the dedicated `streetbite-6dd3c` project. Runtime options live in `lib/core/firebase_options.dart`. These app identifiers are public configuration; authorization must come from deployed Firestore rules. Firebase Auth email/password enablement and live CRUD still require verification. Web/iOS Firebase registrations are pending.
+The Android Firebase application is registered to the dedicated `streetbite-6dd3c` project. Runtime options live in `lib/core/firebase_options.dart`. These app identifiers are public configuration; authorization must come from deployed Firestore rules. Firebase Email/Password and ten direct Firestore access checks passed; full UI workflows still require acceptance. Web/iOS Firebase registrations are pending.
 
 TheMealDB development key `1` is for educational use. Production app-store publication requires the appropriate API plan. Prices, payment authorization and vendor locations are demonstration data.
 
 ## Architecture
 
-Data sources/repositories, domain entities/contracts/use cases, and presentation blocs/screens/widgets are separated. Factory selects remote/cache sources; Builder constructs profiles; Singleton centralizes Firestore; payment strategies share a contract. Profile/order integration still needs further repository/use-case extraction before strict Clean Architecture acceptance.
+Data sources/repositories, domain entities/contracts/use cases, and presentation blocs/screens/widgets are separated. Factory selects remote/cache sources; Builder constructs profiles; Singleton centralizes Firestore; payment strategies share a contract. Profile and order integration use repository contracts and dedicated implementations.
 
 ## Permissions
 
@@ -42,4 +42,4 @@ flutter build web
 flutter build apk --release
 ```
 
-Recorded so far: analyzer passes; two unit tests pass. Real-device QA, Firebase security-rule tests, Appium execution, full Figma matching, release signing, App Distribution and tester acceptance are pending. See `../docs/delivery-checklist.md`. Do not submit this as a completed capstone yet.
+Recorded so far: analyzer passed, ten Flutter tests and five emulator Appium scenarios passed. Android beta 1.0.0 (1) was distributed to two testers. Ten live Firestore access checks passed. Real-device QA, full app-flow acceptance, full Figma matching, production signing and tester acceptance remain pending. See `../docs/delivery-checklist.md`. Do not submit this as a completed capstone yet.

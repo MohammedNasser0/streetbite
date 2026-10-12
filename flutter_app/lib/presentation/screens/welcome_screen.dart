@@ -16,40 +16,57 @@ class WelcomeScreen extends StatelessWidget {
           duration: const Duration(milliseconds: 700),
           builder: (context, opacity, child) =>
               Opacity(opacity: opacity, child: child),
-          child: Padding(
-            padding: const EdgeInsets.all(28),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const Spacer(),
-                const Icon(
-                  Icons.ramen_dining_rounded,
-                  size: 140,
-                  color: Colors.white,
-                ),
-                const SizedBox(height: 32),
-                Text(
-                  l.appName,
-                  style: const TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
+          child: Column(
+            children: [
+              Expanded(
+                flex: 52,
+                child: SizedBox.expand(
+                  child: Image.asset(
+                    'assets/images/welcome.png',
+                    fit: BoxFit.cover,
                   ),
                 ),
-                Text(
-                  l.welcome,
-                  style: const TextStyle(fontSize: 28, color: Colors.white),
-                ),
-                const Spacer(),
-                FilledButton(
-                  onPressed: () => Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (_) => const HomeScreen()),
+              ),
+              Expanded(
+                flex: 48,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 28,
                   ),
-                  child: Text(l.start),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        l.appName,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 36,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        l.welcome,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 22,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const Spacer(),
+                      FilledButton(
+                        onPressed: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (_) => const HomeScreen()),
+                        ),
+                        child: Text(l.start),
+                      ),
+                    ],
+                  ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

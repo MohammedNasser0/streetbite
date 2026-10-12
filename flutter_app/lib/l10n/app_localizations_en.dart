@@ -194,7 +194,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get orderReceived => 'Order received';
 
   @override
-  String get fastest => 'Featured meals';
+  String get vendorCairo => 'Cairo Bite';
+
+  @override
+  String get vendorAlexandria => 'Alexandria Bite';
+
+  @override
+  String get vendorLuxor => 'Luxor Bite';
+
+  @override
+  String get vendorAswan => 'Aswan Bite';
+
+  @override
+  String get vendorHurghada => 'Hurghada Bite';
+
+  @override
+  String get vendorCuisine => 'Street food';
 
   @override
   String get saveAddress => 'Save address';

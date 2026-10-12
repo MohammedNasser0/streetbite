@@ -452,11 +452,41 @@ abstract class AppLocalizations {
   /// **'Order received'**
   String get orderReceived;
 
-  /// No description provided for @fastest.
+  /// No description provided for @vendorCairo.
   ///
   /// In en, this message translates to:
-  /// **'Featured meals'**
-  String get fastest;
+  /// **'Cairo Bite'**
+  String get vendorCairo;
+
+  /// No description provided for @vendorAlexandria.
+  ///
+  /// In en, this message translates to:
+  /// **'Alexandria Bite'**
+  String get vendorAlexandria;
+
+  /// No description provided for @vendorLuxor.
+  ///
+  /// In en, this message translates to:
+  /// **'Luxor Bite'**
+  String get vendorLuxor;
+
+  /// No description provided for @vendorAswan.
+  ///
+  /// In en, this message translates to:
+  /// **'Aswan Bite'**
+  String get vendorAswan;
+
+  /// No description provided for @vendorHurghada.
+  ///
+  /// In en, this message translates to:
+  /// **'Hurghada Bite'**
+  String get vendorHurghada;
+
+  /// No description provided for @vendorCuisine.
+  ///
+  /// In en, this message translates to:
+  /// **'Street food'**
+  String get vendorCuisine;
 
   /// No description provided for @saveAddress.
   ///

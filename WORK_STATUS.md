@@ -1,27 +1,22 @@
-# Saved work — 12 October 2026
+# StreetBite work status — 12 October 2026
 
-Work paused at the user's request when the five-hour Codex usage window reached 93%.
+## Verified and delivered
+- Public repository: https://github.com/MohammedNasser0/streetbite
+- Android release APK 1.0.0 (2), development signing. SHA256: 3b8b7025831f73a22ad90e78608e2d3f163c203641f3cdb7ed86f24eb3870cdb.
+- Firebase App Distribution upload and distribution to both authorized testers succeeded. Release ID: 11dliohcsqaq0. Acceptance is not verified.
+- Ten Flutter unit/widget tests passed, including EN/AR forms at 375/412 logical pixels. Analyzer passed.
+- Final build-2 Appium run: seven passed, zero failed/skipped in 5m 36s. Includes the five required cases, Maps and live checkout/order history after app restart. Additional screen tour passed.
+- Google Maps tiles and all five vendor markers render on emulator. Cairo marker interaction passed.
+- Email/Password authentication verified using a dedicated QA account.
+- Ten live Firestore REST checks passed: owner profile read/write, favourite read/write/removal, order create/read, and denial of order modification, cross-user access and unauthenticated access. These are backend checks, not full app-flow verification.
+- Screenshots and a seven-slide presentation prepared. See docs/emulator-verification.md.
 
-## Completed
-- Separate Flutter application, Android/iOS/web scaffolding, dedicated Firebase Android registration.
-- Live meals, versioned cache fallback, cart, bilingual themes, authentication flow, favourites/profile/order repositories, demo checkout, address and order acknowledgement screens.
-- Firestore ownership rules deployed to `streetbite-6dd3c`.
-- Six unit tests passed: models/cart, cache fallback/corruption, valid/invalid orders.
-- Analyzer passed before the most recent small UI/device/test changes.
-- Appium Java project compiled; five scenarios authored but not executed.
-- QA plan, manual cases, traceability and draft closure report written.
-- Public GitHub repository created: https://github.com/MohammedNasser0/streetbite
+## Outstanding before final acceptance
+1. Complete all Figma frame mapping and faithful screen coverage. Current implementation does not establish full 50+ screen fidelity.
+2. Complete signup/profile/favourites UI acceptance and offline device restart. Cash checkout, live order history and persisted authentication after app restart passed on emulator.
+3. Connect a physical Android device for required manual cases, Appium login rerun, biometric/gallery evidence and device details.
+4. Tester acceptance is pending. User-supplied Firebase dashboard screenshots show the release and two invited testers, zero accepted/downloaded; originals are retained privately.
+5. Document actual real-device manual results/Jira defects. EN/AR key parity and direct-usage audit passed; unused ARB key removed and vendor strings moved into ARB.
+6. Production signing and iOS configuration/build verification remain pending. No final Sprints submission performed.
 
-## Resume first
-1. Re-run formatter, analyzer and all tests. Four new localized-layout widget tests have not run yet.
-2. Rebuild Android with `flutter build apk --release --dart-define=MAPS_CONFIGURED=true`. Kotlin cross-drive cache issue was addressed in gradle.properties. Last build began before the Maps placeholder configuration edit and failed at manifest merging; confirm fresh configuration works.
-3. Verify Google Maps SDK/key and Firebase Email/Password enablement. User supplied Maps key stored only in ignored android/maps.properties.
-4. Install APK and run Appium on emulator. Get actual screenshots and fix observed issues. A physical Android device still needs to be connected.
-5. Complete faithful frame matching and remaining card/settings/order variants; do not claim pixel fidelity yet.
-6. Finish presentation, beta upload to two supplied testers, real-device QA/Jira evidence and final documentation.
-7. Publish verified source changes and CI results. No final capstone submission has been performed.
-
-## Important
-Firebase configs, Maps key, build outputs and private handoff notes are ignored by Git. Copy `flutter_app/lib/core/firebase_options.example.dart` to `firebase_options.dart` and provide your own app config on a fresh checkout. Current local config is retained.
-
-Auth console initially reported no permission to manage sign-in providers. The user is addressing setup. Do not invent test passes, tester acceptance or physical-device evidence.
+Private Firebase configuration, Maps key and QA credentials remain ignored. Dedicated backend: streetbite-6dd3c. Do not reuse the parent ConnectMe backend.

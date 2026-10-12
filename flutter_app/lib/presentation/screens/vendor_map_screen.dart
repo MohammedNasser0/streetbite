@@ -8,7 +8,6 @@ class VendorMapScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context)!;
-    final arabic = Localizations.localeOf(context).languageCode == 'ar';
     const points = [
       LatLng(30.0444, 31.2357),
       LatLng(31.2001, 29.9187),
@@ -16,21 +15,13 @@ class VendorMapScreen extends StatelessWidget {
       LatLng(24.0889, 32.8998),
       LatLng(27.2579, 33.8116),
     ];
-    final names = arabic
-        ? [
-            'بايت القاهرة',
-            'بايت الإسكندرية',
-            'بايت الأقصر',
-            'بايت أسوان',
-            'بايت الغردقة',
-          ]
-        : [
-            'Cairo Bite',
-            'Alexandria Bite',
-            'Luxor Bite',
-            'Aswan Bite',
-            'Hurghada Bite',
-          ];
+    final names = [
+      l.vendorCairo,
+      l.vendorAlexandria,
+      l.vendorLuxor,
+      l.vendorAswan,
+      l.vendorHurghada,
+    ];
     return Scaffold(
       appBar: AppBar(title: Text(l.vendors)),
       body: Column(
@@ -53,8 +44,7 @@ class VendorMapScreen extends StatelessWidget {
                           position: points[i],
                           infoWindow: InfoWindow(
                             title: names[i],
-                            snippet:
-                                '${arabic ? 'طعام الشارع' : 'Street food'} • 4.5 ★',
+                            snippet: '${l.vendorCuisine} • 4.5 ★',
                           ),
                         ),
                     },

@@ -192,7 +192,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get orderReceived => 'تم استلام الطلب';
 
   @override
-  String get fastest => 'وجبات مميزة';
+  String get vendorCairo => 'بايت القاهرة';
+
+  @override
+  String get vendorAlexandria => 'بايت الإسكندرية';
+
+  @override
+  String get vendorLuxor => 'بايت الأقصر';
+
+  @override
+  String get vendorAswan => 'بايت أسوان';
+
+  @override
+  String get vendorHurghada => 'بايت الغردقة';
+
+  @override
+  String get vendorCuisine => 'طعام الشارع';
 
   @override
   String get saveAddress => 'حفظ العنوان';

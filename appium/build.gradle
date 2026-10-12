@@ -15,7 +15,10 @@ dependencies {
 }
 
 test {
-    useTestNG { configFailurePolicy = 'continue' }
+    useTestNG {
+        configFailurePolicy = 'continue'
+        if (!Boolean.getBoolean('mobile.evidence')) excludeGroups 'evidence'
+    }
     if (System.getProperty('mobile.target', 'emulator') == 'emulator') {
         exclude '**/RealDeviceTest.class'
     }

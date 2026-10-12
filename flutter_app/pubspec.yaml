@@ -1,7 +1,7 @@
 name: streetbite_app
 description: Bilingual food discovery and ordering capstone.
 publish_to: none
-version: 1.0.0+1
+version: 1.0.0+2
 environment:
   sdk: ^3.13.5
 dependencies:
@@ -28,3 +28,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/images/welcome.png
