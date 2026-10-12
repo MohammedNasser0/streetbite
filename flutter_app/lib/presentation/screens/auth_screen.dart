@@ -81,7 +81,8 @@ class _AuthScreenState extends State<AuthScreen> {
                         validator: (value) =>
                             value == null ||
                                 value.trim().isEmpty ||
-                                (RegExp(r'^[a-z]').hasMatch(value.trim()))
+                                !RegExp(r'^[A-Z\u0621-\u064A]')
+                                    .hasMatch(value.trim())
                             ? l.nameError
                             : null,
                       ),
