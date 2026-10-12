@@ -65,3 +65,15 @@ Private Firebase configuration, Maps key and QA credentials remain ignored. Dedi
 - Analyzer passed and all 23 Flutter tests passed, including historical order decoding, thumbnail/date round trip and compact EN/AR history rows.
 - Maps-enabled build 6 is being built. Emulator checkout/history verification and release distribution are pending. Build 5 remains the distributed beta and review ZIP; the new source is not yet in that ZIP.
 - Reinstalling build 5 on the physical phone stalled and was cancelled. Do not claim successful final reinstall.
+
+- Build 6 Maps-enabled APK completed successfully (55.1 MB). SHA256: 37c49975e1729f86552c430aec4fbcc1e1ae35a77d9703c3ef1bcbf53e6db19f. Targeted emulator checkout/history/restart is running; no pass claimed yet.
+
+## Saved continuation point — usage limit approaching
+- Latest public source commit: b3153da. Build 6 APK completed; analyzer and 23 tests passed.
+- Build-6 emulator CheckoutTest FAILED after login submission while waiting up to 30 seconds for the StreetBite home label (CheckoutTest.java:15). Failure screenshot remained on the login form. No runtime checkout/history acceptance is claimed for build 6. Diagnose network/auth response and rerun this targeted case before distribution or packaging. Original report: .delivery/verification/emulator-beta6/TEST-streetbite.CheckoutTest-initial.xml (private).
+- Next: rerun/diagnose build-6 login; verify new order thumbnail and localized date visually after cash checkout/restart. Then distribute build 6 only after verification. Keep current build-5 review ZIP unchanged.
+- Current distributed release remains build 5: 7tp5domjttll8. Private review ZIP: .delivery/StreetBite-review-build5.zip, SHA256 9038778f8ba4cea8b2422c8a5be446c6566f07c98e9b171c53702eb6ca6ba166.
+- Current presentation is presentation/StreetBite-project-review-build5.pptx (7 slides, finalizer passed). Do not update its counts/version to build 6 without a deliberate revision.
+- Android emulator is visible, Medium_Phone, emulator-5554, enrolled fingerprint 1. Genuine Windows prompt capture retained privately and included in ZIP. Physical device 66fc4053 was connected, but final reinstall stalled/cancelled. Appium server localhost:4723.
+- Figma checkout 10:338 was visually inspected: map with adjust pin, delivery-option cards, address/detail/contact/promo rows, fixed bottom action. These remain fidelity work. Do not fabricate real delivery ETAs or charges. Accessible copy contains 15 app frames.
+- No running Flutter build or Appium test remains. No final Sprints submission made. Remaining manual QA and full design fidelity are still open.
