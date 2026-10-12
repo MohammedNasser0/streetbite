@@ -643,6 +643,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Use demo card'**
   String get useDemoCard;
+
+  /// No description provided for @increaseQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase quantity'**
+  String get increaseQuantity;
+
+  /// No description provided for @decreaseQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease quantity'**
+  String get decreaseQuantity;
+
+  /// No description provided for @seeMenu.
+  ///
+  /// In en, this message translates to:
+  /// **'See menu'**
+  String get seeMenu;
 }
 
 class _AppLocalizationsDelegate

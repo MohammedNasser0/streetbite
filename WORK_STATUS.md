@@ -40,3 +40,10 @@ Private Firebase configuration, Maps key and QA credentials remain ignored. Dedi
 - Owner-assisted physical profile/photo verification is running. Final acceptance remains open.
 
 - Maps-enabled build 4 upload and distribution succeeded: release `3e6bqgorl8k0g`. Tester acceptance remains unverified.
+
+- Owner-assisted final-build-4 fingerprint/profile/photo/restart case PASSED (1m49s). Profile/device and before/after-restart photo images reviewed and retained privately. Five required cases are being rerun on the exact distributed artifact.
+
+- Final Maps-enabled build 4 physical required cases passed across two runs. Targeted retry completed in 1m14s after owner left phone idle.
+- Build 5 source in progress: cart thumbnails, quantity controls, last-item removal feedback and compact EN/AR coverage. Not yet built/distributed.
+
+- Build 5 analyzer and nineteen Flutter tests passed. EN/AR localization parity and direct-usage audit passed with no unused getters. APK build running; targeted cart/checkout and physical profile evidence are next.

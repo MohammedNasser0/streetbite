@@ -4,6 +4,9 @@ $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 Push-Location $projectRoot
 try {
+    $sourceChanges = @(& git status --porcelain --untracked-files=normal)
+    if ($LASTEXITCODE -ne 0) { throw 'Unable to inspect source state.' }
+    if ($sourceChanges.Count -gt 0) { throw 'Commit the reviewed source and documentation before packaging.' }
     $zipPath = [IO.Path]::GetFullPath((Join-Path $projectRoot $OutputPath))
     if (-not $zipPath.StartsWith($projectRoot + [IO.Path]::DirectorySeparatorChar)) {
         throw 'Delivery archive must remain inside the project workspace.'
@@ -38,6 +41,10 @@ try {
         $entry = $archive.CreateEntry('streetbite-capstone/beta/SHA256.txt')
         $writer = [IO.StreamWriter]::new($entry.Open())
         try { $writer.WriteLine((Get-FileHash -LiteralPath $apk -Algorithm SHA256).Hash.ToLower() + '  StreetBite.apk') }
+        finally { $writer.Dispose() }
+        $entry = $archive.CreateEntry('streetbite-capstone/SOURCE_COMMIT.txt')
+        $writer = [IO.StreamWriter]::new($entry.Open())
+        try { $writer.WriteLine((& git rev-parse HEAD)) }
         finally { $writer.Dispose() }
     } finally {
         $archive.Dispose()

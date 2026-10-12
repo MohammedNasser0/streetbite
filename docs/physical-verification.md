@@ -14,13 +14,13 @@ Five cases passed, zero failed/skipped, in 2m51s on the initial build 4 APK (SHA
 | Meal-grid scrolling | Pass | Retained privately |
 | Add-to-cart feedback | Pass | Retained privately |
 
-The initial build omitted the Maps-enabled compile flag. The corrected build 4 artifact has SHA256 `8a6c53e8e5a57af4197c2e65643f997bb1feeeef1802fc21581135be465e0f47`; Maps and additional acceptance are being verified separately. Do not attribute the five-case run above to that corrected artifact until re-run.
+The initial build omitted the Maps-enabled compile flag. The corrected build 4 artifact has SHA256 `8a6c53e8e5a57af4197c2e65643f997bb1feeeef1802fc21581135be465e0f47`; Maps and additional acceptance are being verified separately. The same five cases subsequently passed on the corrected artifact across two runs: Home scrolling/cart feedback and empty login passed first; invalid-credentials and valid-login passed in a targeted 1m14s retry. One installation exceeded the 90-second setup timeout, and the first valid-login attempt was interrupted while the phone Settings screen was foregrounded. Interrupted attempts remain retained privately and are not counted as app passes.
 
 The first physical attempt had OEM `pm clear` permission failures. BaseTest now uses a fresh installation for the dedicated test package on physical devices, without relaxing phone security. A stale driver teardown was also fixed. Original reports remain privately retained.
 
-## Owner-assisted device features — in progress
+## Owner-assisted device features — passed on final build 4
 
-Fingerprint authentication opened the profile screen with the owner's participation. The current profile test is not yet a pass: its original native ScrollView assertion was unsuitable for Flutter, and a later profile-name wait coincided with an unstable USB authorization/session. Corrected live-name, gallery and restart checks are pending. The profile name exists in Firestore, verified using the QA owner's token.
+The fingerprint/profile/gallery/restart Appium scenario passed on the Maps-enabled build 4 in 1m49s with owner participation. It checked the live profile name, favourites section, device details, a changed photo stored through the QA owner's Firestore record, and the same stored photo after terminating/relaunching the app and authenticating again. Private screenshots were visually reviewed: the profile shows the synthetic QA identity and OPPO CPH2669 / Android 16; the food thumbnail persists after restart.
 
 Android returns a black image for the protected biometric prompt. This is a screenshot limitation; no security flag was bypassed. A black screenshot is not visual biometric-prompt evidence.
 
@@ -29,3 +29,5 @@ Optional payment/checkout runs were interrupted when the USB connection became u
 Manual-case execution is tracked separately in `manual-test-cases.csv`; an automated pass does not silently become a manual result. No physical-device screenshot is substituted with emulator imagery.
 
 Physical screenshots are retained privately at the user's explicit request; they are not published to this public repository.
+
+The owner initially had no second camera available and may try a normal manual screenshot of the biometric prompt. No capture workaround or security-setting change is requested. Until a real visible capture is supplied, this visual evidence remains unavailable.

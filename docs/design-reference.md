@@ -14,4 +14,6 @@ Welcome artwork: exported Frame 6573 (node 30:7132) from the supplied Figma file
 
 Profile frame inspected: node 21:3864, 375 x 812. Reference uses an avatar/name header, Settings, Contact us and Help center rows, with bottom navigation. Current profile adds assignment-specific Firebase data and biometric gating; exact reference navigation/settings coverage remains open.
 
-Additional frames inspected: Add card (2:767) uses card-number/name/expiry/CVV/ZIP fields and a bottom Continue action. Current payment is a simulation with no real card-data collection; this form remains a design gap. The top-level More frame (63:270) is a promotional plugin banner, not an application screen, and should not be copied into StreetBite.
+Additional frames inspected: Add card (2:767) uses card-number/name/expiry/CVV/ZIP fields and a bottom Continue action. Current payment is a simulation with no real card-data collection; build 4 implements its composition with fixed read-only demonstration values. The top-level More frame (63:270) is a promotional plugin banner, not an application screen, and should not be copied into StreetBite.
+
+Build 5 cart work follows the reference thumbnail/quantity/action composition. Delivery/pickup selection and fee/discount rows are not populated with invented charges. See figma-frame-coverage.md for the remaining gaps.

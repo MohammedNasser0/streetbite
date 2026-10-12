@@ -288,4 +288,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get useDemoCard => 'استخدام البطاقة التجريبية';
+
+  @override
+  String get increaseQuantity => 'زيادة الكمية';
+
+  @override
+  String get decreaseQuantity => 'تقليل الكمية';
+
+  @override
+  String get seeMenu => 'عرض القائمة';
 }

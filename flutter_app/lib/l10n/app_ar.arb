@@ -90,5 +90,8 @@
   "expiry": "الصلاحية",
   "securityCode": "رمز الأمان",
   "postalCode": "الرمز البريدي",
-  "useDemoCard": "استخدام البطاقة التجريبية"
+  "useDemoCard": "استخدام البطاقة التجريبية",
+  "increaseQuantity": "زيادة الكمية",
+  "decreaseQuantity": "تقليل الكمية",
+  "seeMenu": "عرض القائمة"
 }

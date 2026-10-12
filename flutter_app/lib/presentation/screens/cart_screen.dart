@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../core/price.dart';
 import '../../l10n/app_localizations.dart';
 import '../blocs/cart_bloc.dart';
-import '../blocs/cart_event.dart';
 import '../blocs/cart_state.dart';
 import 'checkout_screen.dart';
+import '../widgets/cart_item_row.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -26,23 +26,17 @@ class CartScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ListView(
-                      children: state.items
-                          .map(
-                            (item) => ListTile(
-                              title: Text(item.meal.name),
-                              subtitle: Text(
-                                '${item.quantity} × ${price(context, item.meal.demoPriceInPiastres)}',
-                              ),
-                              trailing: IconButton(
-                                tooltip: l.remove,
-                                icon: const Icon(Icons.delete_outline),
-                                onPressed: () => context.read<CartBloc>().add(
-                                  RemoveMeal(item.meal.id),
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
+                      padding: const EdgeInsets.only(top: 12),
+                      children: [
+                        ...state.items.map(CartItemRow.new),
+                        Align(
+                          alignment: AlignmentDirectional.centerStart,
+                          child: TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(l.seeMenu),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   SafeArea(
@@ -55,14 +49,18 @@ class CartScreen extends StatelessWidget {
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                           Text(l.demoPrices),
-                          FilledButton(
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => const CheckoutScreen(),
+                          const SizedBox(height: 12),
+                          SizedBox(
+                            width: double.infinity,
+                            child: FilledButton(
+                              onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => const CheckoutScreen(),
+                                ),
                               ),
+                              child: Text(l.placeOrder),
                             ),
-                            child: Text(l.placeOrder),
                           ),
                         ],
                       ),

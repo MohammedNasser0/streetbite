@@ -90,5 +90,8 @@
   "expiry": "Expiry",
   "securityCode": "CVV",
   "postalCode": "ZIP",
-  "useDemoCard": "Use demo card"
+  "useDemoCard": "Use demo card",
+  "increaseQuantity": "Increase quantity",
+  "decreaseQuantity": "Decrease quantity",
+  "seeMenu": "See menu"
 }

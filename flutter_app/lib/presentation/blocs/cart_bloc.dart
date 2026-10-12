@@ -21,6 +21,17 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         CartState(state.items.where((item) => item.meal.id != event.id)),
       ),
     );
+    on<DecreaseMeal>((event, emit) {
+      emit(
+        CartState([
+          for (final item in state.items)
+            if (item.meal.id != event.id)
+              item
+            else if (item.quantity > 1)
+              CartItem(item.meal, item.quantity - 1),
+        ]),
+      );
+    });
     on<ClearCart>((event, emit) => emit(CartState([])));
   }
 }

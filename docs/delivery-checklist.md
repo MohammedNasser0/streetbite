@@ -15,4 +15,4 @@
 
 ## Latest local artifact
 
-The Maps-enabled build 4 APK passed eight emulator Appium cases (login, home, Maps, cash checkout/history and demo-card selection), zero failures/skips. SHA256: `8a6c53e8e5a57af4197c2e65643f997bb1feeeef1802fc21581135be465e0f47`. Firebase upload and distribution to both authorized testers succeeded (release `3e6bqgorl8k0g`). A physical rerun of this exact artifact remains pending.
+The Maps-enabled build 4 APK passed eight emulator Appium cases (login, home, Maps, cash checkout/history and demo-card selection), zero failures/skips. SHA256: `8a6c53e8e5a57af4197c2e65643f997bb1feeeef1802fc21581135be465e0f47`. Firebase upload and distribution to both authorized testers succeeded (release `3e6bqgorl8k0g`). All five required physical cases subsequently passed on this exact artifact across two runs; the owner-assisted profile/photo/restart scenario also passed.

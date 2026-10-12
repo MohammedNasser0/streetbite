@@ -12,4 +12,9 @@ class RemoveMeal extends CartEvent {
   final String id;
 }
 
+class DecreaseMeal extends CartEvent {
+  DecreaseMeal(this.id);
+  final String id;
+}
+
 class ClearCart extends CartEvent {}

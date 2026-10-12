@@ -290,4 +290,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get useDemoCard => 'Use demo card';
+
+  @override
+  String get increaseQuantity => 'Increase quantity';
+
+  @override
+  String get decreaseQuantity => 'Decrease quantity';
+
+  @override
+  String get seeMenu => 'See menu';
 }

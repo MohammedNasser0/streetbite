@@ -12,7 +12,7 @@ Reference: Food Delivery Mobile App UI Kit by Vlad Solomakha, CC BY 4.0. The acc
 | Resturaunt • Scroll | 19:2672 | Home/Browse scrolling | Sticky category strip and grouped rows |
 | Resturaunt • Added | 19:2840 | CartBloc and cart route | Inline quantity controls and bottom Continue |
 | Resturaunt • Search | 18:1784 | BrowseScreen | Category-tile grid differs from current meal grid |
-| Order (cart) | 18:980 | CartScreen | Thumbnails, inline quantity controls and summary composition |
+| Order (cart) | 18:980 | CartScreen | Build 5 adds thumbnails, inline quantity controls and full-width action; reference delivery/pickup and fee breakdown remain absent |
 | Checkout | 10:338 | CheckoutScreen | Map, delivery options and contact rows |
 | Add card | 2:767 | DemoCardScreen (build 4) | Fixed demo values replace editable financial data; no default-card persistence |
 | Order (preparing) | 19:3355 | OrderProgressScreen | Map/timeline composition; no live fulfilment exists |
