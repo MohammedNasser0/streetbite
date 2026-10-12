@@ -260,4 +260,32 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noOrders => 'لا توجد طلبات حتى الآن';
+
+  @override
+  String get addDemoCard => 'إضافة بطاقة تجريبية';
+
+  @override
+  String get demoCardNotice =>
+      'محاكاة فقط. بيانات نموذجية ثابتة؛ لا تُجمع بيانات بطاقة حقيقية ولا يُحصّل أي مبلغ.';
+
+  @override
+  String get cardNumber => 'رقم البطاقة';
+
+  @override
+  String get cardholder => 'اسم حامل البطاقة';
+
+  @override
+  String get demoCardholder => 'عميل تجريبي';
+
+  @override
+  String get expiry => 'الصلاحية';
+
+  @override
+  String get securityCode => 'رمز الأمان';
+
+  @override
+  String get postalCode => 'الرمز البريدي';
+
+  @override
+  String get useDemoCard => 'استخدام البطاقة التجريبية';
 }

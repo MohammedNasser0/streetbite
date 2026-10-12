@@ -26,3 +26,10 @@ Private Firebase configuration, Maps key and QA credentials remain ignored. Dedi
 - Dedicated private Jira project created at the user's request. A code-review defect was fixed and verified; issue details and screenshots are retained privately.
 - Build 3 uploaded and distributed to both authorized testers, release7dopgsri4kak0. No tester acceptance or physical-device execution claimed.
 - Full Figma fidelity, Add card design variant, profile/gallery/biometric UI acceptance, offline device checks and real-device manual/Appium QA remain outstanding.
+
+## Build 4 work in progress
+- Localized fixed-data Add card layout added and linked from checkout; it accepts no real card credentials. Checkout now scrolls on compact screens.
+- Analyzer passed and fourteen Flutter tests passed; ARB parity/direct-usage audit has no unused getters.
+- Five required Appium scenarios passed on a physical OPPO CPH2669 / Android 16 using the initial build 4 artifact. See docs/physical-verification.md for hashes, scope and infrastructure failures.
+- Maps-enabled build 4 rebuilt; additional profile/photo/payment/checkout and final-artifact tests remain in progress. Distribution is not yet updated.
+- Fingerprint opened the profile with owner participation. Test-locator refinements and gallery/restart verification remain in progress; no final profile test pass claimed yet.

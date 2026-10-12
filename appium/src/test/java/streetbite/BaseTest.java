@@ -18,6 +18,7 @@ public abstract class BaseTest {
   protected WebDriverWait wait;
   @BeforeMethod
   public void setup() throws Exception {
+    driver = null;
     String serial = System.getProperty("mobile.udid", "emulator-5554");
     Path apk = Path.of(System.getProperty("mobile.apk", "../flutter_app/build/app/outputs/flutter-apk/app-release.apk")).toAbsolutePath();
     if (!Files.exists(apk)) throw new IllegalArgumentException("Build StreetBite APK first");
@@ -26,6 +27,9 @@ public abstract class BaseTest {
       .setAppActivity("com.streetbite.streetbite_app.MainActivity").setNoReset(false)
       .setNewCommandTimeout(Duration.ofSeconds(120));
     options.setCapability("appium:enforceAppInstall", true);
+    // Some OEM phones deny `pm clear` to ADB. A fresh test-only install avoids
+    // that permission without changing the phone's security settings.
+    if (!serial.startsWith("emulator-")) options.setFullReset(true);
     driver = new AndroidDriver(URI.create(System.getProperty("mobile.server", "http://127.0.0.1:4723")).toURL(), options);
     wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     wait.ignoring(StaleElementReferenceException.class);
@@ -78,6 +82,6 @@ public abstract class BaseTest {
   }
   @AfterMethod(alwaysRun=true)
   public void teardown(ITestResult result) throws Exception {
-    if (driver != null) { try { screenshot(result.getMethod().getMethodName()); } finally { driver.quit(); } }
+    if (driver != null) { try { screenshot(result.getMethod().getMethodName()); } finally { driver.quit(); driver = null; } }
   }
 }

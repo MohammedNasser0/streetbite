@@ -9,6 +9,6 @@
 - [x] Build beta APK using the development signing key; record checksum/version. Production signing remains pending.
 - [x] Upload to Firebase App Distribution and invite two user-specified testers. User-supplied dashboard evidence confirms two invited, zero accepted/downloaded.
 - [ ] Record actual real-device QA, Jira defects, traceability and closure.
-- [ ] Execute Appium login, scrolling and cart scenarios on emulator and device.
+- [x] Execute Appium login, scrolling and cart scenarios on emulator and device. Five physical cases passed on initial build 4; artifact-specific scope is in physical-verification.md.
 - [ ] Complete remaining screenshots (profile/device details and biometrics). Onboarding, auth, home EN/AR/dark, details, cart and Maps captured on emulator.
-- [ ] Publish public GitHub repository and presentation.
+- [x] Publish public GitHub repository and presentation. Final acceptance remains open.

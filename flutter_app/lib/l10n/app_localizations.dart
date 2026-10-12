@@ -589,6 +589,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No orders yet'**
   String get noOrders;
+
+  /// No description provided for @addDemoCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Add demo card'**
+  String get addDemoCard;
+
+  /// No description provided for @demoCardNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulation only. Fixed sample details; no real card information or payment is collected.'**
+  String get demoCardNotice;
+
+  /// No description provided for @cardNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Card number'**
+  String get cardNumber;
+
+  /// No description provided for @cardholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Name on card'**
+  String get cardholder;
+
+  /// No description provided for @demoCardholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo customer'**
+  String get demoCardholder;
+
+  /// No description provided for @expiry.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiry'**
+  String get expiry;
+
+  /// No description provided for @securityCode.
+  ///
+  /// In en, this message translates to:
+  /// **'CVV'**
+  String get securityCode;
+
+  /// No description provided for @postalCode.
+  ///
+  /// In en, this message translates to:
+  /// **'ZIP'**
+  String get postalCode;
+
+  /// No description provided for @useDemoCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Use demo card'**
+  String get useDemoCard;
 }
 
 class _AppLocalizationsDelegate

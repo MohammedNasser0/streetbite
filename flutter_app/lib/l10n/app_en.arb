@@ -81,5 +81,14 @@
   "settings": "More",
   "deliveryAddress": "Delivery address",
   "demoOrderNotice": "Demo order saved. No restaurant dispatch or live delivery tracking is connected.",
-  "noOrders": "No orders yet"
+  "noOrders": "No orders yet",
+  "addDemoCard": "Add demo card",
+  "demoCardNotice": "Simulation only. Fixed sample details; no real card information or payment is collected.",
+  "cardNumber": "Card number",
+  "cardholder": "Name on card",
+  "demoCardholder": "Demo customer",
+  "expiry": "Expiry",
+  "securityCode": "CVV",
+  "postalCode": "ZIP",
+  "useDemoCard": "Use demo card"
 }

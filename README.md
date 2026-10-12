@@ -39,7 +39,7 @@ Android requests internet and biometric access; gallery selection uses the syste
 
 ## Verification and delivery
 
-Ten unit/widget tests passed on 12 October 2026, including English/Arabic delivery-form layouts at 375 and 412 logical pixels. Build 2 passed seven Appium scenarios: the five required cases, Maps, and cash checkout/order history after restart. Build 3 passed two targeted signup checks: numeric-name rejection and successful account/profile persistence. Ten live Firestore access checks passed. Version 1.0.0 (3) was uploaded to Firebase App Distribution and distributed to the two authorized testers. Tester acceptance and physical-device execution remain unverified.
+Fourteen unit/widget tests passed on 12 October 2026, including English/Arabic delivery and read-only demo-card layouts at 375 and 412 logical pixels. Build 2 passed seven Appium scenarios: the five required cases, Maps, and cash checkout/order history after restart. Build 3 passed two targeted signup checks. The five required Appium cases also passed on a physical OPPO Android 16 phone using the initial build 4 artifact; see [physical verification](docs/physical-verification.md) for exact versions and remaining device checks. Ten live Firestore access checks passed. Version 1.0.0 (3) is the currently distributed beta; build 4 distribution is pending. Tester acceptance remains unverified.
 
 [Beta tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/7dopgsri4kak0). Distribution completed through Firebase CLI after login renewal. User-supplied dashboard screenshots confirm two invited testers, with zero accepted/downloaded at capture time. Originals containing personal emails are retained privately; see [distribution evidence](docs/distribution-evidence.md).
 
@@ -53,5 +53,5 @@ See [work status](WORK_STATUS.md), [QA plan](docs/test-plan.md), [traceability](
 
 ## Design and data references
 
-- [Food Delivery Mobile App UI Kit, Vlad Solomakha](https://www.figma.com/community/file/1352761962360670057/food-delivery-mobile-app-ui-kit), CC BY 4.0. Inspected Welcome, Home, Restaurant, Address and Checkout frames. Full screen coverage and fidelity remain under review.
+- [Food Delivery Mobile App UI Kit, Vlad Solomakha](https://www.figma.com/community/file/1352761962360670057/food-delivery-mobile-app-ui-kit), CC BY 4.0. See the [frame inventory and fidelity gaps](docs/figma-frame-coverage.md). Full fidelity remains under review.
 - [TheMealDB API](https://www.themealdb.com/api.php), educational development key `1`. Recipes come from the API; prices, vendors and payment results are explicitly demonstration data.

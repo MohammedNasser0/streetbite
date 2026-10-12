@@ -13,6 +13,7 @@ import '../blocs/cart_bloc.dart';
 import '../blocs/cart_event.dart';
 import 'auth_screen.dart';
 import 'delivery_address_screen.dart';
+import 'demo_card_screen.dart';
 import 'order_progress_screen.dart';
 
 class CheckoutScreen extends StatefulWidget {
@@ -26,6 +27,20 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   bool _busy = false;
   String? _requestId;
   Map<String, String>? _address;
+  Future<void> _selectPayment(String? value) async {
+    if (value == null || _busy) return;
+    if (value == 'demo-card') {
+      final confirmed = await Navigator.push<bool>(
+        context,
+        MaterialPageRoute(builder: (_) => const DemoCardScreen()),
+      );
+      if (!mounted || confirmed != true) return;
+    }
+    setState(() {
+      _payment = value == 'cash' ? CashPayment() : CardPayment();
+    });
+  }
+
   Future<void> _order() async {
     final l = AppLocalizations.of(context)!;
     if (!services.isRegistered<AuthCubit>()) {
@@ -90,8 +105,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       appBar: AppBar(title: Text(l.placeOrder)),
       body: Padding(
         padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: ListView(
           children: [
             Text(l.demoPrices),
             const SizedBox(height: 20),
@@ -123,19 +137,13 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 DropdownMenuItem(value: 'cash', child: Text(l.cash)),
                 DropdownMenuItem(value: 'demo-card', child: Text(l.card)),
               ],
-              onChanged: _busy
-                  ? null
-                  : (value) => setState(
-                      () => _payment = value == 'cash'
-                          ? CashPayment()
-                          : CardPayment(),
-                    ),
+              onChanged: _busy ? null : _selectPayment,
             ),
             const SizedBox(height: 24),
             Text(
               '${l.total}: ${price(context, context.watch<CartBloc>().state.totalInPiastres)}',
             ),
-            const Spacer(),
+            const SizedBox(height: 32),
             FilledButton(
               onPressed: _busy ? null : _order,
               child: _busy

@@ -262,4 +262,32 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noOrders => 'No orders yet';
+
+  @override
+  String get addDemoCard => 'Add demo card';
+
+  @override
+  String get demoCardNotice =>
+      'Simulation only. Fixed sample details; no real card information or payment is collected.';
+
+  @override
+  String get cardNumber => 'Card number';
+
+  @override
+  String get cardholder => 'Name on card';
+
+  @override
+  String get demoCardholder => 'Demo customer';
+
+  @override
+  String get expiry => 'Expiry';
+
+  @override
+  String get securityCode => 'CVV';
+
+  @override
+  String get postalCode => 'ZIP';
+
+  @override
+  String get useDemoCard => 'Use demo card';
 }
