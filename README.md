@@ -2,6 +2,10 @@
 
 Bilingual Flutter food discovery and demo ordering, by Mohammed Nasser. [Public repository](https://github.com/MohammedNasser0/streetbite).
 
+## Unreleased source follow-up
+
+Current source is version **1.0.0+11** and adds Browse retry for the last failed query, preserving the search input. All 31 Flutter tests passed. This follow-up has not been built or distributed; the tested APK, delivery ZIP and Firebase release described below remain build 10. Native verification and distribution of build 11 are pending.
+
 ## Features
 
 - Live TheMealDB search, category filtering and offline query cache.

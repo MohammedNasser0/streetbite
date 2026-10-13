@@ -10,6 +10,9 @@ class MenuCubit extends Cubit<MenuState> {
   final SearchMeals searchMeals;
   int _request = 0;
   List<Meal> _all = const [];
+  String _lastQuery = '';
+
+  Future<void> retry() => search(_lastQuery);
   void filterCategory(String? category) {
     emit(
       MenuState(
@@ -26,6 +29,7 @@ class MenuCubit extends Cubit<MenuState> {
   }
 
   Future<void> search(String query) async {
+    _lastQuery = query;
     final request = ++_request;
     emit(const MenuState(loading: true));
     try {

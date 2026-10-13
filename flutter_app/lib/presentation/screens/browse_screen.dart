@@ -38,7 +38,22 @@ class BrowseScreen extends StatelessWidget {
                       return const Center(child: CircularProgressIndicator());
                     }
                     if (state.error != null) {
-                      return Center(child: Text(l.networkError));
+                      return Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(l.networkError),
+                              const SizedBox(height: 12),
+                              FilledButton(
+                                onPressed: context.read<MenuCubit>().retry,
+                                child: Text(l.retry),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
                     }
                     if (state.meals.isEmpty) {
                       return Center(child: Text(l.noMeals));

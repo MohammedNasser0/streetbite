@@ -1,3 +1,12 @@
+# Unreleased source checkpoint — 14 October 2026
+
+- Source version 1.0.0+11: Browse network-error view now offers Retry. MenuCubit retries its last query, preserving the entered search text.
+- All 31 Flutter tests passed, including EN/AR failure→retry→results checks that assert the same query is reused.
+- No build 11 APK, native pass or distribution is claimed. Existing final APK/ZIP/Firebase release remain build 10. Do not package the current source with the build 10 APK as if they match.
+- Analyzer passed with no issues. Next: build and verify the Browse failure/retry flow on native Android before distribution. Full Figma fidelity/manual QA/current dashboard capture remain open.
+
+Earlier delivery checkpoints below retain their original scope.
+
 # Documentation checkpoint — 14 October 2026
 
 - Source/application remains the verified and distributed build 10; no new app build required for these documentation changes.
