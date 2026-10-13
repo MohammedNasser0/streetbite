@@ -13,3 +13,13 @@
 | Beta | Firebase App Distribution | Upload dashboard and tester invitation evidence |
 
 Execution status is tracked in manual-test-cases.csv and the closure report. Mapping alone is not evidence of a pass.
+
+## Additional manual coverage — 14 October 2026
+
+| Area | Implementation | Planned manual cases | Execution |
+|---|---|---|---|
+| Onboarding | WelcomeScreen | TC_ONBOARD_001 | Not Run |
+| Search/category | BrowseScreen | TC_BROWSE_001 | Not Run |
+| Checkout rows/payment/action | CheckoutScreen | TC_CHECKOUT_001–003 | Not Run; separate build 10 automated evidence is documented |
+| Address validation/editing | DeliveryAddressScreen | TC_ADDRESS_001–002 | Not Run |
+| Language/theme settings | MoreScreen | TC_SETTINGS_001 | Not Run |

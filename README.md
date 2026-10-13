@@ -53,6 +53,8 @@ The dashboard image documents build 1 invitations; it does not establish current
 
 [Project presentation](presentation/StreetBite-project-review-build10.pptx) covers the developer, planning, architecture, features and current verification status. Phone screenshots, the genuine emulator biometric capture and original Firebase/Jira evidence are included only in the private delivery ZIP.
 
+The [manual QA walkthrough](docs/manual-qa-walkthrough.md) explains how to execute and record the 36 planned cases. Eight added cases cover onboarding, browse, Checkout, address and settings; they remain Not Run.
+
 See [primary acceptance](docs/core-acceptance.md), [physical verification](docs/physical-verification.md), [emulator verification](docs/emulator-verification.md), [QA plan](docs/test-plan.md), [traceability](docs/traceability.md) and [closure](docs/test-closure.md). Figma fidelity remains partial; map-tile diagnosis is deferred by the owner as bonus. Remaining manual cases stay Not Run. No final learning-platform submission has been made.
 
 ## Design and data references

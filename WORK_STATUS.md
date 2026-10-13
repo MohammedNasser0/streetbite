@@ -1,3 +1,14 @@
+# Documentation checkpoint — 14 October 2026
+
+- Source/application remains the verified and distributed build 10; no new app build required for these documentation changes.
+- Added Arabic manual QA walkthrough and eight planned cases, bringing the matrix to 36. New cases remain Not Run; prior recorded results unchanged.
+- Current documentation package: StreetBite-review-build10-qa.zip. Prior build10 ZIP is preserved.
+- Tried the actual Firebase build-10 console URL and one reload; page remained on its loading spinner. A current dashboard screenshot is still missing; API distribution confirmation is retained and the public screenshot is explicitly historical.
+- Phone still has build 9 after stalled build10 install was stopped. No new physical pass claimed.
+- Remaining: full Figma fidelity, actual manual QA execution and current Firebase dashboard capture. Bonus map tiles deferred; tester acceptance unverified; no final platform submission.
+
+Earlier checkpoints below retain their historical scope.
+
 # Latest checkpoint — build 10, 14 October 2026
 
 - Final Android APK 1.0.0 (10), SHA256 549280bd7c069657573bc40c3609c31d647246432198a5cb04f2fb1a0949bb5b.

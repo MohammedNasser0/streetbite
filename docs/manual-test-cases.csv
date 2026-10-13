@@ -27,3 +27,11 @@ TC_MAP_001,Map,Positive,Open configured map and marker,Five cities and vendor cu
 TC_L10N_001,Settings,GUI,Toggle Arabic and restart,Arabic strings RTL and mirrored navigation persist,Not executed,Not Run
 TC_THEME_001,Settings,GUI,Toggle dark mode and restart,Dark theme persists with readable contrast,Not executed,Not Run
 TC_SECURITY_001,Firestore,Negative,Attempt cross-user document access,Read and write rejected by rules,Not executed,Not Run
+TC_ONBOARD_001,Onboarding,GUI,Cold launch then tap Explore meals,Fade appears and Home opens once,Not executed,Not Run
+TC_BROWSE_001,Browse,Positive,Search for a known meal then select a category,Results match query/category; selecting meal opens details,Not executed,Not Run
+TC_CHECKOUT_001,Checkout,GUI,Open Checkout with one item at a small screen size in EN and AR,Address instructions contact and payment remain reachable; total and order action stay visible,Not executed,Not Run
+TC_CHECKOUT_002,Checkout,Negative,Choose demo card then cancel with system back,Cash remains selected and no payment/order is created,Not executed,Not Run
+TC_CHECKOUT_003,Checkout,Negative,Remove final cart item and inspect available checkout actions,Empty cart is shown and checkout/order submission is unavailable,Not executed,Not Run
+TC_ADDRESS_001,Address,Negative,Submit blank or shorter than five character address,Inline address error prevents returning to Checkout,Not executed,Not Run
+TC_ADDRESS_002,Address,Positive,Save complete address apartment and comment then reopen editor,Values remain populated and appear in the matching Checkout rows,Not executed,Not Run
+TC_SETTINGS_001,Settings,GUI,Open More and toggle language and theme,Labels and theme update; choices survive restart,Not executed,Not Run

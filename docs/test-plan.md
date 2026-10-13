@@ -11,3 +11,7 @@ No open blocker/critical defects; all required flows pass; every failed case has
 
 ## Evidence rules
 Record actual observed results and environment. Never treat a planned case, skipped test, mocked response or emulator screenshot as physical-device execution. Jira issues are created only for observed defects. No duplicate or invented issues to satisfy a count.
+
+## Manual execution preparation — 14 October 2026
+
+The matrix now contains 36 uniquely identified cases. Eight added cases cover onboarding, browse, current Checkout composition, cancelled demo-card selection, empty-cart checkout prevention, address validation/editing and settings. Added cases remain Not Run. Follow `manual-qa-walkthrough.md` to record actual device/version/date and observed results; automated passes do not replace manual execution.
