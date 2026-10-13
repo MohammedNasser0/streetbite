@@ -15,7 +15,7 @@ Latest local Android artifact: **1.0.0 (9)**, development signing. APK SHA256: `
 | Orders / cash-card strategies | PlaceOrder and separate payment strategies | Build 9 cash checkout/history/restart passes; no real payment or dispatch |
 | Profile / gallery / live records | ProfileRepository / singleton FirestoreService | Owner-assisted physical build 4 photo/restart pass |
 | English/Arabic and light/dark | ARB, LocaleCubit and ThemeBloc | Compact EN/AR tests pass; prior genuine EN/AR/dark captures |
-| Beta distribution | Firebase App Distribution | Build 5 currently distributed to both authorized testers; new artifact pending |
+| Beta distribution | Firebase App Distribution | Build 9 uploaded and distributed to both authorized testers on 14 October 2026 |
 
 Build 9 analyzer passed, all **27 Flutter tests passed**, and formatting checked across all 75 Dart files with no changes required. Historical passes are not represented as execution on build 9.
 

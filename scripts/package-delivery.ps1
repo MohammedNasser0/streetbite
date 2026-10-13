@@ -20,9 +20,9 @@ try {
     $archive = [IO.Compression.ZipFile]::Open($zipPath, [IO.Compression.ZipArchiveMode]::Update)
     try {
         # Historical decks stay in Git; the delivery archive contains the current deck only.
-        foreach ($oldDeck in @('StreetBite-project-final.pptx', 'StreetBite-project-review-build5.pptx')) {
+        foreach ($oldDeck in @('StreetBite-project-final.pptx', 'StreetBite-project-review-build5.pptx', 'StreetBite-project-review-build9.pptx')) {
             $historical = $archive.GetEntry('streetbite-capstone/presentation/' + $oldDeck)
-            if ($null -ne $historical -and (Test-Path -LiteralPath 'presentation/StreetBite-project-review-build9.pptx')) {
+            if ($null -ne $historical -and (Test-Path -LiteralPath 'presentation/StreetBite-project-review-build9-distributed.pptx')) {
                 $historical.Delete()
             }
         }
@@ -38,7 +38,7 @@ try {
         Add-EvidenceFile $apk 'beta/StreetBite.apk'
         $privateEvidence = Join-Path $projectRoot '.delivery/verification'
         Add-EvidenceFile (Join-Path $privateEvidence 'emulator-beta5/biometric-prompt-windows.png') 'private-evidence/emulator-beta5/biometric-prompt-windows.png'
-        foreach ($name in @('firebase-testers.png', 'firebase-release-testers.png', 'jira-streetbite.jpg', 'jira-evidence.md')) {
+        foreach ($name in @('firebase-testers.png', 'firebase-release-testers.png', 'firebase-beta9-release.json', 'jira-streetbite.jpg', 'jira-evidence.md')) {
             Add-EvidenceFile (Join-Path $privateEvidence $name) ('private-evidence/' + $name)
         }
         # Only visually reviewed screenshots go into the private delivery ZIP.

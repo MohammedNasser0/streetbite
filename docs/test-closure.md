@@ -25,3 +25,7 @@ The Vendor Map and biometric profile gate are marked bonus in the source brief. 
 ## Build 9 acceptance checkpoint — 13 October 2026
 
 Analyzer and all 27 Flutter tests pass. Eight unique core emulator scenarios pass across the main run and a favourites locator retry; five required physical cases pass across the main run and two APK-install setup retries. The separate screenshot tour passes. Remaining manual cases keep their existing Not Run status. Build 9 distribution is pending Firebase renewal; build 5 remains distributed. Design fidelity and deferred map tiles remain documented gaps, so this is a review package rather than a declaration of complete capstone closure.
+
+## Distribution closure — 14 October 2026
+
+Build 9 upload and distribution to both authorized testers succeeded. Release `6a8l9q8aa79m0` uses the same APK checksum as the tested local artifact. This resolves the previous authentication/upload blocker; remaining design fidelity and manual QA gaps are unchanged.

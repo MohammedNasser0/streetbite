@@ -1,3 +1,14 @@
+# Latest delivery checkpoint — 14 October 2026
+
+- Firebase login renewal succeeded using the official interactive local callback.
+- Build 1.0.0 (9) uploaded and distributed to the same two authorized testers. Release ID: 6a8l9q8aa79m0. Upload checksum matches the tested APK: 5ff43eda0287184b759d80a67c7e1694f98a22baa04c35e2176411dde7d9b917.
+- The initial streamed upload encountered ECONNRESET. The same APK succeeded via Firebase REST with explicit Content-Length; no new access scopes or recipients were added.
+- Current presentation: StreetBite-project-review-build9-distributed.pptx. Current private ZIP: StreetBite-review-build9-distributed.zip. Historical ZIPs are preserved.
+- Verification remains 27 Flutter tests, eight unique core emulator scenarios and five required physical cases across documented main/retry runs.
+- Remaining: full Figma fidelity and unexecuted manual QA. Bonus map-tile diagnosis is deferred. Tester acceptance unverified; no final learning-platform submission.
+
+Earlier checkpoints below retain their historical scope.
+
 # Current checkpoint — 13 October 2026
 
 - Latest local APK: 1.0.0 (9); SHA256 5ff43eda0287184b759d80a67c7e1694f98a22baa04c35e2176411dde7d9b917.

@@ -1,3 +1,13 @@
+# Current beta distribution — 14 October 2026
+
+**1.0.0 (9)** uploaded and distributed successfully to both previously authorized testers. Release ID: `6a8l9q8aa79m0`. [Open tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/6a8l9q8aa79m0).
+
+APK SHA256: `5ff43eda0287184b759d80a67c7e1694f98a22baa04c35e2176411dde7d9b917`, identical to the artifact used for build 9 verification. Firebase CLI login renewal succeeded through the interactive local callback. The streamed CLI upload encountered ECONNRESET; a Firebase REST upload with explicit Content-Length succeeded, then release notes and distribution to the same two testers succeeded. Sanitized release confirmation is retained privately; authentication codes, tokens and signed download URLs are excluded from delivery.
+
+Tester installation/acceptance is unverified. The public redacted dashboard screenshot remains historical build 1 evidence, not a build 9 dashboard capture. The private ZIP retains the original dashboard screenshots.
+
+## Historical records
+
 # Firebase beta distribution evidence
 
 Version: **1.0.0 (1)**. Release ID: `6okh6af9cglmo`.

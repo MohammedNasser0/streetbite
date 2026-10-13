@@ -10,8 +10,8 @@
 - [x] Profile/gallery/photo persistence verified on physical build 4; profile source unchanged in build 9.
 - [x] Analyzer and 27 Flutter tests passed for build 9.
 - [x] Build 9: eight unique core emulator scenarios and all five required physical scenarios pass across scoped runs; evidence retained.
-- [ ] Upload and distribute the current verified APK to both authorized testers.
-- [x] Refresh presentation and README for build 9, recording Firebase renewal failure.
+- [x] Build 9 uploaded and distributed to both authorized testers on 14 October 2026.
+- [x] Refresh presentation and README for build 9, recording successful build 9 distribution.
 - [x] Prepare the current source, APK, presentation and reviewed private evidence for the review ZIP.
 - [ ] Complete faithful coverage of supplied Figma frames; inventory documents remaining differences. The accessible copy contains 15 app frames, not evidence of all advertised 50+ screens.
 
