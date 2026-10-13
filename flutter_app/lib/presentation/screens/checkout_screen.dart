@@ -99,68 +99,122 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     }
   }
 
+  Future<void> _editAddress() async {
+    final result = await Navigator.push<Map<String, String>>(
+      context,
+      MaterialPageRoute(
+        builder: (_) => DeliveryAddressScreen(initial: _address),
+      ),
+    );
+    if (mounted && result != null) setState(() => _address = result);
+  }
+
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context)!;
+    final cart = context.watch<CartBloc>().state;
+    final user = services.isRegistered<AuthCubit>()
+        ? context.watch<AuthCubit>().state.user
+        : null;
+    final comment = _address?['comment']?.trim() ?? '';
+    final apartment = _address?['apartment']?.trim() ?? '';
+    final forward = Icon(
+      Directionality.of(context) == TextDirection.rtl
+          ? Icons.chevron_left
+          : Icons.chevron_right,
+    );
     return Scaffold(
-      appBar: AppBar(title: Text(l.placeOrder)),
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-        child: ListView(
-          children: [
-            Text(l.demoPrices),
-            const SizedBox(height: 20),
-            if (DeliveryPinMap.fromAddress(_address) != null) ...[
-              DeliveryPinMap(
-                key: ValueKey(
-                  '${_address?['latitude']},${_address?['longitude']}',
-                ),
-                pin: DeliveryPinMap.fromAddress(_address),
+      appBar: AppBar(title: Text(l.checkout)),
+      body: ListView(
+        padding: const EdgeInsets.all(20),
+        children: [
+          Text(l.checkoutNotice, style: Theme.of(context).textTheme.bodySmall),
+          const SizedBox(height: 20),
+          if (DeliveryPinMap.fromAddress(_address) != null) ...[
+            DeliveryPinMap(
+              key: ValueKey(
+                '${_address?['latitude']},${_address?['longitude']}',
+              ),
+              pin: DeliveryPinMap.fromAddress(_address),
+            ),
+            const SizedBox(height: 16),
+          ],
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: const Icon(Icons.location_on_outlined),
+            title: Text(_address?['address'] ?? l.deliveryAddress),
+            subtitle: Text(apartment.isEmpty ? l.enterAddress : apartment),
+            trailing: forward,
+            onTap: _busy ? null : _editAddress,
+          ),
+          const Divider(),
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: const Icon(Icons.description_outlined),
+            title: Text(l.deliveryInstructions),
+            subtitle: Text(comment.isEmpty ? l.addDetails : comment),
+            trailing: forward,
+            onTap: _busy ? null : _editAddress,
+          ),
+          const Divider(),
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: const Icon(Icons.mail_outline),
+            title: Text(l.contactDetails),
+            subtitle: Text(user?.email ?? l.login),
+            onTap: user == null && !_busy
+                ? () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const AuthScreen()),
+                  )
+                : null,
+          ),
+          const Divider(),
+          const SizedBox(height: 16),
+          InputDecorator(
+            decoration: InputDecoration(
+              labelText: l.paymentMethod,
+              prefixIcon: const Icon(Icons.payments_outlined),
+              border: const OutlineInputBorder(),
+            ),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<String>(
+                value: _payment.code,
+                isExpanded: true,
+                items: [
+                  DropdownMenuItem(value: 'cash', child: Text(l.cash)),
+                  DropdownMenuItem(value: 'demo-card', child: Text(l.card)),
+                ],
+                onChanged: _busy ? null : _selectPayment,
+              ),
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 12, 20, 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                '${l.total}: ${price(context, cart.totalInPiastres)}',
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 12),
+              FilledButton(
+                onPressed: _busy || cart.items.isEmpty ? null : _order,
+                child: _busy
+                    ? const SizedBox.square(
+                        dimension: 20,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : Text(l.placeOrder),
+              ),
             ],
-            ListTile(
-              leading: const Icon(Icons.location_on_outlined),
-              title: Text(_address?['address'] ?? l.deliveryAddress),
-              subtitle: Text(_address?['comment'] ?? l.addDetails),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: _busy
-                  ? null
-                  : () async {
-                      final result = await Navigator.push<Map<String, String>>(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              DeliveryAddressScreen(initial: _address),
-                        ),
-                      );
-                      if (mounted && result != null) {
-                        setState(() => _address = result);
-                      }
-                    },
-            ),
-            const SizedBox(height: 24),
-            DropdownButton<String>(
-              value: _payment.code,
-              isExpanded: true,
-              items: [
-                DropdownMenuItem(value: 'cash', child: Text(l.cash)),
-                DropdownMenuItem(value: 'demo-card', child: Text(l.card)),
-              ],
-              onChanged: _busy ? null : _selectPayment,
-            ),
-            const SizedBox(height: 24),
-            Text(
-              '${l.total}: ${price(context, context.watch<CartBloc>().state.totalInPiastres)}',
-            ),
-            const SizedBox(height: 32),
-            FilledButton(
-              onPressed: _busy ? null : _order,
-              child: _busy
-                  ? const CircularProgressIndicator()
-                  : Text(l.placeOrder),
-            ),
-          ],
+          ),
         ),
       ),
     );

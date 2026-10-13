@@ -309,4 +309,20 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mapLoading => 'Loading map…';
+
+  @override
+  String get checkout => 'Checkout';
+
+  @override
+  String get deliveryInstructions => 'Delivery instructions';
+
+  @override
+  String get contactDetails => 'Contact details';
+
+  @override
+  String get paymentMethod => 'Payment method';
+
+  @override
+  String get checkoutNotice =>
+      'Demo checkout. No real payment or restaurant delivery.';
 }

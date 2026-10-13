@@ -29,3 +29,9 @@ Analyzer and all 27 Flutter tests pass. Eight unique core emulator scenarios pas
 ## Distribution closure — 14 October 2026
 
 Build 9 upload and distribution to both authorized testers succeeded. Release `6a8l9q8aa79m0` uses the same APK checksum as the tested local artifact. This resolves the previous authentication/upload blocker; remaining design fidelity and manual QA gaps are unchanged.
+
+## Build 10 design checkpoint — 14 October 2026
+
+Checkout composition is closer to Figma node 10:338, with a fixed action and distinct address, instructions and contact rows. Final emulator cash checkout/history/restart and screenshot tour passed. 29 Flutter tests passed before the notice wording change and both affected Checkout tests passed again afterwards; final analyzer is clean. No new full physical-suite execution or completed manual QA matrix is claimed. Remaining Figma differences and deferred bonus map-tile diagnosis are unchanged.
+
+Build 10 distribution succeeded, release `10m6d1qnfpap0`, with the final verified APK checksum.

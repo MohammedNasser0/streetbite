@@ -96,5 +96,10 @@
   "seeMenu": "See menu",
   "selectedPin": "Selected delivery pin",
   "pinInstructions": "Optional: tap the map to select a delivery pin. Enter the address below; the pin does not fill it automatically.",
-  "mapLoading": "Loading map…"
+  "mapLoading": "Loading map…",
+  "checkout": "Checkout",
+  "deliveryInstructions": "Delivery instructions",
+  "contactDetails": "Contact details",
+  "paymentMethod": "Payment method",
+  "checkoutNotice": "Demo checkout. No real payment or restaurant delivery."
 }

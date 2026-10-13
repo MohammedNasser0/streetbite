@@ -307,4 +307,20 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get mapLoading => 'جارٍ تحميل الخريطة…';
+
+  @override
+  String get checkout => 'إتمام الطلب';
+
+  @override
+  String get deliveryInstructions => 'تعليمات التوصيل';
+
+  @override
+  String get contactDetails => 'بيانات التواصل';
+
+  @override
+  String get paymentMethod => 'طريقة الدفع';
+
+  @override
+  String get checkoutNotice =>
+      'إتمام طلب تجريبي، دون دفع حقيقي أو توصيل من مطعم.';
 }

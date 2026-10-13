@@ -1,3 +1,15 @@
+# Latest checkpoint — build 10, 14 October 2026
+
+- Final Android APK 1.0.0 (10), SHA256 549280bd7c069657573bc40c3609c31d647246432198a5cb04f2fb1a0949bb5b.
+- Firebase upload/distribution to the same two authorized testers succeeded, release 10m6d1qnfpap0.
+- Checkout reviewed against Figma node 10:338. Separate address/apartment, instructions and contact rows; localized title/demo notice; fixed total/order action; safe cancelled-card selection.
+- 29 Flutter tests passed before the localized notice correction; affected two tests passed again after it. Final analyzer clean.
+- Final emulator cash checkout/history/restart and screen tour both passed in 2m 48s. Full core emulator/physical evidence remains build 9. Full profile photo persistence remains build 4.
+- Reviewed signed-out Checkout screenshot is public. All phone screenshots remain private ZIP only. Current deck: StreetBite-project-review-build10.pptx; current package: StreetBite-review-build10.zip.
+- Remaining: full Figma fidelity (see frame inventory), remaining manual QA; bonus map tiles deferred. Tester acceptance unverified; no final learning-platform submission.
+
+Previous checkpoints below are historical.
+
 # Latest delivery checkpoint — 14 October 2026
 
 - Firebase login renewal succeeded using the official interactive local callback.

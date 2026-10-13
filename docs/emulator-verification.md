@@ -47,3 +47,9 @@ Build-3 APK SHA256: 1b4e44064cb07aa7d7cea0fe3af81fafdfc34ad1cdfe254c94a12ad996b0
 Fresh StreetBite_Core_QA emulator, Android 17/API 37.1, serial emulator-5556. Eight unique core scenarios passed across two runs: CartTest (1), CheckoutTest (1), HomeTest (2), LoginTest (3), and FavouritesTest (1). The main run passed seven cases and failed the favourites locator; after correcting its escaped-newline prefix, the targeted save/restart/remove case passed. No product fix was required for that locator error. A separate EvidenceTest.screenTour passed and supplied reviewed public details/cart images. This is not a single green eight-case suite. Reports, including the initial failure, remain private.
 
 Build 9 APK SHA256: `5ff43eda0287184b759d80a67c7e1694f98a22baa04c35e2176411dde7d9b917`. The optional map tour was not rerun; blank tile diagnosis is deferred.
+
+## Build 10 Checkout review — 14 October 2026
+
+Final APK SHA256: `549280bd7c069657573bc40c3609c31d647246432198a5cb04f2fb1a0949bb5b`. CheckoutTest.cashOrderAndHistory and EvidenceTest.screenTour both passed on the final APK in 2m 48s. Cash order creation, history and restart persistence were asserted. The reviewed signed-out Checkout screenshot has no personal account details and is public.
+
+All 29 Flutter tests passed before a localized notice wording correction; both Checkout EN/AR compact-layout and cancelled-card checks passed again after that correction. Final analyzer reports no issues. The first build-10 native run also passed, but its APK and screenshots are superseded by the final wording-corrected artifact. Initial unit-test failures were harness scrolling/localized-back issues; the corrected tests pass. Full core native scenario coverage remains scoped to build 9.

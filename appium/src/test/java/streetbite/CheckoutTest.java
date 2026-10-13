@@ -23,7 +23,8 @@ public class CheckoutTest extends BaseTest {
     label("Added to your cart");
     driver.navigate().back();
     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@tooltip-text='Cart']"))).click();
-    button("Place demo order").click(); button("Place demo order").click();
+    button("Place demo order").click(); label("Checkout");
+    screenshot("checkout-contact"); button("Place demo order").click();
     label("Delivery address");
     if (Boolean.getBoolean("mobile.pin")) {
       label("Google Map");

@@ -1,3 +1,9 @@
+# Build 10 Checkout acceptance — 14 October 2026
+
+Checkout now has separate address/apartment, instructions and account contact rows, a controlled cash/demo-card selector, fixed total/order action, empty-cart prevention and localized title/demo notice. Compact EN/AR tests verify the action remains visible and cancelling a demo card preserves cash selection. Final emulator checkout/history/restart and screenshot tour passed; analyzer is clean. Full physical scenario evidence remains build 9. Final APK SHA256: `549280bd7c069657573bc40c3609c31d647246432198a5cb04f2fb1a0949bb5b`.
+
+The table below retains the build 9 primary acceptance baseline.
+
 # Primary functionality acceptance
 
 Latest local Android artifact: **1.0.0 (9)**, development signing. APK SHA256: `5ff43eda0287184b759d80a67c7e1694f98a22baa04c35e2176411dde7d9b917`.

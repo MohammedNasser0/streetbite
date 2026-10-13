@@ -28,7 +28,8 @@ public class EvidenceTest extends BaseTest {
     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@tooltip-text='Cart']"))).click();
     wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.androidUIAutomator(
       "new UiSelector().descriptionStartsWith(\"Total:\")"))); screenshot("cart");
-    driver.navigate().back();
+    button("Place demo order").click(); label("Checkout"); screenshot("checkout-overview");
+    driver.navigate().back(); driver.navigate().back();
     label("Profile\nTab 4 of 4").click(); label("Log in"); screenshot("login");
     button("Create account").click(); label("Create account"); screenshot("signup");
   }

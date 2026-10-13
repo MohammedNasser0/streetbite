@@ -39,19 +39,19 @@ Android requests internet and biometric access; gallery selection uses the syste
 
 ## Verification and delivery
 
-Build **1.0.0 (9)** is the latest locally built Android beta. Analyzer passed and all **27 unit/widget tests passed**. Eight unique core Appium scenarios passed on the emulator across the main run and a targeted favourites retry. All five required physical cases passed on an OPPO Android 16 phone across the main run and two targeted retries after APK-install setup timeouts. A separate current-build screenshot tour passed. Exact execution scopes and initial failures are retained in the verification documents.
+Build **1.0.0 (10)** is the latest Android beta. Checkout now separates address/apartment, instructions and account contact rows, keeps total/order action fixed at the bottom, and preserves cash selection when a demo-card confirmation is cancelled. The localized title and notice make its demo scope clear. This moves the composition closer to the supplied Figma Checkout frame; full visual fidelity remains partial.
 
-Build 9 adds a shared live cart count and BlocConsumer feedback on Meal Details. Earlier improvements include order thumbnails, localized dates and optional delivery-pin persistence. Full owner-assisted physical profile/photo/restart verification is historical build 4; it is not represented as a build 9 run. Payments and restaurant dispatch are demonstrations.
+Final analyzer is clean. All **29 unit/widget tests passed** before a localized notice wording correction; both affected EN/AR compact Checkout tests passed again afterwards. The final APK passed native cash checkout, history/restart persistence and a separate screenshot tour on emulator. The eight core emulator scenarios and five required physical cases remain scoped to build 9. Full owner-assisted physical profile/photo/restart evidence remains build 4. Exact scopes are recorded in the verification documents.
 
-**Distribution:** build **1.0.0 (9)** was uploaded and distributed to both authorized testers on **14 October 2026**. [Current beta release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/6a8l9q8aa79m0). The uploaded APK checksum matches the tested local artifact. Tester acceptance and installation remain unverified. See [distribution evidence](docs/distribution-evidence.md).
+**Distribution:** build **1.0.0 (10)** was uploaded and distributed to both authorized testers on **14 October 2026**. [Current beta release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/10m6d1qnfpap0). Uploaded APK SHA256: `549280bd7c069657573bc40c3609c31d647246432198a5cb04f2fb1a0949bb5b`. Tester acceptance/installation is unverified. See [distribution evidence](docs/distribution-evidence.md).
 
 ![Historical Firebase build 1: two invited testers, emails redacted](docs/screenshots/firebase-distribution-redacted.png)
 
 The dashboard image documents build 1 invitations; it does not establish current-build distribution. Original screenshots remain private.
 
-<img src="docs/screenshots/meal-details-build9.png" alt="Build 9 meal details with live cart count" width="240"> <img src="docs/screenshots/cart-build9.png" alt="Build 9 cart with two items" width="240">
+<img src="docs/screenshots/checkout-build10.png" alt="Final build 10 Checkout" width="240"> <img src="docs/screenshots/meal-details-build9.png" alt="Build 9 meal details with live cart count" width="240"> <img src="docs/screenshots/cart-build9.png" alt="Build 9 cart with two items" width="240">
 
-[Project presentation](presentation/StreetBite-project-review-build9-distributed.pptx) covers the developer, planning, architecture, features and current verification status. Phone screenshots, the genuine emulator biometric capture and original Firebase/Jira evidence are included only in the private delivery ZIP.
+[Project presentation](presentation/StreetBite-project-review-build10.pptx) covers the developer, planning, architecture, features and current verification status. Phone screenshots, the genuine emulator biometric capture and original Firebase/Jira evidence are included only in the private delivery ZIP.
 
 See [primary acceptance](docs/core-acceptance.md), [physical verification](docs/physical-verification.md), [emulator verification](docs/emulator-verification.md), [QA plan](docs/test-plan.md), [traceability](docs/traceability.md) and [closure](docs/test-closure.md). Figma fidelity remains partial; map-tile diagnosis is deferred by the owner as bonus. Remaining manual cases stay Not Run. No final learning-platform submission has been made.
 

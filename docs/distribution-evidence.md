@@ -1,3 +1,9 @@
+# Build 10 distribution — 14 October 2026
+
+Version **1.0.0 (10)** uploaded and distributed to the same two authorized testers using Firebase REST with an explicit content length. Release ID: `10m6d1qnfpap0`. [Tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/10m6d1qnfpap0). The uploaded APK SHA256 is `549280bd7c069657573bc40c3609c31d647246432198a5cb04f2fb1a0949bb5b`, matching the final verified artifact. Release notes and distribution calls succeeded. Sanitized confirmation is included privately in the ZIP; no tokens or signed download URLs are included. Installation/acceptance is unverified.
+
+Prior distribution records below retain their historical scope.
+
 # Current beta distribution — 14 October 2026
 
 **1.0.0 (9)** uploaded and distributed successfully to both previously authorized testers. Release ID: `6a8l9q8aa79m0`. [Open tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/6a8l9q8aa79m0).

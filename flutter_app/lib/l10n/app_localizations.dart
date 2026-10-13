@@ -679,6 +679,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Loading map…'**
   String get mapLoading;
+
+  /// No description provided for @checkout.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout'**
+  String get checkout;
+
+  /// No description provided for @deliveryInstructions.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery instructions'**
+  String get deliveryInstructions;
+
+  /// No description provided for @contactDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact details'**
+  String get contactDetails;
+
+  /// No description provided for @paymentMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment method'**
+  String get paymentMethod;
+
+  /// No description provided for @checkoutNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo checkout. No real payment or restaurant delivery.'**
+  String get checkoutNotice;
 }
 
 class _AppLocalizationsDelegate
