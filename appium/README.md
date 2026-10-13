@@ -38,3 +38,7 @@ CartTest and EmulatorBiometricTest passed on the enrolled emulator. The biometri
 Start the Appium server with `ANDROID_HOME` and `ANDROID_SDK_ROOT` pointing to the installed Android SDK, and `JAVA_HOME` pointing to a supported JDK. These variables must be inherited by the server process, not only the Gradle test process. A missing SDK environment prevented session creation after reboot; it was repaired before the successful build-6 retry.
 
 `CheckoutTest -Dmobile.evidence=true -Dmobile.pin=true` additionally selects the optional native delivery map pin and reads the newly created QA-owned order to verify that valid coordinates persisted. This uses only the dedicated QA account and does not request device location.
+
+## Build 9 additions
+
+FavouritesTest checks save, app restart, persistence and removal using a dedicated QA account. EvidenceTest.screenTour captures Meal Details after adding a meal, including its live cart badge and feedback. Physical-device installation allows 180 seconds for the OEM package scanner. Build 9 passed eight unique core emulator cases and five required physical cases across scoped runs; see the verification documents for the retained initial locator/setup failures.

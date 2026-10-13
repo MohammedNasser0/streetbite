@@ -40,3 +40,11 @@ The initial build-5 cart quantity assertion expected a separate native label for
 
 ### Emulator biometric evidence — build 5
 The owner captured the visible Windows emulator window showing the genuine StreetBite Android biometric prompt. The original is private delivery evidence at `.delivery/verification/emulator-beta5/biometric-prompt-windows.png`; packaging includes it only in the private ZIP. EmulatorBiometricTest then passed after an emulated fingerprint touch, revealing Change photo. This supplements, and does not replace, the previously completed physical-device biometric test.
+
+## Current build 9 — 13 October 2026
+
+OPPO CPH2669, Android 16. All five required automated scenarios passed across two runs: emptyFields, invalidCredentials, validLogin, mealGridScroll and addMealFeedback. The main run passed three; two cases did not reach application assertions because APK installation exceeded 90 seconds. After increasing androidInstallTimeout to 180000 ms, both targeted cases passed. Original setup failures and retry XML reports are retained privately. These results do not mark unexecuted manual cases as passed.
+
+Five current phone screenshots were visually reviewed and copied only to private delivery evidence. Full profile/photo/restart evidence remains build 4. No new build 9 biometric pass is claimed.
+
+After testing, build 9 was reinstalled successfully on the physical phone. Package inspection confirmed versionCode=9 / versionName=1.0.0, and MainActivity launch succeeded.

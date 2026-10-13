@@ -10,7 +10,7 @@ import '../blocs/locale_cubit.dart';
 import '../blocs/theme_bloc.dart';
 import '../widgets/meal_card.dart';
 import '../widgets/meal_image.dart';
-import 'cart_screen.dart';
+import '../widgets/cart_action.dart';
 import 'profile_screen.dart';
 import 'orders_screen.dart';
 import 'browse_screen.dart';
@@ -54,19 +54,7 @@ class HomeScreen extends StatelessWidget {
               ),
               icon: const Icon(Icons.contrast),
             ),
-            BlocBuilder<CartBloc, CartState>(
-              builder: (context, state) => IconButton(
-                tooltip: l.cart,
-                icon: Badge(
-                  label: Text('${state.count}'),
-                  child: const Icon(Icons.shopping_bag_outlined),
-                ),
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => const CartScreen()),
-                ),
-              ),
-            ),
+            const CartAction(),
           ],
         ),
         bottomNavigationBar: NavigationBar(

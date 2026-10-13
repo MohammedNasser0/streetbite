@@ -25,3 +25,7 @@ Version **1.0.0 (3)** was uploaded and distributed successfully after the target
 ## Current beta — build 4
 
 Version **1.0.0 (4)** was uploaded, release notes updated, and distributed to both authorized testers successfully through Firebase CLI on 12 October 2026. Release ID: `3e6bqgorl8k0g`. SHA256: `8a6c53e8e5a57af4197c2e65643f997bb1feeeef1802fc21581135be465e0f47`. [Current tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/3e6bqgorl8k0g). This Maps-enabled artifact passed eight emulator Appium cases and a separate offline cache test. The dashboard image above remains historical build-1 evidence. Current tester acceptance/download counts have not been verified.
+
+## Build 9 prepared — 13 October 2026
+
+Latest local APK: 1.0.0 (9), SHA256 `5ff43eda0287184b759d80a67c7e1694f98a22baa04c35e2176411dde7d9b917`. Upload has not completed. Firebase CLI rejected two remote authorization codes after the owner completed approval. Private diagnostics are retained; no access code or token is published. Build 5 remains the distributed beta, release `7tp5domjttll8`, shared with the two previously authorized testers. No build 9 release ID or successful distribution is claimed.

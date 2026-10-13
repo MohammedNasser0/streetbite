@@ -1,21 +1,29 @@
-# Delivery checklist
+# Delivery checklist — 13 October 2026
 
-- [ ] Inspect every Figma frame after sign-in; record frame-to-screen mapping.
-- [x] Configure dedicated Firebase project and deploy tested rules (ten live REST access checks passed).
-- [ ] Enable Maps SDK and restrict Android/iOS keys.
-- [ ] Implement and verify all functional requirements.
-- [x] `dart format lib test`, `flutter analyze`, `flutter test` (fourteen tests passed).
-- [ ] Test English/Arabic, light/dark, two screen sizes and restart/offline flows.
-- [x] Build beta APK using the development signing key; record checksum/version. Production signing remains pending.
-- [x] Upload to Firebase App Distribution and invite two user-specified testers. User-supplied dashboard evidence confirms two invited, zero accepted/downloaded.
-- [ ] Record actual real-device QA, Jira defects, traceability and closure.
-- [x] Execute Appium login, scrolling and cart scenarios on emulator and device. Five physical cases passed on initial build 4; artifact-specific scope is in physical-verification.md.
-- [ ] Complete biometric-prompt visual evidence (Android rejected both automated and owner manual capture); profile/device/photo screenshots are reviewed and retained privately. Onboarding, auth, home EN/AR/dark, details, cart and Maps captured on emulator.
-- [x] Publish public GitHub repository and presentation. Final acceptance remains open.
+## Primary Android deliverables
+- [x] Dedicated Firebase project, email/password authentication and owner-scoped Firestore rules.
+- [x] Layered architecture, GetIt, BLoCs/Cubits and Builder/Factory/Singleton/payment strategies.
+- [x] Live API menu, responsive two-column grid, featured PageView and five offers.
+- [x] Offline metadata cache, English/Arabic localization and light/dark preferences.
+- [x] Cart quantity/removal/total and demo order persistence.
+- [x] Live Meal Details cart count and BlocConsumer feedback (build 9).
+- [x] Profile/gallery/photo persistence verified on physical build 4; profile source unchanged in build 9.
+- [x] Analyzer and 27 Flutter tests passed for build 9.
+- [x] Build 9: eight unique core emulator scenarios and all five required physical scenarios pass across scoped runs; evidence retained.
+- [ ] Upload and distribute the current verified APK to both authorized testers.
+- [x] Refresh presentation and README for build 9, recording Firebase renewal failure.
+- [x] Prepare the current source, APK, presentation and reviewed private evidence for the review ZIP.
+- [ ] Complete faithful coverage of supplied Figma frames; inventory documents remaining differences. The accessible copy contains 15 app frames, not evidence of all advertised 50+ screens.
 
-## Latest local artifact
+## Bonus and supplementary evidence
+- [x] Five required Appium cases previously passed on emulator and physical build 4.
+- [x] Owner-assisted physical fingerprint/profile/photo/restart passed on build 4.
+- [x] Genuine emulator biometric prompt captured from Windows and retained privately; it is explicitly emulator evidence.
+- [x] Vendor markers and info-window functionality verified; historical screenshot retained.
+- [ ] Diagnose current blank map tiles (deferred by owner as bonus).
+- [ ] Complete the remaining manual real-device QA cycle. Unexecuted cases remain Not Run.
+- [x] Jira bug tracking and private evidence prepared; camera-initialization defect fixed and verified in build 8.
 
-The Maps-enabled build 4 APK passed eight emulator Appium cases (login, home, Maps, cash checkout/history and demo-card selection), zero failures/skips. SHA256: `8a6c53e8e5a57af4197c2e65643f997bb1feeeef1802fc21581135be465e0f47`. Firebase upload and distribution to both authorized testers succeeded (release `3e6bqgorl8k0g`). All five required physical cases subsequently passed on this exact artifact across two runs; the owner-assisted profile/photo/restart scenario also passed.
+Maps, biometrics and QA sections are labeled bonus in the source brief; completion criteria also request QA artifacts. This checklist does not turn unexecuted manual cases into automated passes. Tester installation/acceptance is unverified; successful invitation/distribution is the stated beta requirement. Production signing and an iOS release are outside the requested Android beta artifact.
 
-## Build 5 verification update
-Distributed beta: 1.0.0 (5), release 7tp5domjttll8. Nineteen Flutter tests and analyzer passed. Targeted physical cart/profile and emulator checkout/cart/biometric checks passed. The owner supplied a Windows capture of the genuine emulator fingerprint prompt; the private ZIP includes it with emulator labeling. Physical full photo/restart and the five required cases passed on build 4. Tester acceptance, remaining manual QA and full Figma fidelity remain open.
+Phone photos and original Firebase/Jira captures are private ZIP evidence. Only reviewed emulator images and the owner-approved email-redacted Firebase image are public.

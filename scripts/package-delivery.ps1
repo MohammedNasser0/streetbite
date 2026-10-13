@@ -19,6 +19,13 @@ try {
     Add-Type -AssemblyName System.IO.Compression.FileSystem
     $archive = [IO.Compression.ZipFile]::Open($zipPath, [IO.Compression.ZipArchiveMode]::Update)
     try {
+        # Historical decks stay in Git; the delivery archive contains the current deck only.
+        foreach ($oldDeck in @('StreetBite-project-final.pptx', 'StreetBite-project-review-build5.pptx')) {
+            $historical = $archive.GetEntry('streetbite-capstone/presentation/' + $oldDeck)
+            if ($null -ne $historical -and (Test-Path -LiteralPath 'presentation/StreetBite-project-review-build9.pptx')) {
+                $historical.Delete()
+            }
+        }
         function Add-EvidenceFile([string]$Source, [string]$Entry) {
             if (Test-Path -LiteralPath $Source -PathType Leaf) {
                 [IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
@@ -35,7 +42,7 @@ try {
             Add-EvidenceFile (Join-Path $privateEvidence $name) ('private-evidence/' + $name)
         }
         # Only visually reviewed screenshots go into the private delivery ZIP.
-        foreach ($build in @('physical-beta4', 'physical-beta5')) {
+        foreach ($build in @('physical-beta4', 'physical-beta5', 'physical-beta9')) {
             $physical = Join-Path $privateEvidence ($build + '/reviewed-screenshots')
             foreach ($file in Get-ChildItem -LiteralPath $physical -Filter '*.png' -File -ErrorAction SilentlyContinue) {
                 Add-EvidenceFile $file.FullName ('private-evidence/' + $build + '/' + $file.Name)

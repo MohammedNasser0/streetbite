@@ -41,3 +41,9 @@ Build 2 was subsequently uploaded and distributed to the same two testers. Relea
 Build **1.0.0 (3)** corrects numeric/punctuation initials in the signup name validator. Two targeted Appium cases passed separately: numeric-name rejection and successful signup with owner-token verification of the Builder-created Firestore profile. The prior seven-scenario run applies to build 2; it was not rerun as a full suite on build 3. Flutter analyzer and all ten existing unit/widget tests passed after the fix. Private Jira evidence records the fix and its post-fix screenshot. No physical-device pass is claimed.
 
 Build-3 APK SHA256: 1b4e44064cb07aa7d7cea0fe3af81fafdfc34ad1cdfe254c94a12ad996b01e80. Firebase confirmed upload and distribution to both testers; release ID: 7dopgsri4kak0.
+
+## Current build 9 — 13 October 2026
+
+Fresh StreetBite_Core_QA emulator, Android 17/API 37.1, serial emulator-5556. Eight unique core scenarios passed across two runs: CartTest (1), CheckoutTest (1), HomeTest (2), LoginTest (3), and FavouritesTest (1). The main run passed seven cases and failed the favourites locator; after correcting its escaped-newline prefix, the targeted save/restart/remove case passed. No product fix was required for that locator error. A separate EvidenceTest.screenTour passed and supplied reviewed public details/cart images. This is not a single green eight-case suite. Reports, including the initial failure, remain private.
+
+Build 9 APK SHA256: `5ff43eda0287184b759d80a67c7e1694f98a22baa04c35e2176411dde7d9b917`. The optional map tour was not rerun; blank tile diagnosis is deferred.

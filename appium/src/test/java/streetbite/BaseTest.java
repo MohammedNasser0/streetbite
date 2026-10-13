@@ -29,7 +29,11 @@ public abstract class BaseTest {
     options.setCapability("appium:enforceAppInstall", true);
     // Some OEM phones deny `pm clear` to ADB. A fresh test-only install avoids
     // that permission without changing the phone's security settings.
-    if (!serial.startsWith("emulator-")) options.setFullReset(true);
+    if (!serial.startsWith("emulator-")) {
+      options.setFullReset(true);
+      // OEM install scanning may outlast the default 90-second setup timeout.
+      options.setCapability("appium:androidInstallTimeout", 180000);
+    }
     driver = new AndroidDriver(URI.create(System.getProperty("mobile.server", "http://127.0.0.1:4723")).toURL(), options);
     wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     wait.ignoring(StaleElementReferenceException.class);

@@ -8,6 +8,7 @@ import '../blocs/cart_bloc.dart';
 import '../blocs/cart_event.dart';
 import '../widgets/meal_image.dart';
 import '../widgets/favourite_button.dart';
+import '../widgets/cart_action.dart';
 
 class MealDetailsScreen extends StatelessWidget {
   const MealDetailsScreen(this.meal, {super.key});
@@ -16,7 +17,10 @@ class MealDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l.details), actions: [FavouriteButton(meal)]),
+      appBar: AppBar(
+        title: Text(l.details),
+        actions: [FavouriteButton(meal), const CartAction(feedback: true)],
+      ),
       body: ListView(
         children: [
           SizedBox(height: 280, child: MealImage(meal.image)),
@@ -50,8 +54,6 @@ class MealDetailsScreen extends StatelessWidget {
           child: FilledButton(
             onPressed: () {
               context.read<CartBloc>().add(AddMeal(meal));
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text(l.added)));
             },
             child: Text(
               '${l.add} • ${price(context, meal.demoPriceInPiastres)}',

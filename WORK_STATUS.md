@@ -1,3 +1,14 @@
+# Current checkpoint — 13 October 2026
+
+- Latest local APK: 1.0.0 (9); SHA256 5ff43eda0287184b759d80a67c7e1694f98a22baa04c35e2176411dde7d9b917.
+- Analyzer and 27 Flutter tests passed. Eight unique core emulator cases and five required physical cases passed across scoped main/retry runs. Screenshot tour passed.
+- Reviewed physical images are private ZIP evidence only. Current public details/cart images and seven-slide presentation prepared.
+- Build 9 Firebase upload pending after renewed authorization was rejected. Build 5 remains the distributed beta.
+- Review delivery is prepared from committed source with APK, current deck and private screenshots.
+- Remaining: diagnose Firebase renewal; Figma fidelity partial, bonus map tiles deferred, remaining manual QA Not Run. No final platform submission.
+
+The following is historical progress; its build numbers and claims retain their original scope.
+
 # StreetBite work status — 12 October 2026
 
 ## Verified and delivered
@@ -106,3 +117,19 @@ Private Firebase configuration, Maps key and QA credentials remain ignored. Dedi
 
 - Build-8 vendor-map comparison: marker and info-window interaction passed in 33s, but visual review showed the same blank basemap as the new address map. This affects both screens in the current emulator session. No proxy is modified and no permission/key restrictions are relaxed. Physical comparison and network/rendering diagnosis remain pending.
 - The first build-8 native-pin report (1m17s) is preserved. The 1m31s rendering-delay retry passed in console but its XML was overwritten when starting the map comparison; do not claim two preserved XML reports. The comparison XML and screenshots are retained privately.
+
+## 13 October: primary requirements first
+Vendor maps, biometric gating and the manual/Appium QA sections are explicitly labeled bonus in the brief; the completion section also requests QA artifacts. The owner chose to prioritize primary functionality and defer map-tile diagnosis. Do not describe the map rendering issue as a blocker for core functionality.
+
+Build 9 adds the explicitly requested live cart count on Meal Details and BlocConsumer feedback, using a shared CartAction with Home. Analyzer passed and all 27 Flutter tests passed, including compact English/Arabic detail-to-cart updates. APK build is running. The physical OPPO is connected again and charged to 40%; artifact-specific acceptance and final packaging remain pending.
+
+## Build 9 local artifact and test environment
+APK 1.0.0 (9) built successfully, SHA256 5ff43eda0287184b759d80a67c7e1694f98a22baa04c35e2176411dde7d9b917. Analyzer and all 27 Flutter tests passed; all 75 Dart files are formatted. A current acceptance table is maintained in docs/core-acceptance.md.
+
+Initial emulator rerun failed entirely during Appium setup: the old biometric emulator was credential-locked after cold boot, making the settings helper activity unavailable. No application case ran. Failure XML is retained under .delivery/verification/emulator-beta9-setup-failure. The original AVD/data remain intact. A separate StreetBite_Core_QA AVD on emulator-5556 was created for primary tests; it is currently restarting with 2GB RAM after resource pressure from two simultaneous emulators. The old AVD is closed to release memory.
+
+Physical OPPO connection is currently Unauthorized; owner has been asked to approve USB debugging. Do not claim build-9 emulator/device passes or current release distribution yet. Public presentation build 9 operation was marked started once; builder is prepared at .presentation-build/update-build9.mjs but has not been run. It needs verified .delivery/presentation-facts-build9.json and reviewed emulator screenshots first.
+
+- Build-9 clean emulator acceptance is running on emulator-5556 / StreetBite_Core_QA. Cart quantity/removal and cash checkout/history/restart have passed so far; remaining cases are not yet counted as passed.
+- A fresh core-test AVD avoids requiring access to the original credential-locked AVD. Original Medium_Phone data remain intact. New AVD completed boot after running alone with 2GB RAM. No lock credential was bypassed or changed.
+- Physical phone still awaits owner approval of USB debugging. Presentation source is prepared; output has not yet been authored/finalized. Do not rerun the build-9 operation-start marker.

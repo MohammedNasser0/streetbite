@@ -18,3 +18,10 @@ Analyzer passed and nineteen Flutter tests passed after adding cart thumbnails a
 
 ### Build 6 source verification
 Analyzer and 23 Flutter tests passed. New checks cover legacy order records without images, thumbnail/date round-trip persistence and compact English/Arabic history rows. The published build-5 presentation and review ZIP describe build 5 and remain historical review artifacts until replaced by a verified build-6 package.
+
+## Scope clarification — 13 October 2026
+The Vendor Map and biometric profile gate are marked bonus in the source brief. Manual QA and Appium sections are also marked bonus, although final completion criteria request their artifacts. Map-tile diagnosis is deferred at the owner's direction while primary functional acceptance and delivery are prioritized. Existing historical bonus evidence remains included with its version and device scope. No missing manual execution is silently marked Pass.
+
+## Build 9 acceptance checkpoint — 13 October 2026
+
+Analyzer and all 27 Flutter tests pass. Eight unique core emulator scenarios pass across the main run and a favourites locator retry; five required physical cases pass across the main run and two APK-install setup retries. The separate screenshot tour passes. Remaining manual cases keep their existing Not Run status. Build 9 distribution is pending Firebase renewal; build 5 remains distributed. Design fidelity and deferred map tiles remain documented gaps, so this is a review package rather than a declaration of complete capstone closure.
