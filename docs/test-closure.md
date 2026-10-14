@@ -1,3 +1,8 @@
+# Current delivery checkpoint — build 13, 14 October 2026
+
+43 Flutter tests pass; analyzer clean. Final APK SHA256318b20bf2526d994377d4df2e9b4f43058029be8ddc361f24797b111454a95b3. Four final native emulator cases and six unique physical cases passed across scoped runs, including owner-assisted fingerprint/profile. Initial Profile setup hit Play Protect; owner completed the check, checksum-verified retry passed. Gallery/photo/restart remains historicalbuild4. Firebase release 1p7qp7hs4ct48 distributed to two authorized testers. STREET-3 saved-address subtitle fixed and verified Done. Manual matrix: 43 cases, 2 Pass and 41 Not Run. Figma fidelity partial, Maps bonus deferred, tester acceptance and final platform submission unverified. Seven-slide build13 presentation finalized and visually reviewed; matching review ZIP prepared from committed source.
+
+## Historical checkpoints
 # Build 12 checkpoint — 14 October 2026
 
 35 Flutter tests/analyzer and native guest navigation/support/clipboard passed. Earlier native test assumptions were corrected and reports retained. Distributed release `2nm8gta2jnj68`. Manual real-device cases remain pending; phone unavailable. This is a review release, not complete capstone closure.

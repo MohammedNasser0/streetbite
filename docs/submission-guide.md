@@ -1,14 +1,14 @@
-# دليل حزمة المراجعة — StreetBite 1.0.0 (12)
+# دليل حزمة المراجعة — StreetBite 1.0.0 (13)
 
 الحزمة تحتوي على المصدر، APK التجريبي، العرض، ملفات QA والأدلة الخاصة المسموح بإرفاقها. لم يُرسل المشروع إلى منصة Sprints حتى الآن.
 
 ## ما يمكنك عرضه الآن
 - المستودع العام: https://github.com/MohammedNasser0/streetbite
-- العرض: `presentation/StreetBite-project-review-build12.pptx`.
+- العرض: `presentation/StreetBite-project-review-build13.pptx`.
 - نسخة Android: `beta/StreetBite.apk` داخل ZIP. تحقق من `beta/SHA256.txt` و`SOURCE_COMMIT.txt`.
-- Firebase: الإصدار12 موزّع على المختبرين؛ الدليل المنقح آليًا في `private-evidence/firebase-beta12-release.json`.
+- Firebase: الإصدار13 موزّع على المختبرين؛ الدليل المنقح آليًا في `private-evidence/firebase-beta13-release.json`.
 - صور Welcome/Login/Signup/Home EN/AR/Dark/Details/Cart/Map في `docs/screenshots/`، مع اختلاف إصدار الصور حسب توثيقها.
-- صور الموبايل تبقى داخل `private-evidence/physical-beta4/` و`physical-beta5/` و`physical-beta9/`؛ لا تنشر هذا المجلد.
+- صور الموبايل تبقى داخل `private-evidence/physical-beta4/` و`physical-beta5/` و`physical-beta9/` و`physical-beta13/`؛ لا تنشر هذا المجلد.
 - لقطة نافذة البصمة الحقيقية من المحاكي: `private-evidence/emulator-beta5/biometric-prompt-windows.png`، وليست لقطة جهاز حقيقي.
 - صور Firebase وJira الأصلية خاصة داخل الحزمة؛ النسخة المنشورة في README تطمس الإيميلات.
 

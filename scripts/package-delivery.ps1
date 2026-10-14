@@ -68,11 +68,11 @@ try {
         foreach ($name in @('help-center-build12.png', 'contact-build12.png')) {
             Add-EvidenceFile (Join-Path $privateEvidence ('emulator-beta12-support-passed/' + $name)) ('private-evidence/emulator-beta12/' + $name)
         }
-        foreach ($name in @('firebase-testers.png', 'firebase-release-testers.png', 'firebase-beta9-release.json', 'firebase-beta10-release.json', 'firebase-beta11-release.json', 'firebase-beta12-release.json', 'jira-streetbite.jpg', 'jira-evidence.md')) {
+        foreach ($name in @('firebase-testers.png', 'firebase-release-testers.png', 'firebase-beta9-release.json', 'firebase-beta10-release.json', 'firebase-beta11-release.json', 'firebase-beta12-release.json', 'firebase-beta13-release.json', 'jira-street3-evidence.md', 'jira-streetbite.jpg', 'jira-evidence.md')) {
             Add-EvidenceFile (Join-Path $privateEvidence $name) ('private-evidence/' + $name)
         }
         # Only visually reviewed screenshots go into the private delivery ZIP.
-        foreach ($build in @('physical-beta4', 'physical-beta5', 'physical-beta9')) {
+        foreach ($build in @('physical-beta4', 'physical-beta5', 'physical-beta9', 'physical-beta13')) {
             $physical = Join-Path $privateEvidence ($build + '/reviewed-screenshots')
             foreach ($file in Get-ChildItem -LiteralPath $physical -Filter '*.png' -File -ErrorAction SilentlyContinue) {
                 Add-EvidenceFile $file.FullName ('private-evidence/' + $build + '/' + $file.Name)

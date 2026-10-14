@@ -39,19 +39,17 @@ Android requests internet and biometric access; gallery selection uses the syste
 
 ## Verification and delivery
 
-Build **1.0.0 (12)** is the latest Android beta. Profile has Settings, Contact us and Help center rows; four sections share consistent navigation. Help and Contact work in English and Arabic. Contact copies the public project URL.
+Build **1.0.0 (13)** is the latest Android beta. Home and Checkout share a session delivery address, cleared across accounts. A grouped Menu, Browse category tiles, direct quantity controls and explicit cart subtotal/demo charges complement the existing profile support/navigation.
 
-All **35 Flutter tests passed** and analyzer is clean. Native emulator guest navigation, the order-history login gate, return to Home, support pages and copied URL passed. Historical Browse recovery is build 11; checkout/history/restart build 10; full eight-case core emulator and five-case physical coverage build 9. Physical build 12 testing is pending because the phone is unavailable.
+All **43 Flutter tests passed** and analyzer is clean. Four final native emulator cases passed: search recovery, categories/detail quantity, shared address/grouped menu/cart and screenshot tour. Five core physical cases and an owner-assisted fingerprint/profile retry passed on OPPO Android 16. Gallery/photo/restart evidence remains build 4; checkout/history/restart remains build 10. Historical verification retains its actual version scope.
 
-**Distribution:** build **1.0.0 (12)** uploaded and distributed to both authorized testers on **14 October 2026**. [Current beta release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/2nm8gta2jnj68). Uploaded APK SHA256: `8e9b47df5283047319d43aaab096e8331c29a08abf458da4d71557a736acabea`. Tester installation/acceptance is unverified. See [distribution evidence](docs/distribution-evidence.md).
-
+**Distribution:** build **1.0.0 (13)** uploaded and distributed to both authorized testers on **14 October 2026**. [Current beta release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/1p7qp7hs4ct48). Uploaded APK SHA256: `318b20bf2526d994377d4df2e9b4f43058029be8ddc361f24797b111454a95b3`. Tester acceptance is unverified. See [distribution evidence](docs/distribution-evidence.md).
 ![Historical Firebase build 1: two invited testers, emails redacted](docs/screenshots/firebase-distribution-redacted.png)
 
 The dashboard image documents build 1 invitations; it does not establish current-build distribution. Original screenshots remain private.
 
-<img src="docs/screenshots/browse-retry-build11.png" alt="Build 11 retry after offline search failure" width="240"> <img src="docs/screenshots/checkout-build10.png" alt="Final build 10 Checkout" width="240"> <img src="docs/screenshots/meal-details-build9.png" alt="Build 9 meal details with live cart count" width="240"> <img src="docs/screenshots/cart-build9.png" alt="Build 9 cart with two items" width="240">
-
-[Project presentation](presentation/StreetBite-project-review-build12.pptx) covers the developer, planning, architecture, features and current verification status. Phone screenshots, the genuine emulator biometric capture and original Firebase/Jira evidence are included only in the private delivery ZIP.
+<img src="docs/screenshots/grouped-menu-build13.png" alt="Build 13 grouped menu" width="240"> <img src="docs/screenshots/cart-summary-build13.png" alt="Build 13 cart summary" width="240"> <img src="docs/screenshots/checkout-shared-address-build13.png" alt="Build 13 shared delivery address" width="240">
+[Project presentation](presentation/StreetBite-project-review-build13.pptx) covers the developer, planning, architecture, features and current verification status. Phone screenshots, the genuine emulator biometric capture and original Firebase/Jira evidence are included only in the private delivery ZIP.
 
 The [manual QA walkthrough](docs/manual-qa-walkthrough.md) explains how to execute and record the 43 planned cases, including Browse retry. Planned checks remain Not Run until actual manual execution.
 

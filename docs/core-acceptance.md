@@ -1,3 +1,6 @@
+# Build 13 review checkpoint — 14 October 2026
+
+Final Android 1.0.0 (13), SHA256 `318b20bf2526d994377d4df2e9b4f43058029be8ddc361f24797b111454a95b3`. All 43 Flutter tests and analyzer pass. Four final emulator cases and six physical cases passed across scoped runs, including owner-assisted fingerprint/profile. Gallery/photo/restart retains build 4 scope. Firebase release 1p7qp7hs4ct48 distributed to two authorized testers. Seven-slide build13 deck finalized and visually reviewed. STREET-3 fixed and verified Done. Private phone screenshots remain ZIP-only. Manual matrix: 43 cases, 2 Pass and 41 Not Run; Figma fidelity remains partial, Maps bonus deferred, tester acceptance unverified. No final Sprints submission. Earlier checkpoints below retain their original scopes.
 # Build 12 checkpoint — 14 October 2026
 
 Localized Contact/Help, Profile settings/support rows and shared section navigation are implemented. 35 Flutter tests and analyzer pass; native guest navigation/support/clipboard passes46s. The same APK is distributed to two testers. Historical authenticated/physical scopes below are unchanged.

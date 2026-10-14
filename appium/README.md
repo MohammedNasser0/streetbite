@@ -46,3 +46,5 @@ FavouritesTest checks save, app restart, persistence and removal using a dedicat
 ## Build 11 Browse recovery
 
 BrowseRetryTest is emulator-only and changes connectivity only on the named QA emulator. It checks an uncached failed query, error feedback, Retry after reconnection and preserved input, then restores the original connection state in finally. Run with `-Dmobile.evidence=true -Dmobile.udid=emulator-5556`. The first System UI ANR and passing retry are scoped in the emulator verification document.
+
+When reusing the parent installation, set `APPIUM_HOME` to the absolute `appium_mobile_testing` directory before starting the server. Its existing `node_modules/.cache/appium/extensions.yaml` identifies UiAutomator2. The default user home has no driver in this workspace. Keep SDK and Java variables in the server environment, too.

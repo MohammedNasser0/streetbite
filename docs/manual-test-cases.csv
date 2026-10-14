@@ -21,7 +21,7 @@ TC_FAV_001,Favourites,Positive,Save then restart signed-in app,Favourite remains
 TC_CART_001,Cart,Positive,Remove final item,Zero total and empty snackbar,Not executed,Not Run
 TC_ORDER_001,Checkout,Positive,Submit complete demo order,One Firestore order and cleared cart,Not executed,Not Run
 TC_ORDER_002,Checkout,Negative,Double tap submit,No duplicate order,Not executed,Not Run
-TC_PROFILE_001,Profile,Mobile,Authenticate with enrolled biometric,Profile unlocks after successful authentication,Owner touched enrolled fingerprint sensor; profile unlocked on OPPO Android 16; observed device details and synthetic QA profile on final build 4,Pass
+TC_PROFILE_001,Profile,Mobile,Authenticate with enrolled biometric,Profile unlocks after successful authentication,Owner touched enrolled fingerprint sensor; profile unlocked on OPPO CPH2669 Android 16; live QA identity and device details verified by owner-assisted Appium on final build 13 on 14 October 2026,Pass
 TC_PROFILE_002,Profile,Positive,Choose gallery thumbnail,Photo updates and survives restart,Owner selected food thumbnail; reviewed photo in profile before and after restart and second owner fingerprint; final build 4,Pass
 TC_MAP_001,Map,Positive,Open configured map and marker,Five cities and vendor cuisine rating info window,Manual physical execution pending; Maps rendered and marker interaction passed in emulator automation,Not Run
 TC_L10N_001,Settings,GUI,Toggle Arabic and restart,Arabic strings RTL and mirrored navigation persist,Not executed,Not Run

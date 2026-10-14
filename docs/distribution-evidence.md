@@ -1,3 +1,8 @@
+# Final build 13 distribution — 14 October 2026
+
+Android 1.0.0 (13), SHA256 `318b20bf2526d994377d4df2e9b4f43058029be8ddc361f24797b111454a95b3`, was uploaded and distributed to the two authorized testers. Release `1p7qp7hs4ct48`; sanitized API proof is included privately as `firebase-beta13-release.json`. Upload and distribution succeeded; tester acceptance/download is unverified. The public redacted Firebase screenshot remains historical build 1 and is not current-release proof.
+
+## Historical evidence
 # Build 12 distribution — 14 October 2026
 
 Version **1.0.0 (12)** uploaded and distributed to the same two authorized testers. Release `2nm8gta2jnj68`. APK SHA256 `8e9b47df5283047319d43aaab096e8331c29a08abf458da4d71557a736acabea`. Sanitized proof is private ZIP content. No tester installation/acceptance claim.

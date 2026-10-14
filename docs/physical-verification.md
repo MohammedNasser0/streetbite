@@ -1,3 +1,14 @@
+# Final build 13 physical verification — 14 October 2026
+
+OPPO CPH2669 / Android 16. APK 1.0.0 (13), SHA256 `318b20bf2526d994377d4df2e9b4f43058029be8ddc361f24797b111454a95b3`.
+
+All five core Appium cases passed: empty login, invalid credentials, valid QA login, meal-grid scrolling and add-to-cart feedback. The initial Profile setup was interrupted by Google Play Protect's installation check and is retained as a setup failure/skipped case. The owner completed the scanner prompt; a separate retry verified the installed base.apk bytes against the candidate checksum before reusing the installation.
+
+The owner then touched the enrolled fingerprint sensor. `ProfileTest.fingerprintAndProfile` passed in 1m29s, including the live QA profile, favourites and OPPO/Android device details. Six unique physical cases passed across these scoped runs. The profile screenshot was visually reviewed and remains private with the other phone screenshots in the delivery ZIP. This retry did not exercise gallery selection or photo persistence; those retain their historical build-4 scope. Android's protected biometric capture is not used as visual prompt evidence.
+
+Automated and owner-assisted checks do not complete the remaining manual test matrix.
+
+## Historical evidence
 # Physical Android verification — 12 October 2026
 
 Environment: OPPO CPH2669, Android 16, physical USB-connected phone. Dedicated synthetic QA account; no personal account credentials used.

@@ -1,3 +1,10 @@
+# Final build 13 emulator verification — 14 October 2026
+
+Final APK SHA256 `318b20bf2526d994377d4df2e9b4f43058029be8ddc361f24797b111454a95b3`. Four native cases passed with zero skips in 2m37s on emulator-5556: Browse failed-query retry; category selection and detail quantity controls; shared Home/Checkout address with grouped menu and cart summary; and the signed-out screenshot tour. The address regression asserts that a saved address has no obsolete entry prompt. STREET-3 was verified and moved to Done, comment 10003.
+
+Final grouped menu, settled cart summary, checkout address and quantity screenshots were visually reviewed. Public captures contain only signed-out UI and a synthetic address. Earlier build-13 reports refer to a different, explicitly preserved pre-final checksum and do not substitute for this run. The first shared-address failure was an accessibility locator mismatch; subsequent visual review found the subtitle defect corrected in the final build.
+
+## Historical evidence
 # Emulator verification — 12 October 2026
 
 Environment: Flutter 3.47.6 / Dart 3.13.5, Medium_Phone AVD (Android API 37, emulator-5554), Appium 3.8.0, UiAutomator2 8.7.0, Java/TestNG.
