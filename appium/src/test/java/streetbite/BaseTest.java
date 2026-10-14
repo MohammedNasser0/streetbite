@@ -22,15 +22,17 @@ public abstract class BaseTest {
     String serial = System.getProperty("mobile.udid", "emulator-5554");
     Path apk = Path.of(System.getProperty("mobile.apk", "../flutter_app/build/app/outputs/flutter-apk/app-release.apk")).toAbsolutePath();
     if (!Files.exists(apk)) throw new IllegalArgumentException("Build StreetBite APK first");
+    boolean reuse=Boolean.getBoolean("mobile.reuseVerifiedInstall");
+    if(reuse) VerifiedInstallation.check(serial,apk);
     var options = new UiAutomator2Options().setPlatformName("Android").setDeviceName("StreetBite test device")
       .setUdid(serial).setApp(apk.toString()).setAppPackage("com.streetbite.streetbite_app")
-      .setAppActivity("com.streetbite.streetbite_app.MainActivity").setNoReset(false)
+      .setAppActivity("com.streetbite.streetbite_app.MainActivity").setNoReset(reuse)
       .setNewCommandTimeout(Duration.ofSeconds(120));
-    options.setCapability("appium:enforceAppInstall", true);
+    options.setCapability("appium:enforceAppInstall", !reuse);
     // Some OEM phones deny `pm clear` to ADB. A fresh test-only install avoids
     // that permission without changing the phone's security settings.
     if (!serial.startsWith("emulator-")) {
-      options.setFullReset(true);
+      options.setFullReset(!reuse);
       // OEM install scanning may outlast the default 90-second setup timeout.
       options.setCapability("appium:androidInstallTimeout", 180000);
     }

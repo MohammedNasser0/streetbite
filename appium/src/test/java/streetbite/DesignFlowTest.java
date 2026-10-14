@@ -23,11 +23,16 @@ public class DesignFlowTest extends BaseTest {
   label("Added to your cart");
   wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.androidUIAutomator(
     "new UiSelector().descriptionStartsWith(\"Cart • 1\").clickable(true)"))).click();
-  label("Subtotal"); label("Additional charges");
+  var summary=wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.androidUIAutomator(
+    "new UiSelector().descriptionContains(\"Subtotal\").descriptionContains(\"Additional charges\")")));
+  Assert.assertTrue(summary.getAttribute("content-desc").contains("E£0.00"));
+  wait.until(ExpectedConditions.invisibilityOfElementLocated(AppiumBy.accessibilityId("Added to your cart")));
   screenshot("cart-summary-build13");
   button("Place demo order").click();
   label("Checkout");
-  Assert.assertTrue(label("StreetBite QA Street 13").isDisplayed());
+  var savedAddress=wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.androidUIAutomator(
+    "new UiSelector().descriptionContains(\"StreetBite QA Street 13\")")));
+  Assert.assertFalse(savedAddress.getAttribute("content-desc").contains("Enter your delivery address below"));
   screenshot("checkout-shared-address-build13");
  }
 

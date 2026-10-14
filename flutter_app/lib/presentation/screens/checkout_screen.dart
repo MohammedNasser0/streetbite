@@ -173,7 +173,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             contentPadding: EdgeInsets.zero,
             leading: const Icon(Icons.location_on_outlined),
             title: Text(_address?['address'] ?? l.deliveryAddress),
-            subtitle: Text(apartment.isEmpty ? l.enterAddress : apartment),
+            subtitle: _address == null
+                ? Text(l.enterAddress)
+                : apartment.isEmpty
+                ? null
+                : Text(apartment),
             trailing: forward,
             onTap: _busy ? null : _editAddress,
           ),

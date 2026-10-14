@@ -70,6 +70,10 @@ void main() {
         await tester.tap(find.text('Open Checkout'));
         await tester.pumpAndSettle();
         expect(find.text('QA Street 13'), findsOneWidget);
+        final l = AppLocalizations.of(
+          tester.element(find.byType(CheckoutScreen)),
+        )!;
+        expect(find.text(l.enterAddress), findsNothing);
         await tester.tap(find.text('QA Street 13'));
         await tester.pumpAndSettle();
         expect(
