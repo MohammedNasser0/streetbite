@@ -1,3 +1,7 @@
+## Current physical exploratory QA — 14 October 2026
+
+The matrix now records 36 Pass, 6 Not Run and 1 Blocked (owner-deferred bonus Maps). Newly observed physical/technical results and the exact remaining cases are detailed in [physical exploratory QA](physical-exploratory-qa.md). Earlier statements below retain their historical scope. This is not independent human execution or complete capstone closure.
+
 # Build 13 review checkpoint — 14 October 2026
 
 Final Android 1.0.0 (13), SHA256 `318b20bf2526d994377d4df2e9b4f43058029be8ddc361f24797b111454a95b3`. All 43 Flutter tests and analyzer pass. Four final emulator cases and six physical cases passed across scoped runs, including owner-assisted fingerprint/profile. Gallery/photo/restart retains build 4 scope. Firebase release 1p7qp7hs4ct48 distributed to two authorized testers. Seven-slide build13 deck finalized and visually reviewed. STREET-3 fixed and verified Done. Private phone screenshots remain ZIP-only. Manual matrix: 43 cases, 2 Pass and 41 Not Run; Figma fidelity remains partial, Maps bonus deferred, tester acceptance unverified. No final Sprints submission. Earlier checkpoints below retain their original scopes.

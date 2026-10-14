@@ -1,3 +1,7 @@
+## Current physical exploratory QA — 14 October 2026
+
+The matrix now records 36 Pass, 6 Not Run and 1 Blocked (owner-deferred bonus Maps). Newly observed physical/technical results and the exact remaining cases are detailed in [physical exploratory QA](physical-exploratory-qa.md). Earlier statements below retain their historical scope. This is not independent human execution or complete capstone closure.
+
 # Traceability
 
 | Requirement | Implementation | Verification |

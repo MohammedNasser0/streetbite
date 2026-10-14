@@ -49,9 +49,9 @@ All **43 Flutter tests passed** and analyzer is clean. Four final native emulato
 The dashboard image documents build 1 invitations; it does not establish current-build distribution. Original screenshots remain private.
 
 <img src="docs/screenshots/grouped-menu-build13.png" alt="Build 13 grouped menu" width="240"> <img src="docs/screenshots/cart-summary-build13.png" alt="Build 13 cart summary" width="240"> <img src="docs/screenshots/checkout-shared-address-build13.png" alt="Build 13 shared delivery address" width="240">
-[Project presentation](presentation/StreetBite-project-review-build13.pptx) covers the developer, planning, architecture, features and current verification status. Phone screenshots, the genuine emulator biometric capture and original Firebase/Jira evidence are included only in the private delivery ZIP.
+[Project presentation](presentation/StreetBite-project-review-build13-qa.pptx) covers the developer, planning, architecture, features and current verification status. Phone screenshots, the genuine emulator biometric capture and original Firebase/Jira evidence are included only in the private delivery ZIP.
 
-The [manual QA walkthrough](docs/manual-qa-walkthrough.md) explains how to execute and record the 43 planned cases, including Browse retry. Planned checks remain Not Run until actual manual execution.
+The [manual QA walkthrough](docs/manual-qa-walkthrough.md) explains how to execute and record the 43 planned cases, including Browse retry. Current matrix: **36 Pass, 6 Not Run and 1 Blocked**. New results come from agent-driven exploratory physical QA with visual review and scoped technical checks; historical owner-assisted results retain their actual versions. See [execution scope and remaining cases](docs/physical-exploratory-qa.md).
 
 See [primary acceptance](docs/core-acceptance.md), [physical verification](docs/physical-verification.md), [emulator verification](docs/emulator-verification.md), [QA plan](docs/test-plan.md), [traceability](docs/traceability.md) and [closure](docs/test-closure.md). Figma fidelity remains partial; map-tile diagnosis is deferred by the owner as bonus. Remaining manual cases stay Not Run. No final learning-platform submission has been made.
 

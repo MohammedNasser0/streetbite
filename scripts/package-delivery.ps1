@@ -1,6 +1,7 @@
 param(
     [string]$OutputPath = '.delivery/StreetBite-review.zip',
-    [string]$AndroidSdkPath = $env:ANDROID_SDK_ROOT
+    [string]$AndroidSdkPath = $env:ANDROID_SDK_ROOT,
+    [string]$PresentationName = ''
 )
 
 $ErrorActionPreference = 'Stop'
@@ -31,6 +32,11 @@ try {
         throw 'APK version does not match committed source. Build and verify the current source before packaging.'
     }
     $currentDeck = 'StreetBite-project-review-build' + $sourceVersion.Groups[2].Value + '.pptx'
+    if ($PresentationName) {
+        $pattern = '^StreetBite-project-review-build' + $sourceVersion.Groups[2].Value + '(-[a-z0-9-]+)?\.pptx$'
+        if ($PresentationName -notmatch $pattern) { throw 'Presentation must name a reviewed revision of the current build.' }
+        $currentDeck = $PresentationName
+    }
     if (-not (Test-Path -LiteralPath (Join-Path 'presentation' $currentDeck))) {
         throw 'Prepare the presentation for the current build before packaging.'
     }
@@ -78,6 +84,10 @@ try {
                 Add-EvidenceFile $file.FullName ('private-evidence/' + $build + '/' + $file.Name)
             }
         }
+        foreach ($file in Get-ChildItem -LiteralPath (Join-Path $privateEvidence 'manual-beta13/reviewed-screenshots') -Filter '*.png' -File -ErrorAction SilentlyContinue) {
+            Add-EvidenceFile $file.FullName ('private-evidence/manual-beta13/' + $file.Name)
+        }
+        Add-EvidenceFile (Join-Path $privateEvidence 'manual-beta13/backend-results.json') 'private-evidence/manual-beta13/backend-results.json'
         $entry = $archive.CreateEntry('streetbite-capstone/beta/SHA256.txt')
         $writer = [IO.StreamWriter]::new($entry.Open())
         try { $writer.WriteLine((Get-FileHash -LiteralPath $apk -Algorithm SHA256).Hash.ToLower() + '  StreetBite.apk') }
