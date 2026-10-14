@@ -11,9 +11,7 @@ import '../blocs/theme_bloc.dart';
 import '../widgets/meal_card.dart';
 import '../widgets/meal_image.dart';
 import '../widgets/cart_action.dart';
-import 'profile_screen.dart';
-import 'orders_screen.dart';
-import 'browse_screen.dart';
+import '../widgets/app_navigation_bar.dart';
 import 'more_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -57,47 +55,7 @@ class HomeScreen extends StatelessWidget {
             const CartAction(),
           ],
         ),
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: 0,
-          onDestinationSelected: (index) {
-            if (index == 1) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const BrowseScreen()),
-              );
-            }
-            if (index == 2) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const OrdersScreen()),
-              );
-            }
-            if (index == 3) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const ProfileScreen()),
-              );
-            }
-          },
-          destinations: [
-            NavigationDestination(
-              icon: const Icon(Icons.home_outlined),
-              label: l.home,
-            ),
-            NavigationDestination(
-              icon: const Icon(Icons.search),
-              label: l.browse,
-            ),
-            NavigationDestination(
-              icon: const Icon(Icons.receipt_long_outlined),
-              label: l.orders,
-            ),
-            NavigationDestination(
-              icon: const Icon(Icons.person_outline),
-              label: l.profile,
-            ),
-          ],
-        ),
+        bottomNavigationBar: const AppNavigationBar(selectedIndex: 0),
         body: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 900),

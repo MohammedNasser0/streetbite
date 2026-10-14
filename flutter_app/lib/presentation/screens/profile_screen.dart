@@ -18,6 +18,9 @@ import '../blocs/auth_cubit.dart';
 import '../blocs/cart_bloc.dart';
 import '../blocs/cart_event.dart';
 import 'auth_screen.dart';
+import 'more_screen.dart';
+import '../widgets/app_navigation_bar.dart';
+import '../widgets/support_links.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -90,6 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     if (!services.isRegistered<AuthCubit>()) {
       return Scaffold(
         appBar: AppBar(title: Text(l.profile)),
+        bottomNavigationBar: const AppNavigationBar(selectedIndex: 3),
         body: Center(child: Text(l.firebaseSetup)),
       );
     }
@@ -99,6 +103,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     if (!_unlocked) {
       return Scaffold(
         appBar: AppBar(title: Text(l.profile)),
+        bottomNavigationBar: const AppNavigationBar(selectedIndex: 3),
         body: Center(
           child: FilledButton(onPressed: _unlock, child: Text(l.unlockProfile)),
         ),
@@ -119,6 +124,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ],
       ),
+      bottomNavigationBar: const AppNavigationBar(selectedIndex: 3),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -129,16 +135,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
               if (snap.hasError) return Text(l.networkError);
               final photo = _profilePhoto(profile?.photo);
               return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CircleAvatar(
-                    radius: 44,
+                    radius: 32,
                     backgroundImage: photo,
                     onBackgroundImageError: photo == null ? null : (_, _) {},
                     child: photo != null
                         ? null
                         : const Icon(Icons.person, size: 48),
                   ),
-                  Text(profile?.name ?? user.name),
+                  const SizedBox(height: 12),
+                  Text(
+                    profile?.name ?? user.name,
+                    style: Theme.of(context).textTheme.headlineSmall,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                   Text(user.email),
                   TextButton(
                     onPressed: _busy ? null : () => _photo(user.id),
@@ -148,6 +161,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
               );
             },
           ),
+          const SizedBox(height: 16),
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: const Icon(Icons.tune),
+            title: Text(l.settingsTitle),
+            trailing: Icon(
+              Directionality.of(context) == TextDirection.rtl
+                  ? Icons.chevron_left
+                  : Icons.chevron_right,
+            ),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const MoreScreen()),
+            ),
+          ),
+          const SupportLinks(),
+          const Divider(),
           Text(_device),
           const SizedBox(height: 24),
           Text(l.favourites, style: Theme.of(context).textTheme.titleLarge),

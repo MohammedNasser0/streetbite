@@ -709,6 +709,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Demo checkout. No real payment or restaurant delivery.'**
   String get checkoutNotice;
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @contactUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact us'**
+  String get contactUs;
+
+  /// No description provided for @helpCenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Help center'**
+  String get helpCenter;
+
+  /// No description provided for @contactIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Share feedback or report a problem through the StreetBite project page.'**
+  String get contactIntro;
+
+  /// No description provided for @copyProjectLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy project link'**
+  String get copyProjectLink;
+
+  /// No description provided for @linkCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Link copied'**
+  String get linkCopied;
+
+  /// No description provided for @contactHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy the link and open it in your browser.'**
+  String get contactHint;
+
+  /// No description provided for @helpDemoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Are orders and payments real?'**
+  String get helpDemoTitle;
+
+  /// No description provided for @helpDemoBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a demo. Orders are saved to your account, but no restaurant dispatch or real card charge takes place.'**
+  String get helpDemoBody;
+
+  /// No description provided for @helpOfflineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Can I browse without internet?'**
+  String get helpOfflineTitle;
+
+  /// No description provided for @helpOfflineBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Previously loaded meal searches are available offline. New searches need a connection, and images may show placeholders while offline.'**
+  String get helpOfflineBody;
+
+  /// No description provided for @helpAccountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I save favourites and change my photo?'**
+  String get helpAccountTitle;
+
+  /// No description provided for @helpAccountBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to save favourites and orders. Open Profile, unlock it with your fingerprint, then choose Change photo to select a gallery image.'**
+  String get helpAccountBody;
 }
 
 class _AppLocalizationsDelegate

@@ -191,3 +191,6 @@ Physical OPPO connection is currently Unauthorized; owner has been asked to appr
 - Build-9 clean emulator acceptance is running on emulator-5556 / StreetBite_Core_QA. Cart quantity/removal and cash checkout/history/restart have passed so far; remaining cases are not yet counted as passed.
 - A fresh core-test AVD avoids requiring access to the original credential-locked AVD. Original Medium_Phone data remain intact. New AVD completed boot after running alone with 2GB RAM. No lock credential was bypassed or changed.
 - Physical phone still awaits owner approval of USB debugging. Presentation source is prepared; output has not yet been authored/finalized. Do not rerun the build-9 operation-start marker.
+
+## Build 12 source work in progress (14 October)
+Profile now uses a start-aligned avatar/name and working Settings, Contact us and Help center rows. Support pages are localized; Contact copies only the public repository URL. Home, Browse, Orders and Profile share section navigation that returns to the original Home route. All 35 Flutter tests passed; analyzer passed after fixing one test formatting warning. Native build 12 verification, distribution, deck and ZIP are pending. Build 11 remains the latest verified distributed package. The owner says the physical phone is unavailable; outstanding manual real-device cases remain pending.

@@ -101,5 +101,18 @@
   "deliveryInstructions": "Delivery instructions",
   "contactDetails": "Contact details",
   "paymentMethod": "Payment method",
-  "checkoutNotice": "Demo checkout. No real payment or restaurant delivery."
+  "checkoutNotice": "Demo checkout. No real payment or restaurant delivery.",
+  "settingsTitle": "Settings",
+  "contactUs": "Contact us",
+  "helpCenter": "Help center",
+  "contactIntro": "Share feedback or report a problem through the StreetBite project page.",
+  "copyProjectLink": "Copy project link",
+  "linkCopied": "Link copied",
+  "contactHint": "Copy the link and open it in your browser.",
+  "helpDemoTitle": "Are orders and payments real?",
+  "helpDemoBody": "This is a demo. Orders are saved to your account, but no restaurant dispatch or real card charge takes place.",
+  "helpOfflineTitle": "Can I browse without internet?",
+  "helpOfflineBody": "Previously loaded meal searches are available offline. New searches need a connection, and images may show placeholders while offline.",
+  "helpAccountTitle": "How do I save favourites and change my photo?",
+  "helpAccountBody": "Sign in to save favourites and orders. Open Profile, unlock it with your fingerprint, then choose Change photo to select a gallery image."
 }

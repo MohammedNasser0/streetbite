@@ -7,6 +7,7 @@ import '../../l10n/app_localizations.dart';
 import '../blocs/menu_cubit.dart';
 import '../blocs/menu_state.dart';
 import '../widgets/meal_card.dart';
+import '../widgets/app_navigation_bar.dart';
 
 class BrowseScreen extends StatelessWidget {
   const BrowseScreen({super.key});
@@ -18,6 +19,7 @@ class BrowseScreen extends StatelessWidget {
         final l = AppLocalizations.of(context)!;
         return Scaffold(
           appBar: AppBar(title: Text(l.browse)),
+          bottomNavigationBar: const AppNavigationBar(selectedIndex: 1),
           body: Column(
             children: [
               Padding(

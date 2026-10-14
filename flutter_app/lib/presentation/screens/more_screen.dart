@@ -5,6 +5,7 @@ import '../../l10n/app_localizations.dart';
 import '../blocs/locale_cubit.dart';
 import '../blocs/theme_bloc.dart';
 import 'vendor_map_screen.dart';
+import '../widgets/support_links.dart';
 
 class MoreScreen extends StatelessWidget {
   const MoreScreen({super.key});
@@ -36,6 +37,11 @@ class MoreScreen extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (_) => const VendorMapScreen()),
             ),
+          ),
+          const Divider(),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: SupportLinks(),
           ),
         ],
       ),

@@ -323,4 +323,47 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get checkoutNotice =>
       'إتمام طلب تجريبي، دون دفع حقيقي أو توصيل من مطعم.';
+
+  @override
+  String get settingsTitle => 'الإعدادات';
+
+  @override
+  String get contactUs => 'تواصل معنا';
+
+  @override
+  String get helpCenter => 'مركز المساعدة';
+
+  @override
+  String get contactIntro =>
+      'شارك ملاحظاتك أو أبلغ عن مشكلة من خلال صفحة مشروع StreetBite.';
+
+  @override
+  String get copyProjectLink => 'نسخ رابط المشروع';
+
+  @override
+  String get linkCopied => 'تم نسخ الرابط';
+
+  @override
+  String get contactHint => 'انسخ الرابط وافتحه في متصفحك.';
+
+  @override
+  String get helpDemoTitle => 'هل الطلبات والمدفوعات حقيقية؟';
+
+  @override
+  String get helpDemoBody =>
+      'هذا تطبيق تجريبي. تُحفظ الطلبات في حسابك، دون إرسالها إلى مطعم أو خصم مبالغ حقيقية من بطاقة.';
+
+  @override
+  String get helpOfflineTitle => 'هل يمكنني التصفح دون إنترنت؟';
+
+  @override
+  String get helpOfflineBody =>
+      'يمكنك عرض نتائج البحث التي سبق تحميلها دون اتصال. البحث الجديد يحتاج إلى الإنترنت، وقد تظهر صور بديلة أثناء انقطاع الاتصال.';
+
+  @override
+  String get helpAccountTitle => 'كيف أحفظ المفضلة وأغيّر صورتي؟';
+
+  @override
+  String get helpAccountBody =>
+      'سجّل الدخول لحفظ المفضلة والطلبات. افتح الملف الشخصي وافتحه بالبصمة، ثم اختر تغيير الصورة لتحديد صورة من المعرض.';
 }

@@ -7,6 +7,7 @@ import '../../injection.dart';
 import '../../l10n/app_localizations.dart';
 import '../blocs/auth_cubit.dart';
 import '../widgets/order_history_tile.dart';
+import '../widgets/app_navigation_bar.dart';
 import 'auth_screen.dart';
 import 'order_progress_screen.dart';
 
@@ -18,6 +19,7 @@ class OrdersScreen extends StatelessWidget {
     if (!services.isRegistered<AuthCubit>()) {
       return Scaffold(
         appBar: AppBar(title: Text(l.orders)),
+        bottomNavigationBar: const AppNavigationBar(selectedIndex: 2),
         body: Center(child: Text(l.firebaseSetup)),
       );
     }
@@ -25,6 +27,7 @@ class OrdersScreen extends StatelessWidget {
     if (user == null) return const AuthScreen();
     return Scaffold(
       appBar: AppBar(title: Text(l.orders)),
+      bottomNavigationBar: const AppNavigationBar(selectedIndex: 2),
       body: StreamBuilder<List<PlacedOrder>>(
         stream: services<ProfileRepository>().watchOrders(user.id),
         builder: (context, snap) {

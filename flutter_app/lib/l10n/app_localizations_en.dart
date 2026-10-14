@@ -325,4 +325,48 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get checkoutNotice =>
       'Demo checkout. No real payment or restaurant delivery.';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get contactUs => 'Contact us';
+
+  @override
+  String get helpCenter => 'Help center';
+
+  @override
+  String get contactIntro =>
+      'Share feedback or report a problem through the StreetBite project page.';
+
+  @override
+  String get copyProjectLink => 'Copy project link';
+
+  @override
+  String get linkCopied => 'Link copied';
+
+  @override
+  String get contactHint => 'Copy the link and open it in your browser.';
+
+  @override
+  String get helpDemoTitle => 'Are orders and payments real?';
+
+  @override
+  String get helpDemoBody =>
+      'This is a demo. Orders are saved to your account, but no restaurant dispatch or real card charge takes place.';
+
+  @override
+  String get helpOfflineTitle => 'Can I browse without internet?';
+
+  @override
+  String get helpOfflineBody =>
+      'Previously loaded meal searches are available offline. New searches need a connection, and images may show placeholders while offline.';
+
+  @override
+  String get helpAccountTitle =>
+      'How do I save favourites and change my photo?';
+
+  @override
+  String get helpAccountBody =>
+      'Sign in to save favourites and orders. Open Profile, unlock it with your fingerprint, then choose Change photo to select a gallery image.';
 }
