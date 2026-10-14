@@ -38,3 +38,7 @@ TC_SETTINGS_001,Settings,GUI,Open More and toggle language and theme,Labels and 
 TC_BROWSE_002,Browse,Negative,Submit uncached query offline; restore network and tap Retry,Same query and input preserved; results load,Not executed,Not Run
 TC_SUPPORT_001,Support,GUI,Open Help in English and Arabic; expand each question,Readable localized answers without overflow,Not executed,Not Run
 TC_SUPPORT_002,Support,Positive,Open Contact and copy project link; return Home,Correct public repository URL copied; confirmation visible and navigation returns Home,Not executed,Not Run
+TC_ADDRESS_003,Address,Positive,Select address from Home; open Checkout; change account,Address draft is shared in same session and cleared for a different account,Not executed,Not Run
+TC_MENU_001,Menu,GUI,Open Menu; scroll grouped rows and pinned category strip; filter and add a meal,Actual category filtering; live cart count and total; same cart opens,Not executed,Not Run
+TC_BROWSE_003,Browse,GUI,Select a category tile and return to Categories in EN and AR,Only matching meals shown; categories restored without overflow,Not executed,Not Run
+TC_DETAILS_002,Details,Positive,Add meal then increase and decrease quantity in Details; open Cart,Quantity and total remain consistent across both screens,Not executed,Not Run

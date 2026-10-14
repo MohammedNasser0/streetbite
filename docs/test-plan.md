@@ -19,3 +19,5 @@ The matrix now contains 36 uniquely identified cases. Eight added cases cover on
 Build 11 adds TC_BROWSE_002 for uncached offline search and query-preserving recovery. The matrix now has 37 cases; the new manual case remains Not Run. Native automated evidence is recorded separately.
 
 Build 12 adds TC_SUPPORT_001–002 for localized FAQ content and public-link copying/back navigation. The matrix now has39 unique cases; both remain Not Run until physical manual execution. Native support/navigation/clipboard evidence is separate.
+
+Build13 adds TC_ADDRESS_003, TC_MENU_001, TC_BROWSE_003 and TC_DETAILS_002. Current matrix:43 unique manual cases, with real-device execution pending for new cases. Grouped menu and shared Home address are in scope.

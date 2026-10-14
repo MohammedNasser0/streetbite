@@ -31,3 +31,12 @@ Build 11 Browse retry: MenuCubit.retry / BrowseScreen, planned manual TC_BROWSE_
 | Area | Implementation | Planned cases | Execution |
 |---|---|---|---|
 | Help/Contact | HelpCenterScreen / ContactScreen / SupportLinks | TC_SUPPORT_001–002 | Not Run; build12 widget/native support evidence is separate |
+
+## Design flows — build13
+
+| Area | Implementation | Manual case | Scope |
+|---|---|---|---|
+| Shared address/session isolation | DeliveryAddressCubit/Header and Checkout | TC_ADDRESS_003 | Not Run; separate widget/native evidence |
+| Grouped menu/pinned categories/cart | GroupedMenuScreen | TC_MENU_001 | Not Run |
+| Browse category tiles | CategoryTiles | TC_BROWSE_003 | Not Run |
+| Direct details quantity | QuantityControl | TC_DETAILS_002 | Not Run |
