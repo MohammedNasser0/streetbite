@@ -65,7 +65,10 @@ try {
         Add-EvidenceFile $apk 'beta/StreetBite.apk'
         $privateEvidence = Join-Path $projectRoot '.delivery/verification'
         Add-EvidenceFile (Join-Path $privateEvidence 'emulator-beta5/biometric-prompt-windows.png') 'private-evidence/emulator-beta5/biometric-prompt-windows.png'
-        foreach ($name in @('firebase-testers.png', 'firebase-release-testers.png', 'firebase-beta9-release.json', 'firebase-beta10-release.json', 'firebase-beta11-release.json', 'jira-streetbite.jpg', 'jira-evidence.md')) {
+        foreach ($name in @('help-center-build12.png', 'contact-build12.png')) {
+            Add-EvidenceFile (Join-Path $privateEvidence ('emulator-beta12-support-passed/' + $name)) ('private-evidence/emulator-beta12/' + $name)
+        }
+        foreach ($name in @('firebase-testers.png', 'firebase-release-testers.png', 'firebase-beta9-release.json', 'firebase-beta10-release.json', 'firebase-beta11-release.json', 'firebase-beta12-release.json', 'jira-streetbite.jpg', 'jira-evidence.md')) {
             Add-EvidenceFile (Join-Path $privateEvidence $name) ('private-evidence/' + $name)
         }
         # Only visually reviewed screenshots go into the private delivery ZIP.

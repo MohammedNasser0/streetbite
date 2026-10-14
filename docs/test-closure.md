@@ -1,3 +1,7 @@
+# Build 12 checkpoint — 14 October 2026
+
+35 Flutter tests/analyzer and native guest navigation/support/clipboard passed. Earlier native test assumptions were corrected and reports retained. Distributed release `2nm8gta2jnj68`. Manual real-device cases remain pending; phone unavailable. This is a review release, not complete capstone closure.
+
 # Test closure — work in progress
 
 Final acceptance remains open. Fourteen Flutter unit/widget tests and eight Appium emulator scenarios passed on the Maps-enabled build 4. Two additional screenshot tours passed, including Maps rendering and marker interaction on the installed beta. Ten direct authenticated Firestore REST checks passed. Email/Password authentication and Firebase beta distribution were verified.
@@ -39,3 +43,5 @@ Build 10 distribution succeeded, release `10m6d1qnfpap0`, with the final verifie
 ## Build 11 checkpoint — 14 October 2026
 
 31 Flutter tests passed and analyzer is clean. Native emulator Browse retry passed after a System UI infrastructure failure; original failure and passing reports are retained separately. The identical APK was distributed to both authorized testers, release `3clm3j8ki2bng`. This does not complete physical/manual QA or certify full Figma fidelity.
+
+Build12 further passed9 core/additional emulator regression cases: three login, two Home, cart quantity/empty feedback, cache/restart, favourite/restart and cash checkout/history/restart. The separate support/navigation test brings current native coverage to10 unique cases. Physical/manual scopes remain unchanged.

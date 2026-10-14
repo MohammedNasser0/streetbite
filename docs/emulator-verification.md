@@ -62,3 +62,7 @@ The reviewed error screenshot and final settled results screenshot are public. A
 
 ## Build 12 support/navigation verification
 On 14 October, all35 Flutter tests passed and analysis reported no issues. The Android release APK built successfully. Native QA-emulator support/navigation passed in46s: Home/Browse, guest Order history login gate, back to Home, Help, Contact, copy public URL and return. Initial failed test assumptions are retained privately (label, login gate, SelectableText locator). This does not certify authenticated Profile/bio or real-device cases on12. Reviewed Contact/Help screenshots remain private for now. Build12 deck/ZIP still pending.
+
+
+## Build 12 core regression — 14 October 2026
+Five required emulator cases passed in2m39s: valid/invalid/empty login, Home grid scrolling and add-to-cart feedback. Additional cart quantity/empty feedback, cash order/history/restart and favourite/restart checks passed; cache/offline restart also passed. All9 core/additional regression cases passed, plus the separate support/navigation case. These are emulator results and do not replace manual real-device cases. No Google API key literals found in tracked text. EN/AR localization keys match with no unused direct getters.

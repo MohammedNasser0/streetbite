@@ -1,3 +1,7 @@
+# Build 12 checkpoint — 14 October 2026
+
+Localized Contact/Help, Profile settings/support rows and shared section navigation are implemented. 35 Flutter tests and analyzer pass; native guest navigation/support/clipboard passes46s. The same APK is distributed to two testers. Historical authenticated/physical scopes below are unchanged.
+
 # Build 11 Browse acceptance — 14 October 2026
 
 Browse failure recovery preserves the query and text input. All 31 Flutter tests pass; analyzer is clean. Native emulator offline→online retry passed, and the same APK was distributed to both authorized testers, release `3clm3j8ki2bng`. Final APK SHA256 `e596c3ff1b5897f3a18e121f53d4f5f310f6158f7158405bf5573398c2125a8f`. Packaging verifies APK versionName/versionCode against committed pubspec and keeps only the matching build presentation. Historical device scopes below are unchanged.

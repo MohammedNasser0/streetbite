@@ -1,3 +1,9 @@
+# Current delivery checkpoint — build 12, 14 October 2026
+
+35 Flutter tests/analyzer pass; native support/navigation/clipboard passes. APK SHA256 8e9b47df5283047319d43aaab096e8331c29a08abf458da4d71557a736acabea. Distributed release2nm8gta2jnj68 to two testers. Current presentation StreetBite-project-review-build12.pptx. Physical/manual cases pending; phone unavailable. Historical scopes below remain unchanged.
+
+## Historical checkpoints
+
 # Current delivery checkpoint — build 11, 14 October 2026
 
 - Android 1.0.0 (11), APK SHA256 e596c3ff1b5897f3a18e121f53d4f5f310f6158f7158405bf5573398c2125a8f.
@@ -196,3 +202,7 @@ Physical OPPO connection is currently Unauthorized; owner has been asked to appr
 Profile now uses a start-aligned avatar/name and working Settings, Contact us and Help center rows. Support pages are localized; Contact copies only the public repository URL. Home, Browse, Orders and Profile share section navigation that returns to the original Home route. All 35 Flutter tests passed; analyzer passed after fixing one test formatting warning. Native build 12 verification, distribution, deck and ZIP are pending. Build 11 remains the latest verified distributed package. The owner says the physical phone is unavailable; outstanding manual real-device cases remain pending.
 
 Build 12 verification update: release APK built successfully (SHA256 8e9b47df5283047319d43aaab096e8331c29a08abf458da4d71557a736acabea). The native guest navigation/support/clipboard scenario passed on the QA emulator in46s. Earlier attempts exposed incorrect test assumptions about the Order history label, guest login gate and SelectableText accessibility; private reports are retained. No app source changes were needed for those retries. Physical device testing remains pending because the owner says the phone is unavailable. Build12 deck/ZIP pending.
+
+
+## Build 12 core regression — 14 October 2026
+Five required emulator cases passed in2m39s: valid/invalid/empty login, Home grid scrolling and add-to-cart feedback. Additional cart quantity/empty feedback, cash order/history/restart and favourite/restart checks passed; cache/offline restart also passed. All9 core/additional regression cases passed, plus the separate support/navigation case. These are emulator results and do not replace manual real-device cases. No Google API key literals found in tracked text. EN/AR localization keys match with no unused direct getters.

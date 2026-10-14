@@ -25,3 +25,9 @@ Execution status is tracked in manual-test-cases.csv and the closure report. Map
 | Language/theme settings | MoreScreen | TC_SETTINGS_001 | Not Run |
 
 Build 11 Browse retry: MenuCubit.retry / BrowseScreen, planned manual TC_BROWSE_002 remains Not Run; separate native BrowseRetryTest passed on the emulator.
+
+## Support coverage — build 12
+
+| Area | Implementation | Planned cases | Execution |
+|---|---|---|---|
+| Help/Contact | HelpCenterScreen / ContactScreen / SupportLinks | TC_SUPPORT_001–002 | Not Run; build12 widget/native support evidence is separate |

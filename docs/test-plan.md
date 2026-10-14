@@ -1,7 +1,7 @@
 # StreetBite test plan
 
 ## Scope
-Welcome/splash, login, signup, home discovery, browse/search, details, favourites, cart quantity/last-item removal, checkout, fixed-data demo card, delivery address, order acknowledgement/history, profile/photo/device/biometrics, vendor map and settings. Cover English/Arabic, RTL, light/dark, offline cache/restart and accessibility at 375×812 and 412×915.
+Welcome/splash, login, signup, home discovery, browse/search, details, favourites, cart quantity/last-item removal, checkout, fixed-data demo card, delivery address, order acknowledgement/history, profile/photo/device/biometrics, vendor map, settings, Help center and Contact. Cover English/Arabic, RTL, light/dark, offline cache/restart and accessibility at 375×812 and 412×915.
 
 ## Test levels and environments
 Unit tests for models, cache fallback, cart totals and order validation; widget tests for form validation/localization/responsiveness; Appium on Android emulator and physical Android. Firestore ownership rules require emulator tests and live signed-in verification. iOS requires macOS/Xcode/device execution and cannot be certified from Windows.
@@ -17,3 +17,5 @@ Record actual observed results and environment. Never treat a planned case, skip
 The matrix now contains 36 uniquely identified cases. Eight added cases cover onboarding, browse, current Checkout composition, cancelled demo-card selection, empty-cart checkout prevention, address validation/editing and settings. Added cases remain Not Run. Follow `manual-qa-walkthrough.md` to record actual device/version/date and observed results; automated passes do not replace manual execution.
 
 Build 11 adds TC_BROWSE_002 for uncached offline search and query-preserving recovery. The matrix now has 37 cases; the new manual case remains Not Run. Native automated evidence is recorded separately.
+
+Build 12 adds TC_SUPPORT_001–002 for localized FAQ content and public-link copying/back navigation. The matrix now has39 unique cases; both remain Not Run until physical manual execution. Native support/navigation/clipboard evidence is separate.
