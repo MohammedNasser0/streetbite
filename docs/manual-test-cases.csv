@@ -35,3 +35,4 @@ TC_CHECKOUT_003,Checkout,Negative,Remove final cart item and inspect available c
 TC_ADDRESS_001,Address,Negative,Submit blank or shorter than five character address,Inline address error prevents returning to Checkout,Not executed,Not Run
 TC_ADDRESS_002,Address,Positive,Save complete address apartment and comment then reopen editor,Values remain populated and appear in the matching Checkout rows,Not executed,Not Run
 TC_SETTINGS_001,Settings,GUI,Open More and toggle language and theme,Labels and theme update; choices survive restart,Not executed,Not Run
+TC_BROWSE_002,Browse,Negative,Submit uncached query offline; restore network and tap Retry,Same query and input preserved; results load,Not executed,Not Run

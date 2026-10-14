@@ -1,4 +1,7 @@
-param([string]$OutputPath = '.delivery/StreetBite-review.zip')
+param(
+    [string]$OutputPath = '.delivery/StreetBite-review.zip',
+    [string]$AndroidSdkPath = $env:ANDROID_SDK_ROOT
+)
 
 $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
@@ -7,6 +10,30 @@ try {
     $sourceChanges = @(& git status --porcelain --untracked-files=normal)
     if ($LASTEXITCODE -ne 0) { throw 'Unable to inspect source state.' }
     if ($sourceChanges.Count -gt 0) { throw 'Commit the reviewed source and documentation before packaging.' }
+    $apk = Join-Path $projectRoot 'flutter_app/build/app/outputs/flutter-apk/app-release.apk'
+    if (-not (Test-Path -LiteralPath $apk)) { throw 'Build the beta APK before packaging.' }
+    if ([string]::IsNullOrWhiteSpace($AndroidSdkPath)) { $AndroidSdkPath = $env:ANDROID_HOME }
+    if ([string]::IsNullOrWhiteSpace($AndroidSdkPath) -and $env:LOCALAPPDATA) {
+        $AndroidSdkPath = Join-Path $env:LOCALAPPDATA 'Android/sdk'
+    }
+    if ([string]::IsNullOrWhiteSpace($AndroidSdkPath)) { throw 'Supply -AndroidSdkPath to verify APK metadata.' }
+    $aapt = Get-ChildItem -LiteralPath (Join-Path $AndroidSdkPath 'build-tools') -Filter 'aapt.exe' -Recurse -File |
+        Sort-Object FullName -Descending | Select-Object -First 1
+    if ($null -eq $aapt) { throw 'Android SDK build-tools/aapt is required to verify APK metadata.' }
+    $badging = (& $aapt.FullName dump badging $apk) -join "`n"
+    if ($LASTEXITCODE -ne 0) { throw 'Unable to read APK metadata.' }
+    $sourceVersion = [regex]::Match((Get-Content -LiteralPath 'flutter_app/pubspec.yaml' -Raw), '(?m)^version:\s*([^\s+]+)\+(\d+)\s*$')
+    $apkVersion = [regex]::Match($badging, "versionName='([^']+)'")
+    $apkBuild = [regex]::Match($badging, "versionCode='(\d+)'")
+    if (-not $sourceVersion.Success -or -not $apkVersion.Success -or -not $apkBuild.Success -or
+        $sourceVersion.Groups[1].Value -ne $apkVersion.Groups[1].Value -or
+        $sourceVersion.Groups[2].Value -ne $apkBuild.Groups[1].Value) {
+        throw 'APK version does not match committed source. Build and verify the current source before packaging.'
+    }
+    $currentDeck = 'StreetBite-project-review-build' + $sourceVersion.Groups[2].Value + '.pptx'
+    if (-not (Test-Path -LiteralPath (Join-Path 'presentation' $currentDeck))) {
+        throw 'Prepare the presentation for the current build before packaging.'
+    }
     $zipPath = [IO.Path]::GetFullPath((Join-Path $projectRoot $OutputPath))
     if (-not $zipPath.StartsWith($projectRoot + [IO.Path]::DirectorySeparatorChar)) {
         throw 'Delivery archive must remain inside the project workspace.'
@@ -20,11 +47,13 @@ try {
     $archive = [IO.Compression.ZipFile]::Open($zipPath, [IO.Compression.ZipArchiveMode]::Update)
     try {
         # Historical decks stay in Git; the delivery archive contains the current deck only.
-        foreach ($oldDeck in @('StreetBite-project-final.pptx', 'StreetBite-project-review-build5.pptx', 'StreetBite-project-review-build9.pptx', 'StreetBite-project-review-build9-distributed.pptx')) {
-            $historical = $archive.GetEntry('streetbite-capstone/presentation/' + $oldDeck)
-            if ($null -ne $historical -and (Test-Path -LiteralPath 'presentation/StreetBite-project-review-build10.pptx')) {
-                $historical.Delete()
-            }
+        $historicalDecks = @($archive.Entries | Where-Object {
+            $_.FullName.StartsWith('streetbite-capstone/presentation/') -and
+            $_.FullName.EndsWith('.pptx') -and
+            $_.FullName -ne ('streetbite-capstone/presentation/' + $currentDeck)
+        })
+        foreach ($historical in $historicalDecks) {
+            $historical.Delete()
         }
         function Add-EvidenceFile([string]$Source, [string]$Entry) {
             if (Test-Path -LiteralPath $Source -PathType Leaf) {
@@ -33,12 +62,10 @@ try {
                     [IO.Compression.CompressionLevel]::Optimal) | Out-Null
             }
         }
-        $apk = Join-Path $projectRoot 'flutter_app/build/app/outputs/flutter-apk/app-release.apk'
-        if (-not (Test-Path -LiteralPath $apk)) { throw 'Build the beta APK before packaging.' }
         Add-EvidenceFile $apk 'beta/StreetBite.apk'
         $privateEvidence = Join-Path $projectRoot '.delivery/verification'
         Add-EvidenceFile (Join-Path $privateEvidence 'emulator-beta5/biometric-prompt-windows.png') 'private-evidence/emulator-beta5/biometric-prompt-windows.png'
-        foreach ($name in @('firebase-testers.png', 'firebase-release-testers.png', 'firebase-beta9-release.json', 'firebase-beta10-release.json', 'jira-streetbite.jpg', 'jira-evidence.md')) {
+        foreach ($name in @('firebase-testers.png', 'firebase-release-testers.png', 'firebase-beta9-release.json', 'firebase-beta10-release.json', 'firebase-beta11-release.json', 'jira-streetbite.jpg', 'jira-evidence.md')) {
             Add-EvidenceFile (Join-Path $privateEvidence $name) ('private-evidence/' + $name)
         }
         # Only visually reviewed screenshots go into the private delivery ZIP.

@@ -42,3 +42,7 @@ Start the Appium server with `ANDROID_HOME` and `ANDROID_SDK_ROOT` pointing to t
 ## Build 9 additions
 
 FavouritesTest checks save, app restart, persistence and removal using a dedicated QA account. EvidenceTest.screenTour captures Meal Details after adding a meal, including its live cart badge and feedback. Physical-device installation allows 180 seconds for the OEM package scanner. Build 9 passed eight unique core emulator cases and five required physical cases across scoped runs; see the verification documents for the retained initial locator/setup failures.
+
+## Build 11 Browse recovery
+
+BrowseRetryTest is emulator-only and changes connectivity only on the named QA emulator. It checks an uncached failed query, error feedback, Retry after reconnection and preserved input, then restores the original connection state in finally. Run with `-Dmobile.evidence=true -Dmobile.udid=emulator-5556`. The first System UI ANR and passing retry are scoped in the emulator verification document.

@@ -2,10 +2,6 @@
 
 Bilingual Flutter food discovery and demo ordering, by Mohammed Nasser. [Public repository](https://github.com/MohammedNasser0/streetbite).
 
-## Unreleased source follow-up
-
-Current source is version **1.0.0+11** and adds Browse retry for the last failed query, preserving the search input. All 31 Flutter tests passed. This follow-up has not been built or distributed; the tested APK, delivery ZIP and Firebase release described below remain build 10. Native verification and distribution of build 11 are pending.
-
 ## Features
 
 - Live TheMealDB search, category filtering and offline query cache.
@@ -43,23 +39,25 @@ Android requests internet and biometric access; gallery selection uses the syste
 
 ## Verification and delivery
 
-Build **1.0.0 (10)** is the latest Android beta. Checkout now separates address/apartment, instructions and account contact rows, keeps total/order action fixed at the bottom, and preserves cash selection when a demo-card confirmation is cancelled. The localized title and notice make its demo scope clear. This moves the composition closer to the supplied Figma Checkout frame; full visual fidelity remains partial.
+Build **1.0.0 (11)** is the latest Android beta. Browse now offers Retry after a failed request, keeps the search input and reuses the same query. Checkout retains its localized address/instructions/contact rows, controlled cash/demo-card selector and fixed order action.
 
-Final analyzer is clean. All **29 unit/widget tests passed** before a localized notice wording correction; both affected EN/AR compact Checkout tests passed again afterwards. The final APK passed native cash checkout, history/restart persistence and a separate screenshot tour on emulator. The eight core emulator scenarios and five required physical cases remain scoped to build 9. Full owner-assisted physical profile/photo/restart evidence remains build 4. Exact scopes are recorded in the verification documents.
+All **31 Flutter tests passed** and analyzer is clean. The current APK passed native emulator offline-to-online Browse recovery: the uncached query failed offline, Retry loaded results after network restoration, and the input remained unchanged. The initial run was blocked before the app flow by an Android System UI ANR; its report is retained separately. The passing run used 720×1600 at density 280, preserving approximately the prior logical viewport. Full eight-case core emulator and five-case physical coverage remain build 9; final cash checkout/history verification remains build 10.
 
-**Distribution:** build **1.0.0 (10)** was uploaded and distributed to both authorized testers on **14 October 2026**. [Current beta release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/10m6d1qnfpap0). Uploaded APK SHA256: `549280bd7c069657573bc40c3609c31d647246432198a5cb04f2fb1a0949bb5b`. Tester acceptance/installation is unverified. See [distribution evidence](docs/distribution-evidence.md).
+**Distribution:** build **1.0.0 (11)** uploaded and distributed to both authorized testers on **14 October 2026**. [Current beta release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/3clm3j8ki2bng). Uploaded APK SHA256: `e596c3ff1b5897f3a18e121f53d4f5f310f6158f7158405bf5573398c2125a8f`. Tester installation/acceptance is unverified. See [distribution evidence](docs/distribution-evidence.md).
 
 ![Historical Firebase build 1: two invited testers, emails redacted](docs/screenshots/firebase-distribution-redacted.png)
 
 The dashboard image documents build 1 invitations; it does not establish current-build distribution. Original screenshots remain private.
 
-<img src="docs/screenshots/checkout-build10.png" alt="Final build 10 Checkout" width="240"> <img src="docs/screenshots/meal-details-build9.png" alt="Build 9 meal details with live cart count" width="240"> <img src="docs/screenshots/cart-build9.png" alt="Build 9 cart with two items" width="240">
+<img src="docs/screenshots/browse-retry-build11.png" alt="Build 11 retry after offline search failure" width="240"> <img src="docs/screenshots/checkout-build10.png" alt="Final build 10 Checkout" width="240"> <img src="docs/screenshots/meal-details-build9.png" alt="Build 9 meal details with live cart count" width="240"> <img src="docs/screenshots/cart-build9.png" alt="Build 9 cart with two items" width="240">
 
-[Project presentation](presentation/StreetBite-project-review-build10.pptx) covers the developer, planning, architecture, features and current verification status. Phone screenshots, the genuine emulator biometric capture and original Firebase/Jira evidence are included only in the private delivery ZIP.
+[Project presentation](presentation/StreetBite-project-review-build11.pptx) covers the developer, planning, architecture, features and current verification status. Phone screenshots, the genuine emulator biometric capture and original Firebase/Jira evidence are included only in the private delivery ZIP.
 
-The [manual QA walkthrough](docs/manual-qa-walkthrough.md) explains how to execute and record the 36 planned cases. Eight added cases cover onboarding, browse, Checkout, address and settings; they remain Not Run.
+The [manual QA walkthrough](docs/manual-qa-walkthrough.md) explains how to execute and record the 37 planned cases, including Browse retry. Planned checks remain Not Run until actual manual execution.
 
 See [primary acceptance](docs/core-acceptance.md), [physical verification](docs/physical-verification.md), [emulator verification](docs/emulator-verification.md), [QA plan](docs/test-plan.md), [traceability](docs/traceability.md) and [closure](docs/test-closure.md). Figma fidelity remains partial; map-tile diagnosis is deferred by the owner as bonus. Remaining manual cases stay Not Run. No final learning-platform submission has been made.
+
+For a matching source/APK delivery archive, run `scripts/package-delivery.ps1` after committing the verified build and its presentation. Supply `-AndroidSdkPath` if the SDK is outside the standard Windows location. The script reads APK metadata with Android build-tools/aapt and rejects a source-version mismatch.
 
 ## Design and data references
 

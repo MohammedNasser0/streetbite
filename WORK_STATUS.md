@@ -1,3 +1,18 @@
+# Current delivery checkpoint — build 11, 14 October 2026
+
+- Android 1.0.0 (11), APK SHA256 e596c3ff1b5897f3a18e121f53d4f5f310f6158f7158405bf5573398c2125a8f.
+- Uploaded/distributed to the same two authorized testers, release 3clm3j8ki2bng.
+- 31 Flutter tests pass; analyzer clean. Native Browse retry passed twice after one Android System UI infrastructure failure. Preserved query/input and restored emulator connection state were asserted. Reports retained privately.
+- Reviewed public emulator images: browse-retry-build11.png and browse-results-build11.png. Device environment: API37.1, 720x1600 / density280, same approximate logical viewport.
+- Current presentation: StreetBite-project-review-build11.pptx. Delivery package: StreetBite-review-build11.zip, built from committed source. Historical artifacts preserved.
+- Packaging now verifies versionName/versionCode against pubspec and includes only the matching presentation, preventing source/APK version mismatch.
+- Full five-case physical evidence remains build9, full profile/photo/restart build4; no physical build11 claim. Phone unavailable at last check; connection requested for manual QA.
+- Manual matrix now has 37 cases; added Browse recovery manual case remains Not Run. Automated results do not complete the manual cycle.
+- Next design work: Profile header alignment, Settings/Contact/Help links and bottom navigation per Figma node21:3864, preserving live data and biometrics. Full Figma fidelity remains partial. Reference lists missing SF Compact Display/SF Compact/SF Pro; no font-fidelity pass claimed.
+- Bonus map tiles deferred; tester acceptance unverified; no final platform submission.
+
+Earlier checkpoints below retain their historical scope.
+
 # Unreleased source checkpoint — 14 October 2026
 
 - Source version 1.0.0+11: Browse network-error view now offers Retry. MenuCubit retries its last query, preserving the entered search text.

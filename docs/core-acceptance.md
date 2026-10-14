@@ -1,3 +1,7 @@
+# Build 11 Browse acceptance — 14 October 2026
+
+Browse failure recovery preserves the query and text input. All 31 Flutter tests pass; analyzer is clean. Native emulator offline→online retry passed, and the same APK was distributed to both authorized testers, release `3clm3j8ki2bng`. Final APK SHA256 `e596c3ff1b5897f3a18e121f53d4f5f310f6158f7158405bf5573398c2125a8f`. Packaging verifies APK versionName/versionCode against committed pubspec and keeps only the matching build presentation. Historical device scopes below are unchanged.
+
 # Build 10 Checkout acceptance — 14 October 2026
 
 Checkout now has separate address/apartment, instructions and account contact rows, a controlled cash/demo-card selector, fixed total/order action, empty-cart prevention and localized title/demo notice. Compact EN/AR tests verify the action remains visible and cancelling a demo card preserves cash selection. Final emulator checkout/history/restart and screenshot tour passed; analyzer is clean. Full physical scenario evidence remains build 9. Final APK SHA256: `549280bd7c069657573bc40c3609c31d647246432198a5cb04f2fb1a0949bb5b`.

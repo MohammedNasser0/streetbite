@@ -23,3 +23,5 @@ Execution status is tracked in manual-test-cases.csv and the closure report. Map
 | Checkout rows/payment/action | CheckoutScreen | TC_CHECKOUT_001–003 | Not Run; separate build 10 automated evidence is documented |
 | Address validation/editing | DeliveryAddressScreen | TC_ADDRESS_001–002 | Not Run |
 | Language/theme settings | MoreScreen | TC_SETTINGS_001 | Not Run |
+
+Build 11 Browse retry: MenuCubit.retry / BrowseScreen, planned manual TC_BROWSE_002 remains Not Run; separate native BrowseRetryTest passed on the emulator.

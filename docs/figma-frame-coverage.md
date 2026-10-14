@@ -24,3 +24,5 @@ Reference: Food Delivery Mobile App UI Kit by Vlad Solomakha, CC BY 4.0. The acc
 A mapped frame is not a fidelity pass. The demo does not claim actual couriers, delivery ETAs or payment processing. No invented live order progression is used to imitate reference screenshots.
 
 Build 4 adds the Add card composition with a title, card/name sample surfaces, expiry/CVV/ZIP row and fixed bottom action. English/Arabic layout tests at 375/412 logical pixel widths and 568 height pass, and assert that no editable card-data input exists. Device verification is recorded separately.
+
+On 14 October the reference Profile node 21:3864 was reviewed directly: left-aligned avatar/name, Settings, Contact us, Help center and bottom navigation. These composition differences remain for the next UI pass. Figma lists missing SF Compact Display, SF Compact and SF Pro fonts in this environment; current platform typography is not a font-fidelity pass.

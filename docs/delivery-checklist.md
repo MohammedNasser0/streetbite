@@ -8,14 +8,17 @@
 - [x] Cart quantity/removal/total and demo order persistence.
 - [x] Live Meal Details cart count and BlocConsumer feedback (build 9).
 - [x] Profile/gallery/photo persistence verified on physical build 4; profile source unchanged in build 9.
-- [x] Final build 10 analyzer clean; 29 Flutter tests passed before notice correction and both affected tests passed again afterwards.
+- [x] Build 11 analyzer clean and all 31 Flutter tests passed.
 - [x] Build 9: eight unique core emulator scenarios and all five required physical scenarios pass across scoped runs; evidence retained.
-- [x] Build 10 uploaded and distributed to both authorized testers on 14 October 2026.
-- [x] Refresh presentation and README for build 10, recording successful distribution and historical device scopes.
+- [x] Build 11 uploaded and distributed to both authorized testers on 14 October 2026.
+- [x] Refresh presentation and README for build 11, recording successful distribution and historical device scopes.
 - [x] Prepare the current source, APK, presentation and reviewed private evidence for the review ZIP.
 - [ ] Complete faithful coverage of supplied Figma frames; inventory documents remaining differences. The accessible copy contains 15 app frames, not evidence of all advertised 50+ screens.
 
 - [x] Build 10 final emulator cash checkout/history/restart and screenshot tour passed.
+
+- [x] Build 11 native emulator uncached offline search and query-preserving retry verified; network state restored.
+- [x] Packaging checks source/APK version and the matching presentation.
 
 ## Bonus and supplementary evidence
 - [x] Five required Appium cases previously passed on emulator and physical build 4.

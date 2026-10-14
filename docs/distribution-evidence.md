@@ -1,3 +1,9 @@
+# Build 11 distribution — 14 October 2026
+
+Version **1.0.0 (11)** uploaded and distributed to the same two authorized testers. Release ID: `3clm3j8ki2bng`. [Tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/3clm3j8ki2bng). APK SHA256 `e596c3ff1b5897f3a18e121f53d4f5f310f6158f7158405bf5573398c2125a8f` matches the built and natively verified artifact. The Firebase REST upload, release-note update and distribution calls succeeded. Sanitized confirmation is private ZIP content; no credentials or signed download URLs are included. Installation/acceptance remains unverified. Historical dashboard evidence is explicitly labeled with its original build.
+
+Prior records below retain their original scope.
+
 # Build 10 distribution — 14 October 2026
 
 Version **1.0.0 (10)** uploaded and distributed to the same two authorized testers using Firebase REST with an explicit content length. Release ID: `10m6d1qnfpap0`. [Tester release](https://appdistribution.firebase.google.com/testerapps/1:860880764428:android:416188fed65affb0f6f829/releases/10m6d1qnfpap0). The uploaded APK SHA256 is `549280bd7c069657573bc40c3609c31d647246432198a5cb04f2fb1a0949bb5b`, matching the final verified artifact. Release notes and distribution calls succeeded. Sanitized confirmation is included privately in the ZIP; no tokens or signed download URLs are included. Installation/acceptance is unverified.

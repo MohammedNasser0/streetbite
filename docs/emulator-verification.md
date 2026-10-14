@@ -53,3 +53,9 @@ Build 9 APK SHA256: `5ff43eda0287184b759d80a67c7e1694f98a22baa04c35e2176411dde7d
 Final APK SHA256: `549280bd7c069657573bc40c3609c31d647246432198a5cb04f2fb1a0949bb5b`. CheckoutTest.cashOrderAndHistory and EvidenceTest.screenTour both passed on the final APK in 2m 48s. Cash order creation, history and restart persistence were asserted. The reviewed signed-out Checkout screenshot has no personal account details and is public.
 
 All 29 Flutter tests passed before a localized notice wording correction; both Checkout EN/AR compact-layout and cancelled-card checks passed again after that correction. Final analyzer reports no issues. The first build-10 native run also passed, but its APK and screenshots are superseded by the final wording-corrected artifact. Initial unit-test failures were harness scrolling/localized-back issues; the corrected tests pass. Full core native scenario coverage remains scoped to build 9.
+
+## Build 11 Browse recovery — 14 October 2026
+
+APK SHA256 `e596c3ff1b5897f3a18e121f53d4f5f310f6158f7158405bf5573398c2125a8f`. BrowseRetryTest passed in 52 seconds after an initial System UI ANR prevented reaching onboarding. The first failure is infrastructure evidence, not a Browse assertion failure. The successful emulator run used Android 17/API 37.1, serial emulator-5556, with a 720×1600 / density 280 override to reduce graphics load while preserving the logical viewport. The test disables Wi-Fi/data only on the QA emulator, submits uncached `chicken`, asserts the error and retained query, restores connectivity, taps Retry and asserts results and the same query. A finally block restores the original connection state.
+
+The reviewed error screenshot and final settled results screenshot are public. A repeated passing run also completed in 52 seconds and supplied the final results capture. No new physical execution or manual pass is claimed.

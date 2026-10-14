@@ -15,3 +15,5 @@ Record actual observed results and environment. Never treat a planned case, skip
 ## Manual execution preparation — 14 October 2026
 
 The matrix now contains 36 uniquely identified cases. Eight added cases cover onboarding, browse, current Checkout composition, cancelled demo-card selection, empty-cart checkout prevention, address validation/editing and settings. Added cases remain Not Run. Follow `manual-qa-walkthrough.md` to record actual device/version/date and observed results; automated passes do not replace manual execution.
+
+Build 11 adds TC_BROWSE_002 for uncached offline search and query-preserving recovery. The matrix now has 37 cases; the new manual case remains Not Run. Native automated evidence is recorded separately.
