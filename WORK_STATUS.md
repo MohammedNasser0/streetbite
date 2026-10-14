@@ -1,3 +1,7 @@
+# Build13 source work in progress
+
+Session address shared across Home/Checkout and cleared across accounts; grouped menu with pinned categories; Browse category tiles; detail quantity controls; explicit cart summary; RTL history chevron. Build13 release compilation active. No13native pass/distribution/package yet. Latest completed package remains12.
+
 # Current delivery checkpoint — build 12, 14 October 2026
 
 35 Flutter tests/analyzer pass; native support/navigation/clipboard passes. APK SHA256 8e9b47df5283047319d43aaab096e8331c29a08abf458da4d71557a736acabea. Distributed release2nm8gta2jnj68 to two testers. Current presentation StreetBite-project-review-build12.pptx. Physical/manual cases pending; phone unavailable. Historical scopes below remain unchanged.

@@ -366,4 +366,20 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get helpAccountBody =>
       'سجّل الدخول لحفظ المفضلة والطلبات. افتح الملف الشخصي وافتحه بالبصمة، ثم اختر تغيير الصورة لتحديد صورة من المعرض.';
+
+  @override
+  String get subtotal => 'المجموع الفرعي';
+
+  @override
+  String get additionalCharges => 'رسوم إضافية';
+
+  @override
+  String get noDemoCharges =>
+      'لا تُضاف رسوم توصيل أو خدمة في هذا التطبيق التجريبي.';
+
+  @override
+  String get menuTitle => 'قائمة الوجبات';
+
+  @override
+  String get categories => 'الفئات';
 }

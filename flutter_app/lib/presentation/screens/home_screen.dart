@@ -12,7 +12,9 @@ import '../widgets/meal_card.dart';
 import '../widgets/meal_image.dart';
 import '../widgets/cart_action.dart';
 import '../widgets/app_navigation_bar.dart';
+import '../widgets/delivery_address_header.dart';
 import 'more_screen.dart';
+import 'grouped_menu_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -68,6 +70,23 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          const DeliveryAddressHeader(),
+                          const SizedBox(height: 8),
+                          if (state.meals.isNotEmpty)
+                            Align(
+                              alignment: AlignmentDirectional.centerStart,
+                              child: TextButton.icon(
+                                onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) =>
+                                        GroupedMenuScreen(meals: state.meals),
+                                  ),
+                                ),
+                                icon: const Icon(Icons.restaurant_menu),
+                                label: Text(l.menuTitle),
+                              ),
+                            ),
                           Text(
                             l.featured,
                             style: Theme.of(context).textTheme.headlineMedium,

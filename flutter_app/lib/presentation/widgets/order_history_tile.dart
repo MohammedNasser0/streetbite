@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:intl/intl.dart' hide TextDirection;
 
 import '../../core/price.dart';
 import '../../domain/entities/placed_order.dart';
@@ -46,7 +46,11 @@ class OrderHistoryTile extends StatelessWidget {
         ),
       ),
       isThreeLine: date != null,
-      trailing: const Icon(Icons.chevron_right),
+      trailing: Icon(
+        Directionality.of(context) == TextDirection.rtl
+            ? Icons.chevron_left
+            : Icons.chevron_right,
+      ),
       onTap: onTap,
     );
   }

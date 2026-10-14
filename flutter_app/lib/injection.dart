@@ -8,9 +8,11 @@ import 'data/repositories/meal_repository_impl.dart';
 import 'data/repositories/meal_source_factory.dart';
 import 'domain/repositories/meal_repository.dart';
 import 'domain/usecases/search_meals.dart';
+import 'presentation/blocs/delivery_address_cubit.dart';
 
 final services = GetIt.instance;
 Future<void> configureDependencies() async {
+  services.registerSingleton<DeliveryAddressCubit>(DeliveryAddressCubit());
   final preferences = await SharedPreferences.getInstance();
   services.registerSingleton<SharedPreferences>(preferences);
   final dio = Dio(

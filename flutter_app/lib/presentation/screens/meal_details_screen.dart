@@ -6,6 +6,8 @@ import '../../domain/entities/meal.dart';
 import '../../l10n/app_localizations.dart';
 import '../blocs/cart_bloc.dart';
 import '../blocs/cart_event.dart';
+import '../blocs/cart_state.dart';
+import '../widgets/quantity_control.dart';
 import '../widgets/meal_image.dart';
 import '../widgets/favourite_button.dart';
 import '../widgets/cart_action.dart';
@@ -51,13 +53,39 @@ class MealDetailsScreen extends StatelessWidget {
       bottomNavigationBar: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: FilledButton(
-            onPressed: () {
-              context.read<CartBloc>().add(AddMeal(meal));
-            },
-            child: Text(
-              '${l.add} • ${price(context, meal.demoPriceInPiastres)}',
-            ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              BlocBuilder<CartBloc, CartState>(
+                builder: (context, state) {
+                  final quantity = state.items
+                      .where((item) => item.meal.id == meal.id)
+                      .fold(0, (count, item) => count + item.quantity);
+                  if (quantity == 0) return const SizedBox.shrink();
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 12),
+                    child: QuantityControl(
+                      quantity: quantity,
+                      onDecrease: () =>
+                          context.read<CartBloc>().add(DecreaseMeal(meal.id)),
+                      onIncrease: () =>
+                          context.read<CartBloc>().add(AddMeal(meal)),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  onPressed: () {
+                    context.read<CartBloc>().add(AddMeal(meal));
+                  },
+                  child: Text(
+                    '${l.add} • ${price(context, meal.demoPriceInPiastres)}',
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

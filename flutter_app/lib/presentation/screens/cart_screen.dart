@@ -36,6 +36,27 @@ class CartScreen extends StatelessWidget {
                             child: Text(l.seeMenu),
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            children: [
+                              const Divider(),
+                              _SummaryRow(
+                                l.subtotal,
+                                price(context, state.totalInPiastres),
+                              ),
+                              _SummaryRow(
+                                l.additionalCharges,
+                                price(context, 0),
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                l.noDemoCharges,
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -71,4 +92,20 @@ class CartScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class _SummaryRow extends StatelessWidget {
+  const _SummaryRow(this.label, this.value);
+  final String label;
+  final String value;
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8),
+    child: Row(
+      children: [
+        Expanded(child: Text(label)),
+        Text(value),
+      ],
+    ),
+  );
 }

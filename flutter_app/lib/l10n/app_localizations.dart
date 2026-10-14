@@ -787,6 +787,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign in to save favourites and orders. Open Profile, unlock it with your fingerprint, then choose Change photo to select a gallery image.'**
   String get helpAccountBody;
+
+  /// No description provided for @subtotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Subtotal'**
+  String get subtotal;
+
+  /// No description provided for @additionalCharges.
+  ///
+  /// In en, this message translates to:
+  /// **'Additional charges'**
+  String get additionalCharges;
+
+  /// No description provided for @noDemoCharges.
+  ///
+  /// In en, this message translates to:
+  /// **'No delivery or service charges are added to this demo.'**
+  String get noDemoCharges;
+
+  /// No description provided for @menuTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Menu'**
+  String get menuTitle;
+
+  /// No description provided for @categories.
+  ///
+  /// In en, this message translates to:
+  /// **'Categories'**
+  String get categories;
 }
 
 class _AppLocalizationsDelegate

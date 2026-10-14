@@ -114,5 +114,10 @@
   "helpOfflineTitle": "Can I browse without internet?",
   "helpOfflineBody": "Previously loaded meal searches are available offline. New searches need a connection, and images may show placeholders while offline.",
   "helpAccountTitle": "How do I save favourites and change my photo?",
-  "helpAccountBody": "Sign in to save favourites and orders. Open Profile, unlock it with your fingerprint, then choose Change photo to select a gallery image."
+  "helpAccountBody": "Sign in to save favourites and orders. Open Profile, unlock it with your fingerprint, then choose Change photo to select a gallery image.",
+  "subtotal": "Subtotal",
+  "additionalCharges": "Additional charges",
+  "noDemoCharges": "No delivery or service charges are added to this demo.",
+  "menuTitle": "Menu",
+  "categories": "Categories"
 }

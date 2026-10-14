@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/price.dart';
 import '../../domain/entities/cart_item.dart';
-import '../../l10n/app_localizations.dart';
 import '../blocs/cart_bloc.dart';
 import '../blocs/cart_event.dart';
 import 'meal_image.dart';
+import 'quantity_control.dart';
 
 class CartItemRow extends StatelessWidget {
   const CartItemRow(this.item, {super.key});
@@ -14,34 +14,11 @@ class CartItemRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l = AppLocalizations.of(context)!;
     final cart = context.read<CartBloc>();
-    final controls = DecoratedBox(
-      decoration: BoxDecoration(
-        border: Border.all(color: Theme.of(context).colorScheme.outlineVariant),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          IconButton(
-            tooltip: item.quantity == 1 ? l.remove : l.decreaseQuantity,
-            onPressed: () => cart.add(DecreaseMeal(item.meal.id)),
-            icon: Icon(
-              item.quantity == 1 ? Icons.delete_outline : Icons.remove,
-            ),
-          ),
-          Text(
-            '${item.quantity}',
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          IconButton(
-            tooltip: l.increaseQuantity,
-            onPressed: () => cart.add(AddMeal(item.meal)),
-            icon: const Icon(Icons.add),
-          ),
-        ],
-      ),
+    final controls = QuantityControl(
+      quantity: item.quantity,
+      onDecrease: () => cart.add(DecreaseMeal(item.meal.id)),
+      onIncrease: () => cart.add(AddMeal(item.meal)),
     );
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),

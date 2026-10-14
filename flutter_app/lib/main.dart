@@ -20,6 +20,7 @@ import 'domain/usecases/search_meals.dart';
 import 'injection.dart';
 import 'l10n/app_localizations.dart';
 import 'presentation/blocs/cart_bloc.dart';
+import 'presentation/blocs/delivery_address_cubit.dart';
 import 'presentation/blocs/locale_cubit.dart';
 import 'presentation/blocs/menu_cubit.dart';
 import 'presentation/blocs/theme_bloc.dart';
@@ -60,8 +61,10 @@ class StreetBiteApp extends StatelessWidget {
         if (services.isRegistered<AuthCubit>())
           BlocListener<AuthCubit, AuthState>(
             listenWhen: (previous, next) => previous.user?.id != next.user?.id,
-            listener: (context, state) =>
-                context.read<CartBloc>().add(ClearCart()),
+            listener: (context, state) {
+              context.read<CartBloc>().add(ClearCart());
+              services<DeliveryAddressCubit>().clear();
+            },
           ),
       ],
       child: Builder(

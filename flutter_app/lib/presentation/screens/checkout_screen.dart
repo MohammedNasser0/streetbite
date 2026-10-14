@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,6 +13,7 @@ import '../../l10n/app_localizations.dart';
 import '../blocs/auth_cubit.dart';
 import '../blocs/cart_bloc.dart';
 import '../blocs/cart_event.dart';
+import '../blocs/delivery_address_cubit.dart';
 import '../widgets/delivery_pin_map.dart';
 import 'auth_screen.dart';
 import 'delivery_address_screen.dart';
@@ -28,6 +31,33 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   bool _busy = false;
   String? _requestId;
   Map<String, String>? _address;
+  StreamSubscription<Map<String, String>?>? _addressSubscription;
+  @override
+  void initState() {
+    super.initState();
+    if (services.isRegistered<DeliveryAddressCubit>()) {
+      _address = services<DeliveryAddressCubit>().state;
+      _addressSubscription = services<DeliveryAddressCubit>().stream.listen((
+        value,
+      ) {
+        if (mounted) setState(() => _address = value);
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _addressSubscription?.cancel();
+    super.dispose();
+  }
+
+  void _saveAddress(Map<String, String> value) {
+    setState(() => _address = value);
+    if (services.isRegistered<DeliveryAddressCubit>()) {
+      services<DeliveryAddressCubit>().select(value);
+    }
+  }
+
   Future<void> _selectPayment(String? value) async {
     if (value == null || _busy) return;
     if (value == 'demo-card') {
@@ -66,7 +96,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         MaterialPageRoute(builder: (_) => const DeliveryAddressScreen()),
       );
       if (!mounted || result == null) return;
-      setState(() => _address = result);
+      _saveAddress(result);
     }
     setState(() => _busy = true);
     // The same request ID is reused on retries to avoid creating duplicate orders.
@@ -106,7 +136,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         builder: (_) => DeliveryAddressScreen(initial: _address),
       ),
     );
-    if (mounted && result != null) setState(() => _address = result);
+    if (mounted && result != null) _saveAddress(result);
   }
 
   @override

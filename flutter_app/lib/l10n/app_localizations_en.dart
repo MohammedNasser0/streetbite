@@ -369,4 +369,20 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get helpAccountBody =>
       'Sign in to save favourites and orders. Open Profile, unlock it with your fingerprint, then choose Change photo to select a gallery image.';
+
+  @override
+  String get subtotal => 'Subtotal';
+
+  @override
+  String get additionalCharges => 'Additional charges';
+
+  @override
+  String get noDemoCharges =>
+      'No delivery or service charges are added to this demo.';
+
+  @override
+  String get menuTitle => 'Menu';
+
+  @override
+  String get categories => 'Categories';
 }

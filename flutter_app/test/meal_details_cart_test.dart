@@ -6,6 +6,7 @@ import 'package:streetbite_app/l10n/app_localizations.dart';
 import 'package:streetbite_app/presentation/blocs/cart_bloc.dart';
 import 'package:streetbite_app/presentation/screens/cart_screen.dart';
 import 'package:streetbite_app/presentation/screens/meal_details_screen.dart';
+import 'package:streetbite_app/presentation/widgets/quantity_control.dart';
 
 void main() {
   for (final language in ['en', 'ar']) {
@@ -45,7 +46,20 @@ void main() {
       await tester.tap(find.byType(FilledButton));
       await tester.pumpAndSettle();
       expect(cart.state.count, 1);
-      expect(find.text('1'), findsOneWidget);
+      expect(
+        tester.widget<QuantityControl>(find.byType(QuantityControl)).quantity,
+        1,
+      );
+      await tester.tap(find.byTooltip(l.increaseQuantity));
+      await tester.pumpAndSettle();
+      expect(cart.state.count, 2);
+      expect(
+        tester.widget<QuantityControl>(find.byType(QuantityControl)).quantity,
+        2,
+      );
+      await tester.tap(find.byTooltip(l.decreaseQuantity));
+      await tester.pumpAndSettle();
+      expect(cart.state.count, 1);
       expect(find.byType(SnackBar), findsOneWidget);
       expect(find.text(l.added), findsOneWidget);
       await tester.tap(find.byTooltip(l.cart));
